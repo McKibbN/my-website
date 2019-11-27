@@ -11,6 +11,7 @@ body, span, h1, h2, h3, h4, h5, h6, input, textarea {
   letter-spacing: 1.1px;
   margin: 0;
   padding: 0;
+  outline: none
 }
 
 h1 {
@@ -95,7 +96,7 @@ h4 {
   border-radius: 5px;
 }
 
-.App {
+.AppContainer {
   background-image: url(./Assets/diagonal-noise.png);
   margin-top: 10vh;
   min-height: 90vh;
@@ -139,9 +140,12 @@ h4 {
   padding-right: 1em
 }
 
-.profile,
-.menu {
+.profile {
   height: 6vh
+}
+
+.menu {
+  height: 4vh
 }
 
 .profile {
@@ -187,6 +191,67 @@ h4 {
 .tabContain h4:last-child:hover,
 .tabContain h4:last-child:focus {
   color: #F34213;
+}
+
+/* Drawer Contain */
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  z-index: 7;
+  background-color: #00000033;
+  animation: fade 0.4s cubic-bezier(.21,.07,.3,.97);
+}
+
+.drawerContain {
+  width: 60vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: white;
+  box-shadow: -3px 0 10px #00000099;
+  animation: fadeRight 0.4s cubic-bezier(.21,.07,.3,.97);
+}
+
+.menuListMobile {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  animation-delay: .6s;
+  animation: fadeRight 0.75s cubic-bezier(.21,.07,.3,.97);
+}
+
+.mobileTab {
+  width: 55vw;
+  text-align: right;
+  padding: 2vh 5vw 2vh 0;
+}
+
+.mobileTab:hover,
+.mobileTab:focus {
+  color: #ffffff;
+  background-color: #51C5F8
+}
+
+.crossContain {
+  height: 10vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+.exitMenuIcon {
+  height: 4vh;
+  margin-right: 5vw
 }
 
 /* Splash Contain */
@@ -337,7 +402,7 @@ h4 {
 
 .arrowContain {
   position: absolute;
-  bottom: 3vh;
+  bottom: 4vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -388,7 +453,7 @@ h4 {
     grid-column: 1;
     grid-row: 1;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 35vw 35vw;
     grid-column-gap: 5vw;
     grid-template-rows: repeat(2, 1fr)
   }
@@ -408,6 +473,7 @@ h4 {
   }
 
   .splashSVGContain {
+    width: 35vw;
     grid-column: 2;
     grid-row-start: 1;
     grid-row-end: 3;
@@ -421,6 +487,7 @@ h4 {
   }
 
   .arrowContain {
+    width: auto;
     display: block;
     left: 12.5vw;
     bottom: 10vh;
@@ -665,20 +732,6 @@ h4 {
     flex-direction: column;
   }
 
-  @keyframes fadeRight {
-    0% {
-      opacity: 0
-    }
-    50% {
-      transform: translateX(5vw);
-      opacity: 0
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1
-    }
-  }
-
   .projectName {
     padding: 1em 1em 0 1em;
     align-self: flex-start;
@@ -746,7 +799,7 @@ h4 {
 @media screen and (min-width: 1024px) and (orientation: landscape){
 
   .skillListBackground {
-    padding: 4em 0;
+    padding: 2em 0;
     width: 75vw;
     max-width: none;
   }
@@ -792,78 +845,135 @@ h4 {
   flex-direction: column;
 }
 
-.contactTitle {
+.contactTitle, .contactDetails {
   color: #ffffff;
   padding-bottom: 1em;
 }
 
 .contactCard {
   align-self: center;
-  width: 100%;
-  padding: 1em;
-  border-radius: 10px;
-  background-color: #f1f2f3;
+  width: 90vw;
+  max-width: 500px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .inputContain {
-  width: inherit
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .inputTitle {
-  margin-bottom: .5em
+  color: #ffffff;
+  margin-bottom: .7em
 }
 
 .input {
-  width: 100%;
+  width: auto;
   font-size: 1em;
-  padding: .75em .5em;
+  padding: .75em 2.25vw;
   margin-bottom: 1em;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
   border: none;
-  border-bottom: 1px solid #2E2E3A;
+  border-bottom: 3px solid #2E2E3A;
   animation: borderBottomInactive .25s cubic-bezier(.21,.07,.3,.97)
 }
 
 @keyframes borderBottomInactive {
   0% {
-    border-bottom: 2px solid #51C5F8;
-    box-shadow: 0px -1px 7px #2E2E3A55;
+    border-bottom: 3px solid #51C5F8;
+    box-shadow: 0 0 7px #e2e2f3aa;
   }
   100% {
-    border-bottom: 1px solid #2E2E3A;
+    border-bottom: 3px solid #2E2E3A;
     box-shadow: none;
   }
 }
 
 .active {
-  border-bottom: 2px solid #51C5F8;
-  box-shadow: 0px -1px 7px #2E2E3A55;
+  border-bottom: 3px solid #51C5F8;
+  box-shadow: 0 0 7px #e2e2f3aa;
   animation: borderBottomActive .25s cubic-bezier(.21,.07,.3,.97)
 }
 
 @keyframes borderBottomActive {
   0% {
-    border-bottom: 1px solid #2E2E3A;
+    border-bottom: 3px solid #2E2E3A;
     box-shadow: none;
   }
   100% {
-    border-bottom: 2px solid #51C5F8;
-    box-shadow: 0px -1px 7px #2E2E3A55;
+    border-bottom: 3px solid #51C5F8;
+    box-shadow: 0 0 7px #e2e2f3aa;
   }
 }
 
 .messageInput {
   min-height: 20vh;
+  margin-bottom: 2em;
 }
 
 .contactSubmit {
   width: 100%;
   background-color: #51C5F8;
   font-size: 1em
+}
+
+.contactSubmit:hover,
+.contactSubmit:focus {
+  color: #000000;
+  background-color: #F34213;
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape){
+  .contactContain {
+    width: 75vw;
+    max-width: none;
+  }
+
+  .contactCard {
+    width: 75vw;
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, 35vw);
+    grid-column-gap: 5vw;
+    grid-template-rows: 1fr 3fr auto;
+  }
+
+  .input {
+    width: 33vw;
+    padding: .75em 1vw
+  }
+
+  .nameInputContain {
+    grid-column: 1;
+    grid-row: 1
+  }
+
+  .emailInputContain {
+    grid-column: 2;
+    grid-row: 1
+  }
+
+  .messageInputContain {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 2
+  }
+
+  .messageInput {
+    width: 73vw;
+  }
+
+  .contactSubmit {
+    width: 100%;
+    max-width: 160px;
+    grid-column: 2;
+    justify-self: right;
+  }
 }
 
 /* Footer */
@@ -876,7 +986,7 @@ h4 {
   width: inherit;
 }
 
-/* Shared Animations */
+/* Shared attributes */
 
 @keyframes fade {
   0% {
@@ -888,6 +998,20 @@ h4 {
   }
   100% {
     transform: translateY(0);
+    opacity: 1
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0
+  }
+  50% {
+    transform: translateX(5vw);
+    opacity: 0
+  }
+  100% {
+    transform: translateX(0);
     opacity: 1
   }
 }

@@ -11,7 +11,6 @@ class Splash extends React.Component {
   constructor() {
     super()
     this.state = {
-      mobile: false
     }
   }
 

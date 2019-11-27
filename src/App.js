@@ -5,6 +5,7 @@ import ProjectSelect from './Components/ProjectSelect.js'
 import SkillList from './Components/SkillList.js'
 import ContactForm from './Components/ContactForm.js'
 import Footer from './Components/Footer.js'
+import SideDrawer from './Components/SideDrawer.js'
 import './App.css';
 
 class App extends React.Component {
@@ -13,10 +14,12 @@ class App extends React.Component {
     this.state = {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
-      scrollPos: 0
+      scrollPos: 0,
+      sideDrawerOpen: false
     }
     this.handleDimensionChange = this.handleDimensionChange.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
+    this.drawerClickHandle = this.drawerClickHandle.bind(this);
   }
 
   componentDidMount() {
@@ -46,15 +49,30 @@ class App extends React.Component {
     });
   }
 
+  drawerClickHandle() {
+    this.setState(prevState => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen}
+    })
+  }
+
   render() {
     return (
-      <div className="App">
-        <Header width={this.state.windowWidth} />
-        <Splash width={this.state.windowWidth}/>
-        <ProjectSelect width={this.state.windowWidth} height={this.state.windowHeight} yPos={this.state.scrollPos}/>
-        <SkillList />
-        <ContactForm />
-        <Footer />
+      <div className='AppBackground'>
+        <div className='AppContainer'>
+          <Header width={this.state.windowWidth} drawerClickHandle={this.drawerClickHandle} />
+          <Splash width={this.state.windowWidth}/>
+          <ProjectSelect width={this.state.windowWidth} height={this.state.windowHeight} yPos={this.state.scrollPos}/>
+          <SkillList />
+          <ContactForm />
+          <Footer />
+        </div>
+        {
+          this.state.sideDrawerOpen
+          ?
+          <SideDrawer drawerClickHandle={this.drawerClickHandle}/>
+          :
+          null
+        }
       </div>
     );
   }

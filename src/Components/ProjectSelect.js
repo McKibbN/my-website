@@ -60,6 +60,7 @@ class ProjectSelect extends React.Component {
 
   hoverCardDisplay = (e) => {
     const name = e.target.id
+    
     this.setState({
       projectContent: name
     })
