@@ -5,7 +5,6 @@ class ProjectCardContent extends React.Component {
   constructor() {
     super()
     this.state = {
-      cardVisable: false
     }
   }
 

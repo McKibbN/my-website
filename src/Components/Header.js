@@ -71,7 +71,9 @@ class Header extends React.Component {
           {
             this.state.mobile
             ?
-            <img onClick={this.props.drawerClickHandle} className="menu" src={Menu} alt="menuIcon" />
+            <div className="fade menuContain" onClick={this.props.drawerClickHandle}>
+              <img className="menu" src={Menu} alt="menuIcon" />
+            </div>
             :
             <div className="tabContain">
               <Link className='link' to='/'>

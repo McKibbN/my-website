@@ -44,8 +44,8 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className='AppBackground'>
-          <div className='HomeContain'>
+        <div className='appWrapper'>
+          <div className='appBackground'>
             <Header width={this.state.windowWidth} drawerClickHandle={this.drawerClickHandle} />
             <Route exact path='/' component={Home}/>
             <Route path='/projects' component={ProjectView}/>

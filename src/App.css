@@ -92,6 +92,11 @@ h4 {
   }
 }
 
+::selection,
+::-moz-selection {
+  background: #2E2E3A44;
+}
+
 .button {
   display: inline-block;
   text-align: center;
@@ -101,14 +106,14 @@ h4 {
   border-radius: 5px;
 }
 
-.HomeContain {
+.appBackground {
   background-image: url(./Assets/diagonal-noise.png);
   margin-top: 10vh;
   min-height: 90vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   background-color: #f1f2f3
 }
@@ -149,8 +154,23 @@ h4 {
   height: 6vh
 }
 
+.menuContain {
+  height: 5vh;
+  width: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+  border-radius: 100px;
+}
+
+.menuContain:hover,
+.menuContain:focus {
+  background-color: #000000
+}
+
 .menu {
-  height: 4vh
+  height: 4vh;
 }
 
 .profile {
@@ -230,6 +250,7 @@ h4 {
 }
 
 .mobileTab {
+  color: #000000;
   width: 55vw;
   text-align: right;
   padding: 2vh 5vw 2vh 0;
@@ -977,7 +998,7 @@ h4 {
 
 /* Project View */
 
-.projectViewContain {
+.projectViewBackground {
   width: 90vw;
   align-self: center;
   padding: 1em 0;
@@ -1002,21 +1023,10 @@ h4 {
   margin-bottom: 0;
 }
 
-.projectImgContain {
-
-}
-
-
 /* Footer */
 
 .footerBackground {
   width: 100vw;
-  position: static;
-  bottom: 0
-}
-
-.splashSVG {
-  width: inherit;
 }
 
 /* Shared attributes */
