@@ -6,6 +6,11 @@ body {
   width: 100vw;
 }
 
+.link {
+  color: #ffffff;
+  text-decoration: none
+}
+
 body, span, h1, h2, h3, h4, h5, h6, input, textarea {
   font-family: 'Encode Sans', sans-serif;
   letter-spacing: 1.1px;
@@ -96,15 +101,15 @@ h4 {
   border-radius: 5px;
 }
 
-.AppContainer {
+.HomeContain {
   background-image: url(./Assets/diagonal-noise.png);
   margin-top: 10vh;
   min-height: 90vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   background-color: #f1f2f3
 }
 
@@ -173,23 +178,19 @@ h4 {
   display: flex
 }
 
-.tabContain h4 {
+.tabItem {
+  color: #ffffff;
   font-weight: 400;
   padding: .5em 1.75em
 }
 
-.tabContain h4:last-child {
-  color: #fff;
-  padding-right: 0
-}
-
-.tabContain h4:hover,
-.tabContain h4:focus {
+.tabItem:hover,
+.tabItem:focus {
   color: #51C5F8;
 }
 
-.tabContain h4:last-child:hover,
-.tabContain h4:last-child:focus {
+.contactTab:hover,
+.contactTab:focus {
   color: #F34213;
 }
 
@@ -290,15 +291,15 @@ h4 {
   flex-direction: column;
 }
 
-.contactLink{
+.contactLink {
+  font-weight: 700;
   text-decoration: underline;
   color: #F34213;
 }
 
-.buttonContact:hover,
-.buttonContact:focus {
-  color: #fff;
-  background-color: #F34213
+.contactLink:hover,
+.contactLink:focus {
+  color: #51C5F8;
 }
 
 .splashSVGContain {
@@ -764,7 +765,6 @@ h4 {
 
 .skillListBackground {
   width: 90vw;
-  max-width: 500px;
   margin: 0 auto;
   padding: 2em 0;
   display: flex;
@@ -786,7 +786,6 @@ h4 {
 
 .skillContain {
   width: 90vw;
-  max-width: 500px;
   padding-bottom: 1em;
   display: flex;
   flex-direction: column;
@@ -976,10 +975,44 @@ h4 {
   }
 }
 
+/* Project View */
+
+.projectViewContain {
+  width: 90vw;
+  align-self: center;
+  padding: 1em 0;
+}
+
+.projectImg {
+  width: 90vw;
+  min-height: 50.625vw;
+  background-color: #2E2E3A;
+  margin: 1em 0 0 0;
+}
+
+.projectImgMain {
+  margin: 1em 0;
+}
+
+.projectBody h4{
+  margin-bottom: 1em;
+}
+
+.projectBody h4:last-child{
+  margin-bottom: 0;
+}
+
+.projectImgContain {
+
+}
+
+
 /* Footer */
 
 .footerBackground {
-  width: 100vw
+  width: 100vw;
+  position: static;
+  bottom: 0
 }
 
 .splashSVG {

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Profile from '../Assets/AveryHeadshot.png';
 import Menu from '../Assets/menu.svg';
 import '../App.css'
@@ -61,7 +62,9 @@ class Header extends React.Component {
               null
             }
               <div className="titleTextContain">
-                <h3 className="fade">Avery Jordan Angel</h3>
+                <Link className='link' to='/'>
+                  <h3 className="fade">Avery Jordan Angel</h3>
+                </Link>
                 <h3 className="fade">Frontend Developer</h3>
               </div>
           </div>
@@ -71,9 +74,15 @@ class Header extends React.Component {
             <img onClick={this.props.drawerClickHandle} className="menu" src={Menu} alt="menuIcon" />
             :
             <div className="tabContain">
-              <h4 className="fade">About</h4>
-              <h4 className="fade">Projects</h4>
-              <h4 className="fade">avery.jordan.angel@gmail.com</h4>
+              <Link className='link' to='/'>
+                <h4 className="fade tabItem">About</h4>
+              </Link>
+              <Link className='link' to='/projects'>
+                <h4 className="fade tabItem">Projects</h4>
+              </Link>
+              <Link className='link' to='/'>
+                <h4 className="fade tabItem contactTab">avery.jordan.angel@gmail.com</h4>
+              </Link>
             </div>
           }
         </div>

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { ReactComponent as InputsBackground } from '../Assets/inputsBackground.svg';
 import { ReactComponent as LightPunch } from '../Assets/inputsLP.svg';
 import { ReactComponent as HeavyPunch } from '../Assets/inputsHP.svg';
@@ -31,7 +32,10 @@ class Splash extends React.Component {
               <HeavyKick className='inputs HK' />
             </div>
             <div className="contactLinkContain">
-              <h3>Let's talk <strong className="contactLink">avery.jordan.angel@gmail.com</strong></h3>
+              <h3>Let's talk</h3>
+              <Link className='link' to='/'>
+                <h3 className="fade contactLink">avery.jordan.angel@gmail.com</h3>
+              </Link>
             </div>
           </div>
         </div>

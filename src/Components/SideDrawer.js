@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { ReactComponent as Cross } from '../Assets/cross.svg';
 
 class SideDrawer extends React.Component {

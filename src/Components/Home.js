@@ -1,37 +1,48 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Header from './Components/Header.js'
-import Home from './Components/Home.js'
-import Footer from './Components/Footer.js'
-import SideDrawer from './Components/SideDrawer.js'
-import ProjectView from './Components/ProjectView.js'
-import './App.css';
+import Splash from './Splash.js'
+import ProjectSelect from './ProjectSelect.js'
+import SkillList from './SkillList.js'
+import ContactForm from './ContactForm.js'
+import '../App.css';
 
-class App extends React.Component {
+class Home extends React.Component {
   constructor() {
     super()
     this.state = {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
+      scrollPos: 0,
       sideDrawerOpen: false
     }
     this.handleDimensionChange = this.handleDimensionChange.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
     this.drawerClickHandle = this.drawerClickHandle.bind(this);
   }
 
   componentDidMount() {
     this.handleDimensionChange();
+    this.handleScroll();
     window.addEventListener("resize", this.handleDimensionChange);
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleDimensionChange);
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleDimensionChange() {
     this.setState({
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight
+    });
+  }
+
+  handleScroll() {
+    const currentState = window.pageYOffset;
+
+    this.setState({
+      scrollPos: currentState
     });
   }
 
@@ -43,25 +54,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
         <div className='AppBackground'>
-          <div className='HomeContain'>
-            <Header width={this.state.windowWidth} drawerClickHandle={this.drawerClickHandle} />
-            <Route exact path='/' component={Home}/>
-            <Route path='/projects' component={ProjectView}/>
-            <Footer />
-          </div>
-          {
-            this.state.sideDrawerOpen
-            ?
-            <SideDrawer drawerClickHandle={this.drawerClickHandle}/>
-            :
-            null
-          }
+          <Splash width={this.state.windowWidth}/>
+          <ProjectSelect width={this.state.windowWidth} height={this.state.windowHeight} yPos={this.state.scrollPos}/>
+          <SkillList />
+          <ContactForm />
         </div>
-      </Router>
     );
   }
 }
 
-export default App;
+export default Home;
