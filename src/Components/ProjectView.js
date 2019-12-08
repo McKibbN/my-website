@@ -12,11 +12,8 @@ class ProjectView extends React.Component {
 
   render() {
     return (
-      <div className='projectViewBackground'>
+      <div className='fade projectViewBackground'>
         <ProjectDetailContent project={this.state.projectContent}/>
-        <div className='projectChangeContain'>
-          <h3>Next Project</h3>
-        </div>
       </div>
     )
   }
