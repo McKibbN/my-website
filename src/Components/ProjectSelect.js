@@ -64,6 +64,7 @@ class ProjectSelect extends React.Component {
     this.setState({
       projectContent: name
     })
+    console.log(this.state.projectContent)
   }
 
   render() {
