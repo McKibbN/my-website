@@ -63,7 +63,7 @@ class ProjectCardContent extends React.Component {
           null
         }
         {
-          this.props.cardType === "empty"
+          this.props.cardType === null
           ?
           null
           :

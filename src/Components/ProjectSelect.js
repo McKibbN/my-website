@@ -14,7 +14,7 @@ class ProjectSelect extends React.Component {
     this.state = {
       scrollVisable: false,
       cardView: false,
-      projectContent: 'empty'
+      projectContent: ''
     }
     this.restyleContainer = this.restyleContainer.bind(this)
     this.handleScrollAnimation = this.handleScrollAnimation.bind(this)
@@ -136,4 +136,4 @@ class ProjectSelect extends React.Component {
   }
 }
 
-export default ProjectSelect;
+export default ProjectSelect
