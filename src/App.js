@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './Components/Header.js'
-import Home from './Components/Home.js'
+import Home from './Components/Home/Home.js'
 import Footer from './Components/Footer.js'
 import SideDrawer from './Components/SideDrawer.js'
-import ProjectView from './Components/ProjectView.js'
+import ProjectView from './Components/Projects/ProjectView.js'
 import './App.css';
 
 class App extends React.Component {
@@ -47,8 +47,8 @@ class App extends React.Component {
         <div className='appWrapper'>
           <div className='appBackground'>
             <Header width={this.state.windowWidth} drawerClickHandle={this.drawerClickHandle} />
-            <Route exact path='/' component={Home}/>
-            <Route path='/projects' component={ProjectView}/>
+            <Route exact path='/' component={Home} width={this.state.windowWidth}/>
+            <Route path='/projects' component={ProjectView} width={this.state.windowWidth}/>
             <Footer />
           </div>
           {

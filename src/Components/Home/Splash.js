@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as InputsBackground } from '../Assets/inputsBackground.svg';
-import { ReactComponent as LightPunch } from '../Assets/inputsLP.svg';
-import { ReactComponent as HeavyPunch } from '../Assets/inputsHP.svg';
-import { ReactComponent as LightKick } from '../Assets/inputsLK.svg';
-import { ReactComponent as HeavyKick } from '../Assets/inputsHK.svg';
-import { ReactComponent as Arrow } from '../Assets/downArrow.svg';
-import '../App.css'
+import { ReactComponent as InputsBackground } from '../../Assets/inputsBackground.svg';
+import { ReactComponent as LightPunch } from '../../Assets/inputsLP.svg';
+import { ReactComponent as HeavyPunch } from '../../Assets/inputsHP.svg';
+import { ReactComponent as LightKick } from '../../Assets/inputsLK.svg';
+import { ReactComponent as HeavyKick } from '../../Assets/inputsHK.svg';
+import { ReactComponent as Arrow } from '../../Assets/downArrow.svg';
+import '../../App.css'
 
 class Splash extends React.Component {
   constructor() {

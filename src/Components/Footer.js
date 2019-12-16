@@ -5,7 +5,7 @@ import '../App.css'
 function Footer() {
   return (
     <div className="footerBackground">
-      <img className='splashSVG' src={IsoBuildings} alt='IsoBuildings'/>
+      <img className='footerSVG' src={IsoBuildings} alt='IsoBuildings'/>
       <div className='footerLinkBackground'>
         <div className='footerContain'>
           <div className='footerLinkContain recatchContain'>
