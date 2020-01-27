@@ -17,8 +17,11 @@ class ProjectView extends React.Component {
     this.state = {
       scrollVisable: false,
       cardView: false,
+      scrollPos: 0,
+      cardContent: 'CEAD',
       projectContent: ''
     }
+    this.changeProjContent = this.changeProjContent.bind(this)
     this.restyleContainer = this.restyleContainer.bind(this)
     this.hoverCardDisplay = this.hoverCardDisplay.bind(this)
   }
@@ -26,10 +29,12 @@ class ProjectView extends React.Component {
   componentDidMount() {
     this.restyleContainer();
     window.addEventListener("resize", this.restyleContainer);
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.restyleContainer);
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   restyleContainer() {
@@ -50,74 +55,163 @@ class ProjectView extends React.Component {
     const name = e.target.id
 
     this.setState({
-      projectContent: name
+      cardContent: name
     })
-    console.log(this.state.projectContent)
+  }
+
+  changeProjContent = (e) => {
+    const name = e.target.id
+
+    this.setState({
+      projectContent: name,
+    })
   }
 
   render() {
     return (
-      <div className='fade projectViewBackground'>
-        <div className="projectBackground">
+      <div id='test' className='fade projectViewBackground'>
+        <div className="projectSelectBackground">
           <div className="fade projectInnerContain">
             <h1 className="projectContainTitle">Projects</h1>
             {
               this.state.cardView
               ?
               <div className="projectContain-Mobile">
-                <div className="projectCardListContain">
-                  <div className="projectCard project-CEAD">
-                    <img className='fade SVG' src={CEAD} />
-                    <h2 className="projectName">The Cead Company</h2>
-                    <h3 className="projectDetails">consectetur adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h3>
+                <div className="projectCard">
+                  <div className="projectCardContent">
+                    <div className="projectCardHeader">
+                      <div className="projectCardIcon">
+                        <img src={CEAD} className='cardIcon' />
+                      </div>
+                      <div className="projectCardHeaderText">
+                        <h2 className="projectName">CEAD</h2>
+                        <h4 className="projectCompany">The Cead Company</h4>
+                      </div>
+                    </div>
+                    <div className='projectCardImg'>
+                    </div>
+                    <div className="projectCardBody">
+                      <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
+                    </div>
                   </div>
-                  <div className="projectCard project-SAS">
-                    <img className='fade SVG' src={SAS}/>
-                    <h2 className="projectName">Screen Art Studios</h2>
-                    <h3 className="projectDetails">consectetur adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h3>
+                  <a onClick={this.changeProjContent} id='CEAD' className="projectLink">View More</a>
+                </div>
+                <div className="projectCard">
+                  <div className="projectCardContent">
+                    <div className="projectCardHeader">
+                      <div className="projectCardIcon">
+                        <img src={SAS} className='cardIcon' />
+                      </div>
+                      <div className="projectCardHeaderText">
+                        <h2 className="projectName">SAS Website</h2>
+                        <h4 className="projectCompany">ScreenArt Studios</h4>
+                      </div>
+                    </div>
+                    <div className='projectCardImg'>
+                    </div>
+                    <div className="projectCardBody">
+                      <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
+                    </div>
                   </div>
-                  <div className="projectCard project-TR">
-                    <img className='fade SVG' src={TR}/>
-                    <h2 className="projectName">Total Response</h2>
-                    <h3 className="projectDetails">consectetur adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h3>
+                  <a onClick={this.changeProjContent} id='SAS' className="projectLink">View More</a>
+                </div>
+                <div className="projectCard">
+                  <div className="projectCardContent">
+                    <div className="projectCardHeader">
+                      <div className="projectCardIcon">
+                        <img src={TR} className='cardIcon' />
+                      </div>
+                      <div className="projectCardHeaderText">
+                        <h2 className="projectName">Total Response</h2>
+                        <h4 className="projectCompany">ScreenArt Studios</h4>
+                      </div>
+                    </div>
+                    <div className='projectCardImg'>
+                    </div>
+                    <div className="projectCardBody">
+                      <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
+                    </div>
                   </div>
-                  <div className="projectCard project-Mystic">
-                    <img className='fade SVG' src={Mystic}/>
-                    <h2 className="projectName">Mystic CRM</h2>
-                    <h3 className="projectDetails">consectetur adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h3>
+                  <a onClick={this.changeProjContent} id='TR' className="projectLink">View More</a>
+                </div>
+                <div className="projectCard">
+                  <div className="projectCardContent">
+                    <div className="projectCardHeader">
+                      <div className="projectCardIcon">
+                        <img src={Mystic} className='cardIcon' />
+                      </div>
+                      <div className="projectCardHeaderText">
+                        <h2 className="projectName">Mystic CRM</h2>
+                        <h4 className="projectCompany">Thumbnail Consulting</h4>
+                      </div>
+                    </div>
+                    <div className='projectCardImg'>
+                    </div>
+                    <div className="projectCardBody">
+                      <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
+                    </div>
                   </div>
-                  <div className="projectCard project-QWC">
-                    <img className='fade SVG' src={QWC}/>
-                    <h2 className="projectName">QWC-VENUMM</h2>
-                    <h3 className="projectDetails">consectetur adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h3>
+                  <a onClick={this.changeProjContent} id='Mystic' className="projectLink">View More</a>
+                </div>
+                <div className="projectCard">
+                  <div className="projectCardContent">
+                    <div className="projectCardHeader">
+                      <div className="projectCardIcon">
+                        <img src={QWC} className='cardIcon' />
+                      </div>
+                      <div className="projectCardHeaderText">
+                        <h2 className="projectName">QWC-VENUMM</h2>
+                        <h4 className="projectCompany">ScreenArt Studios</h4>
+                      </div>
+                    </div>
+                    <div className='projectCardImg'>
+                    </div>
+                    <div className="projectCardBody">
+                      <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
+                    </div>
                   </div>
-                  <div className="projectCard project-DBFZ">
-                    <img className='fade SVG' src={DBFZ}/>
-                    <h2 className="projectName">DBFZ Frame Data</h2>
-                    <h3 className="projectDetails">consectetur adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h3>
+                  <a onClick={this.changeProjContent} id='QWC' className="projectLink">View More</a>
+                </div>
+                <div className="projectCard">
+                  <div className="projectCardContent projectCardContentLast">
+                    <div className="projectCardHeader">
+                      <div className="projectCardIcon">
+                        <img src={DBFZ} className='cardIcon' />
+                      </div>
+                      <div className="projectCardHeaderText">
+                        <h2 className="projectName">DBFZ Frame Data</h2>
+                        <h4 className="projectCompany">Personal Project</h4>
+                      </div>
+                    </div>
+                    <div className='projectCardImg'>
+                    </div>
+                    <div className="projectCardBody">
+                      <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
+                    </div>
                   </div>
+                  <a onClick={this.changeProjContent} id='DBFZ' className="projectLink">View More</a>
                 </div>
               </div>
               :
               <div className="projectContain-Desktop">
                 <div className="animationCanvas">
                   <div className="projectSelectContain">
-                    <img onMouseOver={this.hoverCardDisplay} src={CEAD} id='CEAD' className='fade SVG SVG-1' />
-                    <img onMouseOver={this.hoverCardDisplay} src={SAS} id='SAS' className='fade SVG SVG-2' />
-                    <img onMouseOver={this.hoverCardDisplay} src={TR} id='TR' className='fade SVG SVG-3' />
-                    <img onMouseOver={this.hoverCardDisplay} src={Mystic} id='Mystic' className='fade SVG SVG-4' />
-                    <img onMouseOver={this.hoverCardDisplay} src={QWC} id='QWC' className='fade SVG SVG-5' />
-                    <img onMouseOver={this.hoverCardDisplay} src={DBFZ} id='DBFZ' className='fade SVG SVG-6' />
+                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={CEAD} id='CEAD' className='fade SVG SVG-1' />
+                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={SAS} id='SAS' className='fade SVG SVG-2' />
+                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={TR} id='TR' className='fade SVG SVG-3' />
+                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={Mystic} id='Mystic' className='fade SVG SVG-4' />
+                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={QWC} id='QWC' className='fade SVG SVG-5' />
+                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={DBFZ} id='DBFZ' className='fade SVG SVG-6' />
                   </div>
                 </div>
                 <div className="cardBackground">
-                  <ProjectCardContent cardType={this.state.projectContent} />
+                  <ProjectCardContent cardType={this.state.cardContent} />
                 </div>
               </div>
             }
           </div>
         </div>
-        <ProjectDetailContent project={this.state.projectContent}/>
+        <ProjectDetailContent id="projContent" project={this.state.projectContent}/>
       </div>
     )
   }

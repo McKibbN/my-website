@@ -17,7 +17,7 @@ class ProjectDetailContent extends React.Component {
           <div className='projectViewContain'>
             <div className='projectTitle'>
               <h1>CEAD</h1>
-              <h2>The CEAD COMPANY</h2>
+              <h3>The CEAD COMPANY</h3>
             </div>
             <div className='projectImg projectImgMain'>
             </div>
@@ -44,7 +44,7 @@ class ProjectDetailContent extends React.Component {
           <div className='projectViewContain'>
             <div className='projectTitle'>
               <h1>Personal Company Website</h1>
-              <h2>ScreenArt Studios</h2>
+              <h3>ScreenArt Studios</h3>
             </div>
             <div className='projectImg projectImgMain'>
             </div>
@@ -71,7 +71,7 @@ class ProjectDetailContent extends React.Component {
           <div className='projectViewContain'>
             <div className='projectTitle'>
               <h1>Total Response</h1>
-              <h2>ScreenArt Studios</h2>
+              <h3>ScreenArt Studios</h3>
             </div>
             <div className='projectImg projectImgMain'>
             </div>
@@ -98,7 +98,7 @@ class ProjectDetailContent extends React.Component {
           <div className='projectViewContain'>
             <div className='projectTitle'>
               <h1>Mystic CRM</h1>
-              <h2>Thumbnail Consulting</h2>
+              <h3>Thumbnail Consulting</h3>
             </div>
             <div className='projectImg projectImgMain'>
             </div>
@@ -125,7 +125,7 @@ class ProjectDetailContent extends React.Component {
           <div className='projectViewContain'>
             <div className='projectTitle'>
               <h1>QWC-VENUMM</h1>
-              <h2>CustomWebstack</h2>
+              <h3>CustomWebstack</h3>
             </div>
             <div className='projectImg projectImgMain'>
             </div>
@@ -152,7 +152,7 @@ class ProjectDetailContent extends React.Component {
           <div className='projectViewContain'>
             <div className='projectTitle'>
               <h1>DBFZ Frame Data App</h1>
-              <h2>Personal Project</h2>
+              <h3>Personal Project</h3>
             </div>
             <div className='projectImg projectImgMain'>
             </div>

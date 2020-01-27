@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { ReactComponent as Cross } from '../Assets/cross.svg'
 
 class SideDrawer extends React.Component {
@@ -15,9 +16,12 @@ class SideDrawer extends React.Component {
             <Cross className='exitMenuIcon' onClick={this.props.drawerClickHandle} />
           </div>
           <div className='menuListMobile'>
-            <h2 className='mobileTab'>About</h2>
-            <h2 className='mobileTab'>Projects</h2>
-            <h2 className='mobileTab'>Contact</h2>
+            <Link onClick={this.props.drawerClickHandle} className='mobileTab' to='/'>
+              <h2 className='mobileTabItem'>About</h2>
+            </Link>
+            <Link onClick={this.props.drawerClickHandle} className='mobileTab' to='/projects'>
+              <h2 className='mobileTabItem'>Projects</h2>
+            </Link>
           </div>
         </div>
         <div className='backdrop' onClick={this.props.drawerClickHandle}></div>

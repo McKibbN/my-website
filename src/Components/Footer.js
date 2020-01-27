@@ -11,23 +11,17 @@ function Footer() {
           <div className='footerLinkContain recatchContain'>
             <h2>Avery Jordan Angel</h2>
             <h4 className='fade contactLink'>avery.jordan.angel@gmail.com</h4>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</h4>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h4>
           </div>
           <div className='footerInnerContain'>
             <div className='footerLinkContain'>
-              <h3>Menu</h3>
-              <h4 className='fade footerLink'>About</h4>
-              <h4 className='fade footerLink'>Projects</h4>
-              <h4 className='fade footerLink'>Contact</h4>
-            </div>
-            <div className='footerLinkContain'>
-              <h3>Online</h3>
-              <h4 className='fade footerLink'>Github</h4>
-              <h4 className='fade footerLink'>LinkedIn</h4>
-              <h4 className='fade footerLink'>Twitter</h4>
+              <h3>Social Media</h3>
+              <a href="https://github.com/McKibbN" className='fade footerLink'>Github</a><br/>
+              <a href="https://www.linkedin.com/in/avery-angel-a5441b99/" className='fade footerLink'>LinkedIn</a><br/>
+              <a href="https://twitter.com/very_Ange1" className='fade footerLink'>Twitter</a><br/>
             </div>
           </div>
-            <h4 className='cr'>Copyright Avery Jordan Angel 2019 ©</h4>
+          <h4 className='cr'>Copyright Avery Jordan Angel 2019 ©</h4>
         </div>
       </div>
     </div>

@@ -13,19 +13,24 @@ class App extends React.Component {
     this.state = {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
+      scrollPos: 0,
       sideDrawerOpen: false
     }
     this.handleDimensionChange = this.handleDimensionChange.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
     this.drawerClickHandle = this.drawerClickHandle.bind(this);
   }
 
   componentDidMount() {
     this.handleDimensionChange();
+    this.handleScroll();
     window.addEventListener("resize", this.handleDimensionChange);
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleDimensionChange);
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleDimensionChange() {
@@ -33,6 +38,15 @@ class App extends React.Component {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight
     });
+  }
+
+  handleScroll() {
+    const currentState = window.pageYOffset;
+
+    this.setState({
+      scrollPos: currentState
+    });
+    console.log(this.state.scrollPos)
   }
 
   drawerClickHandle() {
@@ -47,8 +61,8 @@ class App extends React.Component {
         <div className='appWrapper'>
           <div className='appBackground'>
             <Header width={this.state.windowWidth} drawerClickHandle={this.drawerClickHandle} />
-            <Route exact path='/' component={Home} width={this.state.windowWidth}/>
-            <Route path='/projects' component={ProjectView} width={this.state.windowWidth}/>
+            <Route exact path='/' render={(props) => <Home {...props} width={this.state.windowWidth} />} />
+            <Route path='/projects' render={(props) => <ProjectView {...props} width={this.state.windowWidth} />} />
             <Footer />
           </div>
           {

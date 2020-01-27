@@ -56,7 +56,6 @@ class Home extends React.Component {
     return (
         <div className='homeBackground'>
           <Splash width={this.state.windowWidth}/>
-          <ProjectSelect width={this.state.windowWidth} height={this.state.windowHeight} yPos={this.state.scrollPos}/>
           <SkillList />
           <ContactForm />
         </div>
