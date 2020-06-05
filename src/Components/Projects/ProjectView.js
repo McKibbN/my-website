@@ -3,11 +3,9 @@ import ProjectCardContent from './ProjectCardContent.js'
 import ProjectDetailContent from './ProjectDetailContent.js'
 import ProjectSelect from './ProjectSelect.js'
 import { Link } from 'react-router-dom'
-import SAS from '../../Assets/SAS.svg'
+import Blank from '../../Assets/blank.svg'
 import CEAD from '../../Assets/CEAD.svg'
-import TR from '../../Assets/TR.svg'
 import Mystic from '../../Assets/Mystic.svg'
-import QWC from '../../Assets/QWC.svg'
 import DBFZ from '../../Assets/DBFZ.svg'
 import '../../App.css'
 
@@ -88,51 +86,11 @@ class ProjectView extends React.Component {
                         <h4 className="projectCompany">The Cead Company</h4>
                       </div>
                     </div>
-                    <div className='projectCardImg'>
-                    </div>
                     <div className="projectCardBody">
                       <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
                     </div>
                   </div>
                   <a onClick={this.changeProjContent} id='CEAD' className="projectLink">View More</a>
-                </div>
-                <div className="projectCard">
-                  <div className="projectCardContent">
-                    <div className="projectCardHeader">
-                      <div className="projectCardIcon">
-                        <img src={SAS} className='cardIcon' />
-                      </div>
-                      <div className="projectCardHeaderText">
-                        <h2 className="projectName">SAS Website</h2>
-                        <h4 className="projectCompany">ScreenArt Studios</h4>
-                      </div>
-                    </div>
-                    <div className='projectCardImg'>
-                    </div>
-                    <div className="projectCardBody">
-                      <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
-                    </div>
-                  </div>
-                  <a onClick={this.changeProjContent} id='SAS' className="projectLink">View More</a>
-                </div>
-                <div className="projectCard">
-                  <div className="projectCardContent">
-                    <div className="projectCardHeader">
-                      <div className="projectCardIcon">
-                        <img src={TR} className='cardIcon' />
-                      </div>
-                      <div className="projectCardHeaderText">
-                        <h2 className="projectName">Total Response</h2>
-                        <h4 className="projectCompany">ScreenArt Studios</h4>
-                      </div>
-                    </div>
-                    <div className='projectCardImg'>
-                    </div>
-                    <div className="projectCardBody">
-                      <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
-                    </div>
-                  </div>
-                  <a onClick={this.changeProjContent} id='TR' className="projectLink">View More</a>
                 </div>
                 <div className="projectCard">
                   <div className="projectCardContent">
@@ -145,32 +103,11 @@ class ProjectView extends React.Component {
                         <h4 className="projectCompany">Thumbnail Consulting</h4>
                       </div>
                     </div>
-                    <div className='projectCardImg'>
-                    </div>
                     <div className="projectCardBody">
                       <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
                     </div>
                   </div>
                   <a onClick={this.changeProjContent} id='Mystic' className="projectLink">View More</a>
-                </div>
-                <div className="projectCard">
-                  <div className="projectCardContent">
-                    <div className="projectCardHeader">
-                      <div className="projectCardIcon">
-                        <img src={QWC} className='cardIcon' />
-                      </div>
-                      <div className="projectCardHeaderText">
-                        <h2 className="projectName">QWC-VENUMM</h2>
-                        <h4 className="projectCompany">ScreenArt Studios</h4>
-                      </div>
-                    </div>
-                    <div className='projectCardImg'>
-                    </div>
-                    <div className="projectCardBody">
-                      <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
-                    </div>
-                  </div>
-                  <a onClick={this.changeProjContent} id='QWC' className="projectLink">View More</a>
                 </div>
                 <div className="projectCard">
                   <div className="projectCardContent projectCardContentLast">
@@ -183,8 +120,6 @@ class ProjectView extends React.Component {
                         <h4 className="projectCompany">Personal Project</h4>
                       </div>
                     </div>
-                    <div className='projectCardImg'>
-                    </div>
                     <div className="projectCardBody">
                       <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
                     </div>
@@ -196,16 +131,13 @@ class ProjectView extends React.Component {
               <div className="projectContain-Desktop">
                 <div className="animationCanvas">
                   <div className="projectSelectContain">
-                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={CEAD} id='CEAD' className='fade SVG SVG-1' />
-                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={SAS} id='SAS' className='fade SVG SVG-2' />
-                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={TR} id='TR' className='fade SVG SVG-3' />
+                    <img src={Blank} className='fade blankSVG SVG-1' />
+                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={CEAD} id='CEAD' className='fade SVG SVG-2' />
+                    <img src={Blank} className='fade blankSVG SVG-3' />
                     <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={Mystic} id='Mystic' className='fade SVG SVG-4' />
-                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={QWC} id='QWC' className='fade SVG SVG-5' />
+                    <img src={Blank} className='fade blankSVG SVG-5' />
                     <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={DBFZ} id='DBFZ' className='fade SVG SVG-6' />
                   </div>
-                </div>
-                <div className="cardBackground">
-                  <ProjectCardContent cardType={this.state.cardContent} />
                 </div>
               </div>
             }

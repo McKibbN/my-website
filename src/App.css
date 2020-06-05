@@ -198,10 +198,17 @@ h4 {
   display: flex
 }
 
-.tabItem {
-  color: #ffffff;
+.tabItem, .emailTab {
   font-weight: 400;
   padding: .5em 1.75em;
+}
+
+.tabItem {
+  color: #ffffff;
+}
+
+.emailTab {
+  color: #ffffff88;
 }
 
 .contactTab {
@@ -320,7 +327,6 @@ h4 {
 
 .contactLink {
   font-weight: 700;
-  text-decoration: underline;
   color: #F34213;
 }
 
@@ -693,6 +699,12 @@ h4 {
   background-color: #F34213;
 }
 
+.errorMessage {
+  color: #FF0054;
+  margin-top: 4px;
+  text-align: right
+}
+
 @media screen and (min-width: 1024px) and (orientation: landscape){
   .contactContain {
     width: 75vw;
@@ -768,7 +780,7 @@ h4 {
 
 .projectContainTitle {
   padding-bottom: 1em;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .projectCardListContain {
@@ -844,7 +856,7 @@ h4 {
 }
 
 .projectLink {
-  margin: 1em;
+  padding: .75em;
   color: #51C5F8;
   font-weight: 700;
   align-self: flex-end;
@@ -861,11 +873,15 @@ h4 {
     padding: 5vh 0;
   }
 
+  .projectContainTitle {
+    margin: 0 7.5vw
+  }
+
   .projectContain-Desktop {
     width: inherit;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
   }
 
   .animationCanvas {
@@ -885,7 +901,7 @@ h4 {
     height: inherit
   }
 
-  .SVG {
+  .SVG, .blankSVG {
     width: 30.6792%;
     max-width: 666.174px;
     position: absolute;
@@ -1018,14 +1034,6 @@ h4 {
     margin: 1em
   }
 
-  .projectLink {
-    padding: .5em 0;
-    margin: 0 1em .5em 0;
-    color: #51C5F8;
-    font-weight: 700;
-    align-self: flex-end;
-  }
-
   .projectLink :hover,
   .projectLink :focus {
     text-decoration: underline;
@@ -1049,7 +1057,6 @@ h4 {
 
 .projectContent {
   width: 100%;
-  background-color: #f1f2f3;
   display: flex;
   flex-direction: column;
   align-items: center
@@ -1065,8 +1072,15 @@ h4 {
 .projectImg {
   width: 90vw;
   min-height: 50.625vw;
-  background-color: #2E2E3A;
+  background-color: #2E2E3A66;
   margin: 2em 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.projectAsset {
+  width: 90vw
 }
 
 .projectTitle h1 {
@@ -1119,14 +1133,13 @@ h4 {
     min-height: 42.1875vw;
   }
 
-  .projectImgMain {
-    width: 50vw;
-    min-height: 28.125vw;
-    margin: 0 0 3em 0;
+  .projectAsset {
+    height: 42.1875vw;
+    width: auto;
   }
 
   .projectBody {
-    margin: 3em 0;
+    margin: 0;
   }
 
   .projectBody h3{

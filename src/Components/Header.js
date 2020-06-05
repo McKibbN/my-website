@@ -65,7 +65,7 @@ class Header extends React.Component {
                 <Link className='link' to='/'>
                   <h3 className="fade">Avery Jordan Angel</h3>
                 </Link>
-                <h3 className="fade">Frontend Developer</h3>
+                <h3 className="fade">Web Designer</h3>
               </div>
           </div>
           {
@@ -82,9 +82,7 @@ class Header extends React.Component {
               <Link className='link' to='/projects'>
                 <h4 className="fade tabItem">Projects</h4>
               </Link>
-              <Link className='link' to='/'>
-                <h4 className="fade tabItem contactTab">avery.jordan.angel@gmail.com</h4>
-              </Link>
+              <h4 className="fade emailTab">avery.jordan.angel@gmail.com</h4>
             </div>
           }
         </div>
