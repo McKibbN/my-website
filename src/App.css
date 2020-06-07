@@ -603,7 +603,6 @@ h4 {
   display: flex;
   padding: 2em 0;
   background-color: #2E2E3A;
-  display: flex;
   justify-content: center;
 }
 
@@ -621,14 +620,15 @@ h4 {
   padding-bottom: 1em;
 }
 
-.contactCard {
+.contactForm {
+  position: relative;
   align-self: center;
   width: 90vw;
+  height: 100%;
   max-width: 500px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .inputContain {
@@ -699,6 +699,44 @@ h4 {
   background-color: #F34213;
 }
 
+.successMessageBackground {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  z-index: 6;
+  background-color: #2E2E3A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: messageTransition .75s cubic-bezier(.21,.07,.3,.97)
+}
+
+.successMessageContain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.successMessage {
+  color: #fff
+}
+
+.bartAsset {
+  width: 32vw;
+  max-width: 320px;
+}
+
+@keyframes messageTransition {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
 .errorMessage {
   color: #FF0054;
   margin-top: 4px;
@@ -711,7 +749,7 @@ h4 {
     max-width: none;
   }
 
-  .contactCard {
+  .contactForm {
     width: 75vw;
     max-width: none;
     display: grid;
@@ -722,7 +760,7 @@ h4 {
 
   .contactDetails {
     max-width: none;
-    width: 75vw
+    width: 32.5vw
   }
 
   .input {

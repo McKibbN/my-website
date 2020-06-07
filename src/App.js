@@ -46,7 +46,6 @@ class App extends React.Component {
     this.setState({
       scrollPos: currentState
     });
-    console.log(this.state.scrollPos)
   }
 
   drawerClickHandle() {
