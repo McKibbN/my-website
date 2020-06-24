@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { getContactOffset } from '../../Redux/Actions/yPosController.js';
 import BartAsset from '../../Assets/Bart.svg'
 import '../../App.css'
 
@@ -10,11 +12,26 @@ class ContactForm extends React.Component {
       email: '',
       message: '',
       active: '',
-      status: ''
+      status: '',
+      contactYPos: 0
     }
     this.handleActiveField = this.handleActiveField.bind(this)
     this.handleFieldChange = this.handleFieldChange.bind(this)
     this.submitForm = this.submitForm.bind(this);
+  }
+
+  componentDidMount() {
+    let el = document.getElementById('contact')
+    let elBounding = el.getBoundingClientRect();
+    let yPos = elBounding.top
+
+    console.log(yPos);
+
+    this.setState({
+      contactYPos: yPos
+    })
+
+    this.props.getContactOffset({contactYPos: this.state.contactYPos})
   }
 
   handleActiveField = e => {
@@ -36,9 +53,9 @@ class ContactForm extends React.Component {
     })
   }
 
-  submitForm(ev) {
-    ev.preventDefault();
-    const form = ev.target;
+  submitForm(e) {
+    e.preventDefault();
+    const form = e.target;
     const data = new FormData(form);
     const xhr = new XMLHttpRequest();
     xhr.open(form.method, form.action);
@@ -58,7 +75,7 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <div className="contactBackground">
+      <div id='contact' className="contactBackground">
         <div className="contactContain">
           <h1 className="contactTitle">Contact</h1>
           <h3 className="contactDetails">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
@@ -121,4 +138,16 @@ class ContactForm extends React.Component {
   }
 }
 
-export default ContactForm;
+function mapStateToProps(state) {
+  return {
+    // for when customer redux is added
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getContactOffset: () => dispatch(getContactOffset())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

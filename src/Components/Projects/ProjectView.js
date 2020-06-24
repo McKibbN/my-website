@@ -25,6 +25,7 @@ class ProjectView extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.restyleContainer();
     window.addEventListener("resize", this.restyleContainer);
     window.addEventListener("scroll", this.handleScroll);

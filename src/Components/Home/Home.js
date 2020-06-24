@@ -20,6 +20,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.handleDimensionChange();
     this.handleScroll();
     window.addEventListener("resize", this.handleDimensionChange);

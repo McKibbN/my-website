@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { connect } from 'react-redux';
 import Header from './Components/Header.js'
 import Home from './Components/Home/Home.js'
 import Footer from './Components/Footer.js'
@@ -72,9 +73,21 @@ class App extends React.Component {
             null
           }
         </div>
+        {console.log(this.props.contactYPos)}
       </Router>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    contactYPos: state.yPosReducer.contactYPos
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
