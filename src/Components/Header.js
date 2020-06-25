@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getHeaderHeight } from '../Redux/Actions/yPosController.js';
 import Profile from '../Assets/AveryHeadshot.png';
 import Menu from '../Assets/menu.svg';
 import '../App.css'
@@ -12,10 +14,12 @@ class Header extends React.Component {
       mobile: false
     }
     this.navBarResize = this.navBarResize.bind(this)
+    this.documentHeaderHeight = this.documentHeaderHeight.bind(this)
   }
 
   componentDidMount() {
     this.navBarResize();
+    this.documentHeaderHeight();
     window.addEventListener("resize", this.navBarResize);
   }
 
@@ -47,9 +51,17 @@ class Header extends React.Component {
     }
   }
 
+  documentHeaderHeight() {
+    let el = document.getElementById('header')
+    let elBounding = el.getBoundingClientRect();
+    let height = elBounding.height
+
+    this.props.getHeaderHeight(height)
+  }
+
   render() {
     return (
-      <div className="headerBackground">
+      <div id="header" className="headerBackground">
         <div className="headerContain">
           <div className="titleContain">
             {
@@ -91,4 +103,15 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+function mapStateToProps(state) {
+  return {
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getHeaderHeight: height => dispatch(getHeaderHeight(height))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

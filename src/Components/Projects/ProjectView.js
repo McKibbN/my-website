@@ -1,7 +1,6 @@
 import React from 'react'
 import ProjectCardContent from './ProjectCardContent.js'
 import ProjectDetailContent from './ProjectDetailContent.js'
-import ProjectSelect from './ProjectSelect.js'
 import { Link } from 'react-router-dom'
 import Blank from '../../Assets/blank.svg'
 import CEAD from '../../Assets/CEAD.svg'
@@ -15,25 +14,22 @@ class ProjectView extends React.Component {
     this.state = {
       scrollVisable: false,
       cardView: false,
-      scrollPos: 0,
       cardContent: 'CEAD',
       projectContent: ''
     }
+    this.restyleContainer = this.restyleContainer.bind(this);
+    this.hoverCardDisplay = this.hoverCardDisplay.bind(this);
     this.changeProjContent = this.changeProjContent.bind(this)
-    this.restyleContainer = this.restyleContainer.bind(this)
-    this.hoverCardDisplay = this.hoverCardDisplay.bind(this)
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
     this.restyleContainer();
     window.addEventListener("resize", this.restyleContainer);
-    window.addEventListener("scroll", this.handleScroll);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.restyleContainer);
-    window.removeEventListener("scroll", this.handleScroll);
   }
 
   restyleContainer() {

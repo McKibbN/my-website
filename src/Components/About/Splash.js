@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { isSetToContact } from '../../Redux/Actions/yPosController.js';
 import { ReactComponent as InputsBackground } from '../../Assets/inputsBackground.svg';
 import { ReactComponent as LightPunch } from '../../Assets/inputsLP.svg';
 import { ReactComponent as HeavyPunch } from '../../Assets/inputsHP.svg';
@@ -10,9 +12,7 @@ import '../../App.css'
 
 class Splash extends React.Component {
   constructor() {
-    super()
-    this.state = {
-    }
+    super();
   }
 
   render() {
@@ -33,9 +33,9 @@ class Splash extends React.Component {
             </div>
             <div className="contactLinkContain">
               <h3>Let's talk</h3>
-              <Link className='link' to='/'>
-                <h3 className="fade contactLink">avery.jordan.angel@gmail.com</h3>
-              </Link>
+              <div className='link'>
+                <h3 onClick={() => this.props.isSetToContact(true)} className="fade contactLink">avery.jordan.angel@gmail.com</h3>
+              </div>
             </div>
           </div>
         </div>
@@ -47,4 +47,15 @@ class Splash extends React.Component {
   }
 }
 
-export default Splash;
+function mapStateToProps(state) {
+  return {
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    isSetToContact: data => dispatch(isSetToContact(data))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Splash);

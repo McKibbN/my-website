@@ -12,26 +12,24 @@ class ContactForm extends React.Component {
       email: '',
       message: '',
       active: '',
-      status: '',
-      contactYPos: 0
+      status: ''
     }
+    this.documentContactElementBounding = this.documentContactElementBounding.bind(this)
     this.handleActiveField = this.handleActiveField.bind(this)
     this.handleFieldChange = this.handleFieldChange.bind(this)
     this.submitForm = this.submitForm.bind(this);
   }
 
   componentDidMount() {
+    this.documentContactElementBounding();
+  }
+
+  documentContactElementBounding() {
     let el = document.getElementById('contact')
     let elBounding = el.getBoundingClientRect();
     let yPos = elBounding.top
 
-    console.log(yPos);
-
-    this.setState({
-      contactYPos: yPos
-    })
-
-    this.props.getContactOffset({contactYPos: this.state.contactYPos})
+    this.props.getContactOffset(yPos)
   }
 
   handleActiveField = e => {
@@ -140,13 +138,12 @@ class ContactForm extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    // for when customer redux is added
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getContactOffset: () => dispatch(getContactOffset())
+    getContactOffset: yPos => dispatch(getContactOffset(yPos))
   }
 }
 

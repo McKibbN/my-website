@@ -1,8 +1,10 @@
 import React from 'react'
+import { Decimal } from 'decimal.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux';
+import { isSetToContact } from './Redux/Actions/yPosController.js';
 import Header from './Components/Header.js'
-import Home from './Components/Home/Home.js'
+import About from './Components/About/About.js'
 import Footer from './Components/Footer.js'
 import SideDrawer from './Components/SideDrawer.js'
 import ProjectView from './Components/Projects/ProjectView.js'
@@ -14,24 +16,26 @@ class App extends React.Component {
     this.state = {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
-      scrollPos: 0,
       sideDrawerOpen: false
     }
     this.handleDimensionChange = this.handleDimensionChange.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
+    this.setToContact = this.setToContact.bind(this);
     this.drawerClickHandle = this.drawerClickHandle.bind(this);
   }
 
   componentDidMount() {
     this.handleDimensionChange();
-    this.handleScroll();
     window.addEventListener("resize", this.handleDimensionChange);
-    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentDidUpdate() {
+    if (this.props.moveToContact) {
+      this.setToContact()
+    }
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleDimensionChange);
-    window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleDimensionChange() {
@@ -41,12 +45,16 @@ class App extends React.Component {
     });
   }
 
-  handleScroll() {
-    const currentState = window.pageYOffset;
+  setToContact() {
+    let contact = this.props.contactYPos;
+    let header = this.props.getHeaderHeight;
+    let newContactTop = this.props.contactYPos + this.props.getHeaderHeight;
 
-    this.setState({
-      scrollPos: currentState
-    });
+    console.log(newContactTop)
+
+    window.scrollTo(0, newContactTop);
+
+    this.props.isSetToContact(false)
   }
 
   drawerClickHandle() {
@@ -61,7 +69,7 @@ class App extends React.Component {
         <div className='appWrapper'>
           <div className='appBackground'>
             <Header width={this.state.windowWidth} drawerClickHandle={this.drawerClickHandle} />
-            <Route exact path='/' render={(props) => <Home {...props} width={this.state.windowWidth} />} />
+            <Route exact path='/' render={(props) => <About />} />
             <Route path='/projects' render={(props) => <ProjectView {...props} width={this.state.windowWidth} />} />
             <Footer />
           </div>
@@ -73,7 +81,6 @@ class App extends React.Component {
             null
           }
         </div>
-        {console.log(this.props.contactYPos)}
       </Router>
     );
   }
@@ -81,13 +88,16 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    contactYPos: state.yPosReducer.contactYPos
+    contactYPos: state.yPosReducer.contactYPos,
+    headerHeight: state.yPosReducer.headerHeight,
+    moveToContact: state.yPosReducer.moveToContact
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-  };
+    isSetToContact: data => dispatch(isSetToContact(data))
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
