@@ -38,25 +38,25 @@ class ProjectDetailContent extends React.Component {
             </div>
             <div className='projectImgContain'>
               <div className='projectImg'>
-                <img className='projectAsset' src={CEADasset1}></img>
+                <img className='projectAsset' src={CEADasset1} alt='ceadAsset1'></img>
               </div>
               <div className='projectImg'>
-                <img className='projectAsset' src={CEADasset2}></img>
+                <img className='projectAsset' src={CEADasset2} alt='ceadAsset2'></img>
               </div>
               <div className='projectImg'>
-                <img className='projectAsset' src={CEADasset3}></img>
+                <img className='projectAsset' src={CEADasset3} alt='ceadAsset3'></img>
               </div>
               <div className='projectImg'>
-                <img className='projectAsset' src={CEADasset4}></img>
+                <img className='projectAsset' src={CEADasset4} alt='ceadAsset4'></img>
               </div>
               <div className='projectImg'>
-                <img className='projectAsset' src={CEADasset5}></img>
+                <img className='projectAsset' src={CEADasset5} alt='ceadAsset5'></img>
               </div>
               <div className='projectImg'>
-                <img className='projectAsset' src={CEADasset6}></img>
+                <img className='projectAsset' src={CEADasset6} alt='ceadAsset6'></img>
               </div>
               <div className='projectImg'>
-                <img className='projectAsset' src={CEADasset7}></img>
+                <img className='projectAsset' src={CEADasset7} alt='ceadAsset7'></img>
               </div>
             </div>
           </div>
@@ -74,10 +74,10 @@ class ProjectDetailContent extends React.Component {
             </div>
             <div className='projectImgContain'>
               <div className='projectImg'>
-                <img className='projectAsset' src={MYSTasset1}></img>
+                <img className='projectAsset' src={MYSTasset1} alt='mysticAsset1'></img>
               </div>
               <div className='projectImg'>
-                <img className='projectAsset' src={MYSTasset2}></img>
+                <img className='projectAsset' src={MYSTasset2} alt='mysticAsset2'></img>
               </div>
             </div>
           </div>
@@ -95,16 +95,16 @@ class ProjectDetailContent extends React.Component {
             </div>
             <div className='projectImgContain'>
               <div className='projectImg'>
-                <img className='projectAsset' src={DBFZasset1}></img>
+                <img className='projectAsset' src={DBFZasset1} alt='dbfzAsset1'></img>
               </div>
               <div className='projectImg'>
-                <img className='projectAsset' src={DBFZasset2}></img>
+                <img className='projectAsset' src={DBFZasset2} alt='dbfzAsset2'></img>
               </div>
               <div className='projectImg'>
-                <img className='projectAsset' src={DBFZasset3}></img>
+                <img className='projectAsset' src={DBFZasset3} alt='dbfzAsset3'></img>
               </div>
               <div className='projectImg'>
-                <img className='projectAsset' src={DBFZasset4}></img>
+                <img className='projectAsset' src={DBFZasset4} alt='dbfzAsset4'></img>
               </div>
             </div>
           </div>

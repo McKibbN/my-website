@@ -1,6 +1,5 @@
 import React from 'react';
 import Splash from './Splash.js'
-import ProjectSelect from '../Projects/ProjectSelect.js'
 import SkillList from './SkillList.js'
 import ContactForm from './ContactForm.js'
 import '../../App.css';

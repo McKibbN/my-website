@@ -20,7 +20,7 @@ class ProjectCardContent extends React.Component {
           <div className="projectCardContent">
             <div className="projectCardHeader">
               <div className="projectCardIcon">
-                <img src={CEAD} className='cardIcon' />
+                <img src={CEAD} className='cardIcon' alt='ceadIcon' />
               </div>
               <div className="projectCardHeaderText">
                 <h2 className="projectName">CEAD</h2>
@@ -39,7 +39,7 @@ class ProjectCardContent extends React.Component {
           <div className="projectCardContent">
             <div className="projectCardHeader">
               <div className="projectCardIcon">
-                <img src={Mystic} className='cardIcon' />
+                <img src={Mystic} className='cardIcon' alt='mysticIcon' />
               </div>
               <div className="projectCardHeaderText">
                 <h2 className="projectName">Mystic CRM</h2>
@@ -58,7 +58,7 @@ class ProjectCardContent extends React.Component {
           <div className="projectCardContent projectCardContentLast">
             <div className="projectCardHeader">
               <div className="projectCardIcon">
-                <img src={DBFZ} className='cardIcon' />
+                <img src={DBFZ} className='cardIcon' alt='dbfzIcon'/>
               </div>
               <div className="projectCardHeaderText">
                 <h2 className="projectName">DBFZ Frame Data</h2>

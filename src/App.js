@@ -1,5 +1,4 @@
 import React from 'react'
-import { Decimal } from 'decimal.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { isSetToContact } from './Redux/Actions/yPosController.js';
@@ -46,9 +45,9 @@ class App extends React.Component {
   }
 
   setToContact() {
-    let contact = this.props.contactYPos;
-    let header = this.props.getHeaderHeight;
-    let newContactTop = this.props.contactYPos + this.props.getHeaderHeight;
+    let contactYPos = this.props.contactYPos;
+    let headerHeight = this.props.headerHeight;
+    let newContactTop = contactYPos - headerHeight
 
     console.log(newContactTop)
 

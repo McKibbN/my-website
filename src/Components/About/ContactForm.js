@@ -60,7 +60,7 @@ class ContactForm extends React.Component {
     xhr.setRequestHeader("Accept", "application/json");
     xhr.onreadystatechange = () => {
       if (xhr.readyState !== XMLHttpRequest.DONE) return;
-      if (xhr.status === 200 && this.state.name != '' && this.state.email != '' && this.state.message != '') {
+      if (xhr.status === 200 && this.state.name !== '' && this.state.email !== '' && this.state.message !== '') {
         form.reset();
         this.setState({ status: "SUCCESS" });
       } else {
@@ -86,7 +86,7 @@ class ContactForm extends React.Component {
                   <div className="successMessageContain">
                     <h2 className='successMessage'>Thank you kindly :D</h2>
                   </div>
-                  <img src={BartAsset} className='bartAsset' />
+                  <img src={BartAsset} className='bartAsset' alt='bart'/>
                 </div>
                 :
                 null

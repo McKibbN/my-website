@@ -1,7 +1,5 @@
 import React from 'react'
-import ProjectCardContent from './ProjectCardContent.js'
 import ProjectDetailContent from './ProjectDetailContent.js'
-import { Link } from 'react-router-dom'
 import Blank from '../../Assets/blank.svg'
 import CEAD from '../../Assets/CEAD.svg'
 import Mystic from '../../Assets/Mystic.svg'

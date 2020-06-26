@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { isSetToContact } from '../../Redux/Actions/yPosController.js';
 import { ReactComponent as InputsBackground } from '../../Assets/inputsBackground.svg';
@@ -11,9 +10,6 @@ import { ReactComponent as Arrow } from '../../Assets/downArrow.svg';
 import '../../App.css'
 
 class Splash extends React.Component {
-  constructor() {
-    super();
-  }
 
   render() {
     return (

@@ -52,7 +52,7 @@ class Header extends React.Component {
   }
 
   documentHeaderHeight() {
-    let el = document.getElementById('header')
+    let el = document.getElementById('header');
     let elBounding = el.getBoundingClientRect();
     let height = elBounding.height
 

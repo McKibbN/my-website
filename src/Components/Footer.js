@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { isSetToContact } from '../Redux/Actions/yPosController.js';
 import IsoBuildings from '../Assets/iso.svg'
 import '../App.css'
 
@@ -10,7 +12,7 @@ function Footer() {
         <div className='footerContain'>
           <div className='footerLinkContain recatchContain'>
             <h2>Avery Jordan Angel</h2>
-            <h4 className='fade contactLink'>avery.jordan.angel@gmail.com</h4>
+            <h4>avery.jordan.angel@gmail.com</h4>
             <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h4>
           </div>
           <div className='footerInnerContain'>
@@ -28,4 +30,15 @@ function Footer() {
   );
 }
 
-export default Footer;
+function mapStateToProps(state) {
+  return {
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    isSetToContact: data => dispatch(isSetToContact(data))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);
