@@ -1,6 +1,8 @@
 import React from 'react'
 import ProjectDetailContent from './ProjectDetailContent.js'
-import Blank from '../../Assets/blank.svg'
+import Sentinal from '../../Assets/sentinal.svg'
+import Cyclops from '../../Assets/cyclops.svg'
+import Storm from '../../Assets/storm.svg'
 import CEAD from '../../Assets/CEAD.svg'
 import Mystic from '../../Assets/Mystic.svg'
 import DBFZ from '../../Assets/DBFZ.svg'
@@ -126,11 +128,11 @@ class ProjectView extends React.Component {
               <div className="projectContain-Desktop">
                 <div className="animationCanvas">
                   <div className="projectSelectContain">
-                    <img src={Blank} className='fade blankSVG SVG-1' />
+                    <img src={Sentinal} className='fade blankSVG SVG-1' />
                     <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={CEAD} id='CEAD' className='fade SVG SVG-2' />
-                    <img src={Blank} className='fade blankSVG SVG-3' />
+                    <img src={Storm} className='fade blankSVG SVG-3' />
                     <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={Mystic} id='Mystic' className='fade SVG SVG-4' />
-                    <img src={Blank} className='fade blankSVG SVG-5' />
+                    <img src={Cyclops} className='fade blankSVG SVG-5' />
                     <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={DBFZ} id='DBFZ' className='fade SVG SVG-6' />
                   </div>
                 </div>
