@@ -234,7 +234,6 @@ h4 {
   top: 0;
   z-index: 7;
   background-color: #00000033;
-  animation: fade 0.4s cubic-bezier(.21,.07,.3,.97);
 }
 
 .drawerContain {
@@ -249,7 +248,6 @@ h4 {
   align-items: flex-end;
   background: white;
   box-shadow: -3px 0 10px #00000099;
-  animation: fadeRight 0.4s cubic-bezier(.21,.07,.3,.97);
 }
 
 .menuListMobile {
@@ -258,7 +256,6 @@ h4 {
   flex-direction: column;
   align-items: flex-end;
   animation-delay: .6s;
-  animation: fadeRight 0.75s cubic-bezier(.21,.07,.3,.97);
 }
 
 .mobileTab {
@@ -298,7 +295,7 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fade 2s cubic-bezier(.21,.07,.3,.97)
+  animation: fadeUpStart 2s cubic-bezier(.21,.07,.3,.97)
 }
 
 .splashContain {
@@ -537,7 +534,7 @@ h4 {
   padding: 2em 0;
   display: flex;
   flex-direction: column;
-  animation: fade 2s cubic-bezier(.21,.07,.3,.97)
+  animation: fadeUpStart 2s cubic-bezier(.21,.07,.3,.97)
 }
 
 .skillTitle {
@@ -841,7 +838,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  animation: fade 2s cubic-bezier(.21,.07,.3,.97)
+  animation: fadeUpStart 2s cubic-bezier(.21,.07,.3,.97)
 }
 
 .projectCardHeader {
@@ -1277,7 +1274,25 @@ h4 {
 
 /* Shared attributes */
 
-@keyframes fade {
+@keyframes fadeStart {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeEnd {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeUpStart {
   0% {
     opacity: 0
   }
@@ -1291,7 +1306,21 @@ h4 {
   }
 }
 
-@keyframes fadeRight {
+@keyframes fadeUpEnd {
+  0% {
+    transform: translateY(0);
+    opacity: 1
+  }
+  50% {
+    transform: translateY(5vh);
+    opacity: 0
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+@keyframes fadeRightStart {
   0% {
     opacity: 0
   }
@@ -1302,6 +1331,21 @@ h4 {
   100% {
     transform: translateX(0);
     opacity: 1
+  }
+}
+
+@keyframes fadeRightEnd {
+  0% {
+    transform: translateX(0);
+    opacity: 1
+
+  }
+  50% {
+    transform: translateX(5vw);
+    opacity: 0
+  }
+  100% {
+    opacity: 0
   }
 }
 

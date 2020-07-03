@@ -5,6 +5,13 @@ export function getContactOffset(data) {
   };
 }
 
+export function getProjectOffset(data) {
+  return {
+    type: "getProjectOffset",
+    payload: data
+  };
+}
+
 export function getHeaderHeight(data) {
   return {
     type: "getHeaderHeight",
@@ -15,6 +22,13 @@ export function getHeaderHeight(data) {
 export function isSetToContact(data) {
   return {
     type: "isSetToContact",
+    payload: data
+  };
+}
+
+export function isSetToProject(data) {
+  return {
+    type: "isSetToProject",
     payload: data
   };
 }

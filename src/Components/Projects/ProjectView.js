@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { isSetToProject } from '../../Redux/Actions/yPosController.js';
 import ProjectDetailContent from './ProjectDetailContent.js'
 import Sentinal from '../../Assets/sentinal.svg'
 import Cyclops from '../../Assets/cyclops.svg'
@@ -57,14 +59,13 @@ class ProjectView extends React.Component {
   changeProjContent = (e) => {
     const name = e.target.id
 
-    this.setState({
-      projectContent: name,
-    })
+    this.setState({projectContent: name});
+    this.props.isSetToProject(true)
   }
 
   render() {
     return (
-      <div id='test' className='fade projectViewBackground'>
+      <div className='fade projectViewBackground'>
         <div className="projectSelectBackground">
           <div className="fade projectInnerContain">
             <h1 className="projectContainTitle">Projects</h1>
@@ -76,7 +77,7 @@ class ProjectView extends React.Component {
                   <div className="projectCardContent">
                     <div className="projectCardHeader">
                       <div className="projectCardIcon">
-                        <img src={CEAD} className='cardIcon' />
+                        <img src={CEAD} className='cardIcon' alt='CeadIcon'/>
                       </div>
                       <div className="projectCardHeaderText">
                         <h2 className="projectName">CEAD</h2>
@@ -87,13 +88,13 @@ class ProjectView extends React.Component {
                       <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
                     </div>
                   </div>
-                  <a onClick={this.changeProjContent} id='CEAD' className="projectLink">View More</a>
+                  <button onClick={this.changeProjContent} id='CEAD' className="projectLink">View More</button>
                 </div>
                 <div className="projectCard">
                   <div className="projectCardContent">
                     <div className="projectCardHeader">
                       <div className="projectCardIcon">
-                        <img src={Mystic} className='cardIcon' />
+                        <img src={Mystic} className='cardIcon' alt='MysticIcon' />
                       </div>
                       <div className="projectCardHeaderText">
                         <h2 className="projectName">Mystic CRM</h2>
@@ -104,13 +105,13 @@ class ProjectView extends React.Component {
                       <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
                     </div>
                   </div>
-                  <a onClick={this.changeProjContent} id='Mystic' className="projectLink">View More</a>
+                  <button onClick={this.changeProjContent} id='Mystic' className="projectLink">View More</button>
                 </div>
                 <div className="projectCard">
                   <div className="projectCardContent projectCardContentLast">
                     <div className="projectCardHeader">
                       <div className="projectCardIcon">
-                        <img src={DBFZ} className='cardIcon' />
+                        <img src={DBFZ} className='cardIcon' alt='DBFZIcon'/>
                       </div>
                       <div className="projectCardHeaderText">
                         <h2 className="projectName">DBFZ Frame Data</h2>
@@ -121,19 +122,19 @@ class ProjectView extends React.Component {
                       <h4 className="projectDetails">sdfvsdfv adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h4>
                     </div>
                   </div>
-                  <a onClick={this.changeProjContent} id='DBFZ' className="projectLink">View More</a>
+                  <button onClick={this.changeProjContent} id='DBFZ' className="projectLink">View More</button>
                 </div>
               </div>
               :
               <div className="projectContain-Desktop">
                 <div className="animationCanvas">
                   <div className="projectSelectContain">
-                    <img src={Sentinal} className='fade blankSVG SVG-1' />
-                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={CEAD} id='CEAD' className='fade SVG SVG-2' />
-                    <img src={Cable} className='fade blankSVG SVG-3' />
-                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={Mystic} id='Mystic' className='fade SVG SVG-4' />
-                    <img src={Cyclops} className='fade blankSVG SVG-5' />
-                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={DBFZ} id='DBFZ' className='fade SVG SVG-6' />
+                    <img src={Sentinal} className='fade blankSVG SVG-1' alt="sentinal"/>
+                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={CEAD} id='CEAD' className='fade SVG SVG-2' alt='CEADIcon'/>
+                    <img src={Cable} className='fade blankSVG SVG-3' alt='Cable'/>
+                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={Mystic} id='Mystic' className='fade SVG SVG-4' alt='MysticIcon' />
+                    <img src={Cyclops} className='fade blankSVG SVG-5' alt='Cyclops'/>
+                    <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={DBFZ} id='DBFZ' className='fade SVG SVG-6' alt='DBFZIcon'/>
                   </div>
                 </div>
               </div>
@@ -146,4 +147,15 @@ class ProjectView extends React.Component {
   }
 }
 
-export default ProjectView
+function mapStateToProps(state) {
+  return {
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    isSetToProject: data => dispatch(isSetToProject(data))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectView);

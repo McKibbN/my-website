@@ -5,9 +5,6 @@ import ContactForm from './ContactForm.js'
 import '../../App.css';
 
 class About extends React.Component {
-  constructor() {
-    super();
-  }
 
   componentDidMount() {
     window.scrollTo(0, 0);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { sideDrawerAction } from '../Redux/Actions/sideDrawerController.js';
 import { getHeaderHeight } from '../Redux/Actions/yPosController.js';
 import Profile from '../Assets/AveryHeadshot.png';
 import Menu from '../Assets/menu.svg';
@@ -83,7 +84,7 @@ class Header extends React.Component {
           {
             this.state.mobile
             ?
-            <div className="fade menuContain" onClick={this.props.drawerClickHandle}>
+            <div className="fade menuContain" onClick={() => this.props.sideDrawerAction(true)}>
               <img className="menu" src={Menu} alt="menuIcon" />
             </div>
             :
@@ -110,7 +111,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getHeaderHeight: height => dispatch(getHeaderHeight(height))
+    getHeaderHeight: height => dispatch(getHeaderHeight(height)),
+    sideDrawerAction: modalState => dispatch(sideDrawerAction(modalState))
   }
 }
 

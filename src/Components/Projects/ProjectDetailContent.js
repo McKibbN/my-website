@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { getProjectOffset } from '../../Redux/Actions/yPosController.js';
 import CEADasset1 from '../../Assets/ceadAssets/cead_Detail.png'
 import CEADasset2 from '../../Assets/ceadAssets/cead_Entry.png'
 import CEADasset3 from '../../Assets/ceadAssets/cead_Filter.png'
@@ -19,11 +21,24 @@ class ProjectDetailContent extends React.Component {
     super()
     this.state = {
     }
+    this.documentProjectElementBounding = this.documentProjectElementBounding.bind(this)
+  }
+
+  componentDidUpdate() {
+    this.documentProjectElementBounding();
+  }
+
+  documentProjectElementBounding() {
+    let el = document.getElementById('projectContain')
+    let elBounding = el.getBoundingClientRect();
+    let yPos = elBounding.top
+
+    this.props.getProjectOffset(yPos)
   }
 
   render() {
     return (
-      <div className='projectContent'>
+      <div id='projectContain' className='projectContent'>
         {
           this.props.project === "CEAD"
           ?
@@ -116,4 +131,15 @@ class ProjectDetailContent extends React.Component {
   }
 }
 
-export default ProjectDetailContent;
+function mapStateToProps(state) {
+  return {
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getProjectOffset: projYPos => dispatch(getProjectOffset(projYPos))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectDetailContent);

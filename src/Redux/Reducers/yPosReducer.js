@@ -1,7 +1,9 @@
 const initialState = {
   contactYPos: 0,
   headerHeight: 0,
-  moveToContact: false
+  projectContentYPos: 0,
+  moveToContact: false,
+  moveToProject: false
 }
 export default function(state = initialState, action) {
   switch (action.type) {
@@ -9,6 +11,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         contactYPos: action.payload
+      };
+    case "getProjectOffset":
+      return {
+        ...state,
+        projectContentYPos: action.payload
       };
     case "getHeaderHeight":
       return {
@@ -19,6 +26,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         moveToContact: action.payload
+      };
+    case "isSetToProject":
+      return {
+        ...state,
+        moveToProject: action.payload
       };
     default:
       return state;

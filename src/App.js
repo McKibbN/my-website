@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { isSetToContact } from './Redux/Actions/yPosController.js';
+import { isSetToContact, isSetToProject } from './Redux/Actions/yPosController.js';
 import Header from './Components/Header.js'
 import About from './Components/About/About.js'
 import Footer from './Components/Footer.js'
@@ -14,12 +14,11 @@ class App extends React.Component {
     super()
     this.state = {
       windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight,
-      sideDrawerOpen: false
+      windowHeight: window.innerHeight
     }
     this.handleDimensionChange = this.handleDimensionChange.bind(this);
     this.setToContact = this.setToContact.bind(this);
-    this.drawerClickHandle = this.drawerClickHandle.bind(this);
+    this.setToProject = this.setToProject.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +29,9 @@ class App extends React.Component {
   componentDidUpdate() {
     if (this.props.moveToContact) {
       this.setToContact()
+    }
+    if (this.props.moveToProject) {
+      this.setToProject()
     }
   }
 
@@ -49,17 +51,21 @@ class App extends React.Component {
     let headerHeight = this.props.headerHeight;
     let newContactTop = contactYPos - headerHeight
 
-    console.log(newContactTop)
-
     window.scrollTo(0, newContactTop);
 
     this.props.isSetToContact(false)
   }
 
-  drawerClickHandle() {
-    this.setState(prevState => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen}
-    })
+  setToProject() {
+    let projectContentYPos = this.props.projectContentYPos;
+    let headerHeight = this.props.headerHeight;
+    let newProjectTop = projectContentYPos - headerHeight
+
+    console.log(newProjectTop)
+
+    window.scrollTo(0, newProjectTop);
+
+    this.props.isSetToProject(false)
   }
 
   render() {
@@ -67,13 +73,13 @@ class App extends React.Component {
       <Router>
         <div className='appWrapper'>
           <div className='appBackground'>
-            <Header width={this.state.windowWidth} drawerClickHandle={this.drawerClickHandle} />
+            <Header width={this.state.windowWidth} />
             <Route exact path='/' render={(props) => <About />} />
             <Route path='/projects' render={(props) => <ProjectView {...props} width={this.state.windowWidth} />} />
             <Footer />
           </div>
           {
-            this.state.sideDrawerOpen
+            this.props.isSideDrawerOpen
             ?
             <SideDrawer drawerClickHandle={this.drawerClickHandle}/>
             :
@@ -88,14 +94,18 @@ class App extends React.Component {
 function mapStateToProps(state) {
   return {
     contactYPos: state.yPosReducer.contactYPos,
+    projectContentYPos: state.yPosReducer.projectContentYPos,
     headerHeight: state.yPosReducer.headerHeight,
-    moveToContact: state.yPosReducer.moveToContact
+    moveToContact: state.yPosReducer.moveToContact,
+    moveToProject: state.yPosReducer.moveToProject,
+    isSideDrawerOpen: state.sideDrawerReducer.isSideDrawerOpen
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    isSetToContact: data => dispatch(isSetToContact(data))
+    isSetToContact: data => dispatch(isSetToContact(data)),
+    isSetToProject: data => dispatch(isSetToProject(data))
   }
 }
 
