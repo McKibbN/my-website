@@ -17,25 +17,7 @@ import MYSTasset2 from '../../Assets/mysticAssets/myst_Home.png'
 import '../../App.css'
 
 class ProjectDetailContent extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-    }
-    this.documentProjectElementBounding = this.documentProjectElementBounding.bind(this)
-  }
-
-  componentDidUpdate() {
-    this.documentProjectElementBounding();
-  }
-
-  documentProjectElementBounding() {
-    let el = document.getElementById('projectContain')
-    let elBounding = el.getBoundingClientRect();
-    let yPos = elBounding.top
-
-    this.props.getProjectOffset(yPos)
-  }
-
+  
   render() {
     return (
       <div id='projectContain' className='projectContent'>
@@ -138,7 +120,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getProjectOffset: projYPos => dispatch(getProjectOffset(projYPos))
+
   }
 }
 

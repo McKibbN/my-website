@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { isSetToProject } from '../../Redux/Actions/yPosController.js';
+import { getProjectOffset, isSetToProject } from '../../Redux/Actions/yPosController.js';
 import ProjectDetailContent from './ProjectDetailContent.js'
 import Sentinal from '../../Assets/sentinal.svg'
 import Cyclops from '../../Assets/cyclops.svg'
@@ -19,6 +19,7 @@ class ProjectView extends React.Component {
       cardContent: 'CEAD',
       projectContent: ''
     }
+    this.documentProjectElementBounding = this.documentProjectElementBounding.bind(this)
     this.restyleContainer = this.restyleContainer.bind(this);
     this.hoverCardDisplay = this.hoverCardDisplay.bind(this);
     this.changeProjContent = this.changeProjContent.bind(this)
@@ -28,6 +29,11 @@ class ProjectView extends React.Component {
     window.scrollTo(0, 0);
     this.restyleContainer();
     window.addEventListener("resize", this.restyleContainer);
+    this.documentProjectElementBounding();
+  }
+
+  componentDidUpdate() {
+    this.documentProjectElementBounding();
   }
 
   componentWillUnmount() {
@@ -63,10 +69,18 @@ class ProjectView extends React.Component {
     this.props.isSetToProject(true)
   }
 
+  documentProjectElementBounding() {
+    let el = document.getElementById('projectSelectContain')
+    let elBounding = el.getBoundingClientRect();
+    let yPos = elBounding.bottom
+
+    this.props.getProjectOffset(yPos)
+  }
+
   render() {
     return (
       <div className='fade projectViewBackground'>
-        <div className="projectSelectBackground">
+        <div id='projectSelectContain' className="projectSelectBackground">
           <div className="fade projectInnerContain">
             <h1 className="projectContainTitle">Projects</h1>
             {
@@ -154,6 +168,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
+    getProjectOffset: projYPos => dispatch(getProjectOffset(projYPos)),
     isSetToProject: data => dispatch(isSetToProject(data))
   }
 }
