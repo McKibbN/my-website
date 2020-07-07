@@ -1,7 +1,8 @@
 const initialState = {
   contactYPos: 0,
-  headerHeight: 0,
+  splashYPos: 0,
   projectContentYPos: 0,
+  selectYPos: 0,
   moveToContact: false,
   moveToProject: false
 }
@@ -12,15 +13,20 @@ export default function(state = initialState, action) {
         ...state,
         contactYPos: action.payload
       };
+    case "getSplashOffset":
+      return {
+        ...state,
+        splashYPos: action.payload
+      };
     case "getProjectOffset":
       return {
         ...state,
         projectContentYPos: action.payload
       };
-    case "getHeaderHeight":
+    case "getSelectOffset":
       return {
         ...state,
-        headerHeight: action.payload
+        selectYPos: action.payload
       };
     case "isSetToContact":
       return {

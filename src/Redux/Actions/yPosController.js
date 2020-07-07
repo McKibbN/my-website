@@ -5,6 +5,13 @@ export function getContactOffset(data) {
   };
 }
 
+export function getSplashOffset(data) {
+  return {
+    type: "getSplashOffset",
+    payload: data
+  };
+}
+
 export function getProjectOffset(data) {
   return {
     type: "getProjectOffset",
@@ -12,9 +19,9 @@ export function getProjectOffset(data) {
   };
 }
 
-export function getHeaderHeight(data) {
+export function getSelectOffset(data) {
   return {
-    type: "getHeaderHeight",
+    type: "getSelectOffset",
     payload: data
   };
 }

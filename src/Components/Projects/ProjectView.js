@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { getProjectOffset, isSetToProject } from '../../Redux/Actions/yPosController.js';
-import ProjectDetailContent from './ProjectDetailContent.js'
+import { getSelectOffset, getProjectOffset, isSetToProject } from '../../Redux/Actions/yPosController.js';
+import ProjectDetail from './ProjectDetail.js'
 import Sentinal from '../../Assets/sentinal.svg'
 import Cyclops from '../../Assets/cyclops.svg'
 import Cable from '../../Assets/cable.svg'
@@ -29,15 +29,13 @@ class ProjectView extends React.Component {
     window.scrollTo(0, 0);
     this.restyleContainer();
     window.addEventListener("resize", this.restyleContainer);
-    this.documentProjectElementBounding();
-  }
-
-  componentDidUpdate() {
+    window.addEventListener("scroll", this.documentProjectElementBounding);
     this.documentProjectElementBounding();
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.restyleContainer);
+    window.removeEventListener("scroll", this.documentProjectElementBounding);
   }
 
   restyleContainer() {
@@ -72,9 +70,12 @@ class ProjectView extends React.Component {
   documentProjectElementBounding() {
     let el = document.getElementById('projectSelectContain')
     let elBounding = el.getBoundingClientRect();
-    let yPos = elBounding.bottom
+    let topPos = elBounding.top;
+    let bottomPos = elBounding.bottom
 
-    this.props.getProjectOffset(yPos)
+    this.props.getSelectOffset(topPos)
+
+    this.props.getProjectOffset(bottomPos)
   }
 
   render() {
@@ -86,7 +87,7 @@ class ProjectView extends React.Component {
             {
               this.state.cardView
               ?
-              <div className="projectContain-Mobile">
+              <div className="projectContain">
                 <div className="projectCard">
                   <div className="projectCardContent">
                     <div className="projectCardHeader">
@@ -155,7 +156,7 @@ class ProjectView extends React.Component {
             }
           </div>
         </div>
-        <ProjectDetailContent id="projContent" project={this.state.projectContent}/>
+        <ProjectDetail id="projContent" project={this.state.projectContent}/>
       </div>
     )
   }
@@ -168,7 +169,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getProjectOffset: projYPos => dispatch(getProjectOffset(projYPos)),
+    getSelectOffset: topYPos => dispatch(getSelectOffset(topYPos)),
+    getProjectOffset: bottomYPos => dispatch(getProjectOffset(bottomYPos)),
     isSetToProject: data => dispatch(isSetToProject(data))
   }
 }

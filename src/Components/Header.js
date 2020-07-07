@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { isSetToContact } from '../Redux/Actions/yPosController.js';
 import { sideDrawerAction } from '../Redux/Actions/sideDrawerController.js';
-import { getHeaderHeight } from '../Redux/Actions/yPosController.js';
 import Profile from '../Assets/AveryHeadshot.png';
 import Menu from '../Assets/menu.svg';
 import '../App.css'
@@ -15,12 +15,10 @@ class Header extends React.Component {
       mobile: false
     }
     this.navBarResize = this.navBarResize.bind(this)
-    this.documentHeaderHeight = this.documentHeaderHeight.bind(this)
   }
 
   componentDidMount() {
     this.navBarResize();
-    this.documentHeaderHeight();
     window.addEventListener("resize", this.navBarResize);
   }
 
@@ -50,14 +48,6 @@ class Header extends React.Component {
         tablet: false
       })
     }
-  }
-
-  documentHeaderHeight() {
-    let el = document.getElementById('header');
-    let elBounding = el.getBoundingClientRect();
-    let height = elBounding.height
-
-    this.props.getHeaderHeight(height)
   }
 
   render() {
@@ -95,7 +85,9 @@ class Header extends React.Component {
               <Link className='link' to='/projects'>
                 <h4 className="fade tabItem">Projects</h4>
               </Link>
-              <h4 className="fade emailTab">avery.jordan.angel@gmail.com</h4>
+              <Link className='link' onClick={() => this.props.isSetToContact(true)} to='/'>
+                <h4 className="fade emailTab">avery.jordan.angel@gmail.com</h4>
+              </Link>
             </div>
           }
         </div>
@@ -111,7 +103,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getHeaderHeight: height => dispatch(getHeaderHeight(height)),
+    isSetToContact: data => dispatch(isSetToContact(data)),
     sideDrawerAction: modalState => dispatch(sideDrawerAction(modalState))
   }
 }

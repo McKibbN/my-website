@@ -48,8 +48,9 @@ class App extends React.Component {
 
   setToContact() {
     let contactYPos = this.props.contactYPos;
-    let headerHeight = this.props.headerHeight;
-    let newContactTop = contactYPos - headerHeight
+    let splashYPos = this.props.splashYPos;
+
+    let newContactTop = contactYPos - splashYPos;
 
     window.scrollTo(0, newContactTop);
 
@@ -58,10 +59,9 @@ class App extends React.Component {
 
   setToProject() {
     let projectContentYPos = this.props.projectContentYPos;
-    let headerHeight = this.props.headerHeight;
-    let newProjectTop = projectContentYPos - headerHeight
+    let selectYPos = this.props.selectYPos;
 
-    console.log(newProjectTop)
+    let newProjectTop = projectContentYPos - selectYPos;
 
     window.scrollTo(0, newProjectTop);
 
@@ -94,7 +94,9 @@ class App extends React.Component {
 function mapStateToProps(state) {
   return {
     contactYPos: state.yPosReducer.contactYPos,
+    splashYPos: state.yPosReducer.splashYPos,
     projectContentYPos: state.yPosReducer.projectContentYPos,
+    selectYPos: state.yPosReducer.selectYPos,
     headerHeight: state.yPosReducer.headerHeight,
     moveToContact: state.yPosReducer.moveToContact,
     moveToProject: state.yPosReducer.moveToProject,
