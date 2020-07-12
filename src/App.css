@@ -546,17 +546,13 @@ h4 {
 }
 
 .skillIntro {
-  padding-bottom: 1em;
-}
-
-.skillListContain:last-child {
-  padding: 0;
+  padding-bottom: 4em;
 }
 
 .skillContain {
   width: 90vw;
   max-width: 500px;
-  padding-bottom: 1em;
+  padding-bottom: 2em;
   display: flex;
   flex-direction: column;
 }
@@ -641,7 +637,7 @@ h4 {
   margin-bottom: .7em
 }
 
-.input {
+.contactInput {
   width: auto;
   font-size: 1em;
   padding: .75em 2.25vw;
@@ -707,7 +703,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: messageTransition .75s cubic-bezier(.21,.07,.3,.97)
+  animation: fadeStart .75s cubic-bezier(.21,.07,.3,.97)
 }
 
 .successMessageContain {
@@ -722,19 +718,11 @@ h4 {
   max-width: 320px;
 }
 
-@keyframes messageTransition {
-  0% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
-
 .errorMessage {
   color: #FF0054;
   margin-top: 4px;
-  text-align: right
+  text-align: right;
+  animation: fadeStart 2s cubic-bezier(.21,.07,.3,.97);
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape){
@@ -755,10 +743,10 @@ h4 {
 
   .contactDetails {
     max-width: none;
-    width: 32.5vw
+    width: 35vw
   }
 
-  .input {
+  .contactInput {
     width: 33vw;
     padding: .75em 1vw
   }

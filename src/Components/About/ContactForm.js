@@ -105,7 +105,7 @@ class ContactForm extends React.Component {
                   onInput={this.handleFieldChange}
                   defaultValue={this.state.name}
                   placeholder="Jane Doe"
-                  className={this.state.active === 'name' ? 'input active' : 'input'}
+                  className={this.state.active === 'name' ? 'contactInput active' : 'contactInput'}
                 />
               </div>
               <div className={this.state.status === "SUCCESS" ? "inputContain emailInputContainhidden hidden" : "inputContain emailInputContain"}>
@@ -117,7 +117,7 @@ class ContactForm extends React.Component {
                   onFocus={this.handleActiveField}
                   onInput={this.handleFieldChange}
                   placeholder="example@email.com"
-                  className={this.state.active === 'email' ? 'input active' : 'input'}
+                  className={this.state.active === 'email' ? 'contactInput active' : 'contactInput'}
                 />
               </div>
               <div className={this.state.status === "SUCCESS" ? "inputContain messageInputContain hidden" : "inputContain messageInputContain"}>
@@ -128,7 +128,7 @@ class ContactForm extends React.Component {
                   onFocus={this.handleActiveField}
                   onInput={this.handleFieldChange}
                   placeholder="Nice to meet ya!"
-                  className={this.state.active === 'message' ? 'input messageInput active' : 'input messageInput'}
+                  className={this.state.active === 'message' ? 'contactInput messageInput active' : 'contactInput messageInput'}
                 />
               </div>
               <input type="submit" defaultValue="Submit" className={this.state.status === "SUCCESS" ? "fade button contactSubmit hidden" : "fade button contactSubmit"}/>
