@@ -62,7 +62,6 @@ class Header extends React.Component {
     return (
       <div id="header" className="headerBackground">
         <div className="headerContain">
-        {console.log(this.state.page)}
           <div className="titleContain">
             {
               this.state.tablet
