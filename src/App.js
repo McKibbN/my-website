@@ -17,6 +17,7 @@ class App extends React.Component {
       windowHeight: window.innerHeight
     }
     this.handleDimensionChange = this.handleDimensionChange.bind(this);
+    this.transitionCheck = this.transitionCheck.bind(this);
     this.setToContact = this.setToContact.bind(this);
     this.setToProject = this.setToProject.bind(this);
   }
@@ -27,12 +28,7 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.props.moveToContact) {
-      this.setToContact()
-    }
-    if (this.props.moveToProject) {
-      this.setToProject()
-    }
+    this.transitionCheck();
   }
 
   componentWillUnmount() {
@@ -46,13 +42,28 @@ class App extends React.Component {
     });
   }
 
+  transitionCheck() {
+    if (this.props.moveToContact) {
+      this.setToContact()
+    }
+    if (this.props.moveToProject) {
+      this.setToProject()
+    }
+  }
+
   setToContact() {
     let contactYPos = this.props.contactYPos;
     let splashYPos = this.props.splashYPos;
 
     let newContactTop = contactYPos - splashYPos;
 
-    window.scrollTo(0, newContactTop);
+    let ScrollOptions = {
+      left: 0,
+      top: newContactTop,
+      behavior: 'smooth'
+    }
+
+    window.scrollTo(ScrollOptions);
 
     this.props.isSetToContact(false)
   }
@@ -63,7 +74,13 @@ class App extends React.Component {
 
     let newProjectTop = projectContentYPos - selectYPos;
 
-    window.scrollTo(0, newProjectTop);
+    let ScrollOptions = {
+      left: 0,
+      top: newProjectTop,
+      behavior: 'smooth'
+    }
+
+    window.scrollTo(ScrollOptions);
 
     this.props.isSetToProject(false)
   }

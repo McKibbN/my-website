@@ -12,18 +12,29 @@ class Header extends React.Component {
     super()
     this.state = {
       tablet: false,
-      mobile: false
+      mobile: false,
+      page: ''
     }
+    this.activePageCheck = this.activePageCheck.bind(this)
     this.navBarResize = this.navBarResize.bind(this)
   }
 
   componentDidMount() {
+    this.activePageCheck();
     this.navBarResize();
     window.addEventListener("resize", this.navBarResize);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.navBarResize);
+  }
+
+  activePageCheck() {
+    if (window.location.pathname === '/') {
+      this.setState({page: 'about'})
+    } else if (window.location.pathname === '/projects'){
+      this.setState({page: 'projects'})
+    }
   }
 
   navBarResize() {
@@ -54,6 +65,7 @@ class Header extends React.Component {
     return (
       <div id="header" className="headerBackground">
         <div className="headerContain">
+        {console.log(this.state.page)}
           <div className="titleContain">
             {
               this.state.tablet
@@ -79,11 +91,11 @@ class Header extends React.Component {
             </div>
             :
             <div className="tabContain">
-              <Link className='link' to='/'>
-                <h4 className="fade tabItem">About</h4>
+              <Link className='link' onClick={() => this.setState({page: 'about'})} to='/'>
+                  <h4 className={this.state.page === 'about' ? "activeTabItem tabItem" : "fade tabItem"}>About</h4>
               </Link>
-              <Link className='link' to='/projects'>
-                <h4 className="fade tabItem">Projects</h4>
+              <Link className='link' onClick={() => this.setState({page: 'projects'})} to='/projects'>
+                <h4 className={this.state.page === 'projects' ? "activeTabItem tabItem" : "fade tabItem"}>Projects</h4>
               </Link>
               <Link className='link' onClick={() => this.props.isSetToContact(true)} to='/'>
                 <h4 className="fade emailTab">avery.jordan.angel@gmail.com</h4>
