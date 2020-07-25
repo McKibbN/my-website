@@ -16,10 +16,10 @@ class ProjectView extends React.Component {
     this.state = {
       scrollVisable: false,
       cardView: false,
-      cardContent: 'CEAD',
+      cardContent: '',
       projectContent: ''
     }
-    this.documentProjectElementBounding = this.documentProjectElementBounding.bind(this)
+    this.documentProjectElementBounding = this.documentProjectElementBounding.bind(this);
     this.restyleContainer = this.restyleContainer.bind(this);
     this.hoverCardDisplay = this.hoverCardDisplay.bind(this);
     this.changeProjContent = this.changeProjContent.bind(this)
@@ -87,7 +87,7 @@ class ProjectView extends React.Component {
     return (
       <div className='fade projectViewBackground'>
         <div id='projectSelectContain' className="projectSelectBackground">
-          <div className="fade projectInnerContain">
+          <div className="fade projectInnerContain" onMouseOver={this.hoverCardDisplay}>
             <h1 className="projectContainTitle">Projects</h1>
             {
               this.state.cardView
@@ -148,6 +148,7 @@ class ProjectView extends React.Component {
               :
               <div className="projectContain-Desktop">
                 <div className="animationCanvas">
+                  <h1 className="projectSelectCenterTitle">{this.state.cardContent}</h1>
                   <div className="projectSelectContain">
                     <img src={Sentinal} className='fade blankSVG SVG-1' alt="sentinal"/>
                     <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={CEAD} id='CEAD' className='fade SVG SVG-2' alt='CEADIcon'/>

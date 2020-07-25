@@ -2,10 +2,21 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { isSetToContact } from '../Redux/Actions/yPosController.js';
+import { pageChange } from '../Redux/Actions/pageController.js';
 import IsoBuildings from '../Assets/iso.svg'
 import '../App.css'
 
 class Footer extends React.Component {
+  constructor() {
+    super()
+    this.state = {}
+    this.contactLinkEvent = this.contactLinkEvent.bind(this)
+  }
+
+  contactLinkEvent() {
+    this.props.pageChange('about');
+    this.props.isSetToContact(true)
+  }
 
   render() {
     return (
@@ -15,7 +26,7 @@ class Footer extends React.Component {
           <div className='footerContain'>
             <div className='footerLinkContain recatchContain'>
               <h2>Avery Jordan Angel</h2>
-              <Link className='link' onClick={() => this.props.isSetToContact(true)} to='/'>
+              <Link className='link' onClick={this.contactLinkEvent} to='/'>
                 <h4 className='fade footerContactLink'>avery.jordan.angel@gmail.com</h4>
               </Link>
               <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h4>
@@ -43,7 +54,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    isSetToContact: data => dispatch(isSetToContact(data))
+    isSetToContact: data => dispatch(isSetToContact(data)),
+    pageChange: page => dispatch(pageChange(page)),
   }
 }
 

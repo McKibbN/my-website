@@ -918,7 +918,6 @@ h4 {
   }
 
   .animationCanvas {
-    position: fixed;
     grid-column: 1;
     position: relative;
     width: 50vw;
@@ -932,6 +931,13 @@ h4 {
     z-index: 4;
     width: inherit;
     height: inherit
+  }
+
+  .projectSelectCenterTitle {
+    position: absolute;
+    animation: fadeUpStart 1.2s cubic-bezier(.21,.07,.3,.97);
+    justify-self: center;
+    align-self: center
   }
 
   .SVG, .blankSVG {

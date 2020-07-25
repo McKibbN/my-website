@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { isSetToContact } from '../Redux/Actions/yPosController.js';
 import { sideDrawerAction } from '../Redux/Actions/sideDrawerController.js';
+import { pageChange } from '../Redux/Actions/pageController.js';
 import Profile from '../Assets/AveryHeadshot.png';
 import Menu from '../Assets/menu.svg';
 import '../App.css'
@@ -15,26 +16,17 @@ class Header extends React.Component {
       mobile: false,
       page: ''
     }
-    this.activePageCheck = this.activePageCheck.bind(this)
-    this.navBarResize = this.navBarResize.bind(this)
+    this.navBarResize = this.navBarResize.bind(this);
+    this.contactLinkEvent = this.contactLinkEvent.bind(this)
   }
 
   componentDidMount() {
-    this.activePageCheck();
     this.navBarResize();
     window.addEventListener("resize", this.navBarResize);
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.navBarResize);
-  }
-
-  activePageCheck() {
-    if (window.location.pathname === '/') {
-      this.setState({page: 'about'})
-    } else if (window.location.pathname === '/projects'){
-      this.setState({page: 'projects'})
-    }
   }
 
   navBarResize() {
@@ -59,6 +51,11 @@ class Header extends React.Component {
         tablet: false
       })
     }
+  }
+
+  contactLinkEvent() {
+    this.props.pageChange('about');
+    this.props.isSetToContact(true)
   }
 
   render() {
@@ -92,12 +89,12 @@ class Header extends React.Component {
             :
             <div className="tabContain">
               <Link className='link' onClick={() => this.setState({page: 'about'})} to='/'>
-                  <h4 className={this.state.page === 'about' ? "activeTabItem tabItem" : "fade tabItem"}>About</h4>
+                  <h4 className={this.props.page === 'about' ? "activeTabItem tabItem" : "fade tabItem"} onClick={() => this.props.pageChange('about')}>About</h4>
               </Link>
               <Link className='link' onClick={() => this.setState({page: 'projects'})} to='/projects'>
-                <h4 className={this.state.page === 'projects' ? "activeTabItem tabItem" : "fade tabItem"}>Projects</h4>
+                <h4 className={this.props.page === 'projects' ? "activeTabItem tabItem" : "fade tabItem"} onClick={() => this.props.pageChange('projects')}>Projects</h4>
               </Link>
-              <Link className='link' onClick={() => this.props.isSetToContact(true)} to='/'>
+              <Link className='link' onClick={this.contactLinkEvent} to='/'>
                 <h4 className="fade emailTab">avery.jordan.angel@gmail.com</h4>
               </Link>
             </div>
@@ -110,13 +107,15 @@ class Header extends React.Component {
 
 function mapStateToProps(state) {
   return {
+    page: state.pageReducer.page
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     isSetToContact: data => dispatch(isSetToContact(data)),
-    sideDrawerAction: modalState => dispatch(sideDrawerAction(modalState))
+    sideDrawerAction: modalState => dispatch(sideDrawerAction(modalState)),
+    pageChange: page => dispatch(pageChange(page)),
   }
 }
 
