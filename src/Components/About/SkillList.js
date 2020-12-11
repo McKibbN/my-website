@@ -27,7 +27,7 @@ class SkillList extends React.Component {
               <h2 className="skillName">Lorem ipsum</h2>
               <h4 className="skillDetails">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
             </div>
-            <div className="skillContain">
+            <div className="skillContain skillContainLast">
               <h2 className="skillName">Lorem ipsum</h2>
               <h4 className="skillDetails">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
             </div>

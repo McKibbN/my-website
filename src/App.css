@@ -561,6 +561,10 @@ h4 {
   flex-direction: column;
 }
 
+.skillContainLast {
+  padding-bottom: 0;
+}
+
 .skillDetails {
   padding-top: .8em
 }
@@ -589,10 +593,13 @@ h4 {
   }
 
   .skillContain {
-    padding-bottom: 2em;
     max-width: none;
     width: 100%;
     grid-column: 2
+  }
+
+  .skillContainLast {
+    padding-bottom: 0;
   }
 }
 
@@ -601,6 +608,7 @@ h4 {
 .contactBackground {
   width: 100vw;
   min-height: 90vh;
+  padding: 2em 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -732,7 +740,6 @@ h4 {
 @media screen and (min-width: 1024px) and (orientation: landscape){
   .contactContain {
     width: 75vw;
-    padding: 2em 0;
     max-width: none;
   }
 
