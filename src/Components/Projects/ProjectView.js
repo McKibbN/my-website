@@ -28,8 +28,7 @@ class ProjectView extends React.Component {
   componentDidMount() {
     let ScrollOptions = {
       left: 0,
-      top: 0,
-      behavior: 'smooth'
+      top: 0
     }
     window.scrollTo(ScrollOptions);
     this.restyleContainer();

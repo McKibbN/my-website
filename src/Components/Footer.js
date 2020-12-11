@@ -29,7 +29,6 @@ class Footer extends React.Component {
               <Link className='link' onClick={this.contactLinkEvent} to='/'>
                 <h4 className='fade footerContactLink'>avery.jordan.angel@gmail.com</h4>
               </Link>
-              <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h4>
             </div>
             <div className='footerInnerContain'>
               <div className='footerLinkContain'>

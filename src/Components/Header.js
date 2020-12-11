@@ -73,7 +73,7 @@ class Header extends React.Component {
               null
             }
               <div className="titleTextContain">
-                <Link className='link' to='/'>
+                <Link className='link' onClick={() => this.props.pageChange('about')} to='/'>
                   <h3 className="fade">Avery Jordan Angel</h3>
                 </Link>
                 <h3 className="fade">Web Designer</h3>
