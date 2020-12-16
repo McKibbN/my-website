@@ -72,10 +72,10 @@ class ProjectView extends React.Component {
   }
 
   documentProjectElementBounding() {
-    let el = document.getElementById('projectSelectContain')
+    let el = document.getElementById('projectSelectContain');
     let elBounding = el.getBoundingClientRect();
     let topPos = elBounding.top;
-    let bottomPos = elBounding.bottom
+    let bottomPos = elBounding.bottom;
 
     this.props.getSelectOffset(topPos)
 

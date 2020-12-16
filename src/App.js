@@ -92,6 +92,8 @@ class App extends React.Component {
       behavior: 'smooth'
     }
 
+    console.log(window.newProjectTop)
+
     window.scrollTo(ScrollOptions);
 
     this.props.isSetToProject(false)
