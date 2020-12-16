@@ -7,7 +7,12 @@ import '../../App.css';
 class About extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    let ScrollOptions = {
+      left: 0,
+      top: 0,
+      behavior: 'smooth'
+    }
+    window.scrollTo(ScrollOptions);
   }
 
   render() {

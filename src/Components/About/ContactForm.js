@@ -21,7 +21,12 @@ class ContactForm extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener("scroll", this.documentContactElementBounding);
     this.documentContactElementBounding();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.documentContactElementBounding);
   }
 
   documentContactElementBounding() {
@@ -91,42 +96,42 @@ class ContactForm extends React.Component {
                 :
                 null
               }
-              <div className="inputContain nameInputContain">
+              <div className={this.state.status === "SUCCESS" ? "inputContain nameInputContain hidden" : "inputContain nameInputContain"}>
                 <h4 className="inputTitle">Name:</h4>
                 <input
                   type="text"
                   name="name"
                   onFocus={this.handleActiveField}
                   onInput={this.handleFieldChange}
-                  value={this.state.name}
+                  defaultValue={this.state.name}
                   placeholder="Jane Doe"
-                  className={this.state.active === 'name' ? 'input active' : 'input'}
+                  className={this.state.active === 'name' ? 'contactInput active' : 'contactInput'}
                 />
               </div>
-              <div className="inputContain emailInputContain">
+              <div className={this.state.status === "SUCCESS" ? "inputContain emailInputContainhidden hidden" : "inputContain emailInputContain"}>
                 <h4 className="inputTitle">Email:</h4>
                 <input
                   type="text"
                   name="email"
-                  value={this.state.email}
+                  defaultValue={this.state.email}
                   onFocus={this.handleActiveField}
                   onInput={this.handleFieldChange}
                   placeholder="example@email.com"
-                  className={this.state.active === 'email' ? 'input active' : 'input'}
+                  className={this.state.active === 'email' ? 'contactInput active' : 'contactInput'}
                 />
               </div>
-              <div className="inputContain messageInputContain">
+              <div className={this.state.status === "SUCCESS" ? "inputContain messageInputContain hidden" : "inputContain messageInputContain"}>
                 <h4 className="inputTitle">Message:</h4>
                 <textarea
-                  value={this.state.message}
+                  defaultValue={this.state.message}
                   name="message"
                   onFocus={this.handleActiveField}
                   onInput={this.handleFieldChange}
                   placeholder="Nice to meet ya!"
-                  className={this.state.active === 'message' ? 'input messageInput active' : 'input messageInput'}
+                  className={this.state.active === 'message' ? 'contactInput messageInput active' : 'contactInput messageInput'}
                 />
               </div>
-              <input type="submit" value="Submit" className='fade button contactSubmit'/>
+              <input type="submit" defaultValue="Submit" className={this.state.status === "SUCCESS" ? "fade button contactSubmit hidden" : "fade button contactSubmit"}/>
             </div>
             {this.state.status === "ERROR" ? <h5 className='errorMessage'>Please enter all fields.</h5> : null}
           </form>

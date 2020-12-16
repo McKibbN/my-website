@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { isSetToContact } from '../Redux/Actions/yPosController.js';
 import { sideDrawerAction } from '../Redux/Actions/sideDrawerController.js';
-import { getHeaderHeight } from '../Redux/Actions/yPosController.js';
+import { pageChange } from '../Redux/Actions/pageController.js';
 import Profile from '../Assets/AveryHeadshot.png';
 import Menu from '../Assets/menu.svg';
 import '../App.css'
@@ -12,15 +13,15 @@ class Header extends React.Component {
     super()
     this.state = {
       tablet: false,
-      mobile: false
+      mobile: false,
+      page: ''
     }
-    this.navBarResize = this.navBarResize.bind(this)
-    this.documentHeaderHeight = this.documentHeaderHeight.bind(this)
+    this.navBarResize = this.navBarResize.bind(this);
+    this.contactLinkEvent = this.contactLinkEvent.bind(this)
   }
 
   componentDidMount() {
     this.navBarResize();
-    this.documentHeaderHeight();
     window.addEventListener("resize", this.navBarResize);
   }
 
@@ -52,12 +53,9 @@ class Header extends React.Component {
     }
   }
 
-  documentHeaderHeight() {
-    let el = document.getElementById('header');
-    let elBounding = el.getBoundingClientRect();
-    let height = elBounding.height
-
-    this.props.getHeaderHeight(height)
+  contactLinkEvent() {
+    this.props.pageChange('about');
+    this.props.isSetToContact(true)
   }
 
   render() {
@@ -75,7 +73,7 @@ class Header extends React.Component {
               null
             }
               <div className="titleTextContain">
-                <Link className='link' to='/'>
+                <Link className='link' onClick={() => this.props.pageChange('about')} to='/'>
                   <h3 className="fade">Avery Jordan Angel</h3>
                 </Link>
                 <h3 className="fade">Web Designer</h3>
@@ -89,13 +87,15 @@ class Header extends React.Component {
             </div>
             :
             <div className="tabContain">
-              <Link className='link' to='/'>
-                <h4 className="fade tabItem">About</h4>
+              <Link className='link' onClick={() => this.setState({page: 'about'})} to='/'>
+                  <h4 className={this.props.page === 'about' ? "activeTabItem tabItem" : "fade tabItem"} onClick={() => this.props.pageChange('about')}>About</h4>
               </Link>
-              <Link className='link' to='/projects'>
-                <h4 className="fade tabItem">Projects</h4>
+              <Link className='link' onClick={() => this.setState({page: 'projects'})} to='/projects'>
+                <h4 className={this.props.page === 'projects' ? "activeTabItem tabItem" : "fade tabItem"} onClick={() => this.props.pageChange('projects')}>Projects</h4>
               </Link>
-              <h4 className="fade emailTab">avery.jordan.angel@gmail.com</h4>
+              <Link className='link' onClick={this.contactLinkEvent} to='/'>
+                <h4 className="fade emailTab">avery.jordan.angel@gmail.com</h4>
+              </Link>
             </div>
           }
         </div>
@@ -106,13 +106,15 @@ class Header extends React.Component {
 
 function mapStateToProps(state) {
   return {
+    page: state.pageReducer.page
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getHeaderHeight: height => dispatch(getHeaderHeight(height)),
-    sideDrawerAction: modalState => dispatch(sideDrawerAction(modalState))
+    isSetToContact: data => dispatch(isSetToContact(data)),
+    sideDrawerAction: modalState => dispatch(sideDrawerAction(modalState)),
+    pageChange: page => dispatch(pageChange(page)),
   }
 }
 

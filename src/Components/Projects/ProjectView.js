@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { isSetToProject } from '../../Redux/Actions/yPosController.js';
-import ProjectDetailContent from './ProjectDetailContent.js'
+import { getSelectOffset, getProjectOffset, isSetToProject } from '../../Redux/Actions/yPosController.js';
+import ProjectDetail from './ProjectDetail.js'
 import Sentinal from '../../Assets/sentinal.svg'
 import Cyclops from '../../Assets/cyclops.svg'
 import Cable from '../../Assets/cable.svg'
@@ -16,22 +16,30 @@ class ProjectView extends React.Component {
     this.state = {
       scrollVisable: false,
       cardView: false,
-      cardContent: 'CEAD',
+      cardContent: '',
       projectContent: ''
     }
+    this.documentProjectElementBounding = this.documentProjectElementBounding.bind(this);
     this.restyleContainer = this.restyleContainer.bind(this);
     this.hoverCardDisplay = this.hoverCardDisplay.bind(this);
     this.changeProjContent = this.changeProjContent.bind(this)
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    let ScrollOptions = {
+      left: 0,
+      top: 0
+    }
+    window.scrollTo(ScrollOptions);
     this.restyleContainer();
     window.addEventListener("resize", this.restyleContainer);
+    window.addEventListener("scroll", this.documentProjectElementBounding);
+    this.documentProjectElementBounding();
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.restyleContainer);
+    window.removeEventListener("scroll", this.documentProjectElementBounding);
   }
 
   restyleContainer() {
@@ -63,16 +71,27 @@ class ProjectView extends React.Component {
     this.props.isSetToProject(true)
   }
 
+  documentProjectElementBounding() {
+    let el = document.getElementById('projectSelectContain')
+    let elBounding = el.getBoundingClientRect();
+    let topPos = elBounding.top;
+    let bottomPos = elBounding.bottom
+
+    this.props.getSelectOffset(topPos)
+
+    this.props.getProjectOffset(bottomPos)
+  }
+
   render() {
     return (
       <div className='fade projectViewBackground'>
-        <div className="projectSelectBackground">
-          <div className="fade projectInnerContain">
+        <div id='projectSelectContain' className="projectSelectBackground">
+          <div className="fade projectInnerContain" onMouseOver={this.hoverCardDisplay}>
             <h1 className="projectContainTitle">Projects</h1>
             {
               this.state.cardView
               ?
-              <div className="projectContain-Mobile">
+              <div className="projectContain">
                 <div className="projectCard">
                   <div className="projectCardContent">
                     <div className="projectCardHeader">
@@ -128,6 +147,7 @@ class ProjectView extends React.Component {
               :
               <div className="projectContain-Desktop">
                 <div className="animationCanvas">
+                  <h1 className="projectSelectCenterTitle">{this.state.cardContent}</h1>
                   <div className="projectSelectContain">
                     <img src={Sentinal} className='fade blankSVG SVG-1' alt="sentinal"/>
                     <img onClick={this.changeProjContent} onMouseOver={this.hoverCardDisplay} src={CEAD} id='CEAD' className='fade SVG SVG-2' alt='CEADIcon'/>
@@ -141,7 +161,7 @@ class ProjectView extends React.Component {
             }
           </div>
         </div>
-        <ProjectDetailContent id="projContent" project={this.state.projectContent}/>
+        <ProjectDetail id="projContent" project={this.state.projectContent}/>
       </div>
     )
   }
@@ -154,6 +174,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
+    getSelectOffset: topYPos => dispatch(getSelectOffset(topYPos)),
+    getProjectOffset: bottomYPos => dispatch(getProjectOffset(bottomYPos)),
     isSetToProject: data => dispatch(isSetToProject(data))
   }
 }

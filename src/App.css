@@ -129,7 +129,7 @@ h4 {
   display: flex;
   color: #fff;
   background-color: #2E2E3A;
-  box-shadow: 0 4px 8px #aaaaaa44
+  box-shadow: 0 4px 8px #EAEAEA44
 }
 
 .headerContain {
@@ -201,19 +201,15 @@ h4 {
 .tabItem, .emailTab {
   font-weight: 400;
   padding: .5em 1.75em;
+  box-shadow: none;
 }
 
 .tabItem {
   color: #ffffff;
 }
 
-.emailTab {
-  color: #ffffff88;
-}
-
-.contactTab {
-  margin-right: 0;
-  padding-right: 0
+.activeTabItem {
+  color: #51C5F8;
 }
 
 .tabItem:hover,
@@ -221,9 +217,13 @@ h4 {
   color: #51C5F8;
 }
 
-.contactTab:hover,
-.contactTab:focus {
-  color: #F34213;
+.emailTab {
+  color: #ffffff88;
+}
+
+.emailTab:hover,
+.emailTab:focus{
+  color: #F34213
 }
 
 /* Drawer Contain */
@@ -324,12 +324,12 @@ h4 {
 
 .contactLink {
   font-weight: 700;
-  color: #F34213;
+  color: #51C5F8;
 }
 
 .contactLink:hover,
 .contactLink:focus {
-  color: #51C5F8;
+  color: #F34213;
 }
 
 .splashSVGContain {
@@ -528,10 +528,18 @@ h4 {
 /* Slill List */
 
 .skillListBackground {
+  min-height: 90vh;
+  background-color: #2E2E3A;
+  color: #ffffff;
+  display: flex;
+  padding: 2em 0;
+  align-items: center;
+  justify-content: center
+}
+
+.skillListContent {
   width: 90vw;
   max-width: 500px;
-  margin: 0 auto;
-  padding: 2em 0;
   display: flex;
   flex-direction: column;
   animation: fadeUpStart 2s cubic-bezier(.21,.07,.3,.97)
@@ -542,19 +550,19 @@ h4 {
 }
 
 .skillIntro {
-  padding-bottom: 1em;
-}
-
-.skillListContain:last-child {
-  padding: 0;
+  padding-bottom: 4em;
 }
 
 .skillContain {
   width: 90vw;
   max-width: 500px;
-  padding-bottom: 1em;
+  padding-bottom: 2em;
   display: flex;
   flex-direction: column;
+}
+
+.skillContainLast {
+  padding-bottom: 0;
 }
 
 .skillDetails {
@@ -563,8 +571,7 @@ h4 {
 
 @media screen and (min-width: 1024px) and (orientation: landscape){
 
-  .skillListBackground {
-    padding: 2em 0;
+  .skillListContent {
     width: 75vw;
     max-width: none;
   }
@@ -586,10 +593,13 @@ h4 {
   }
 
   .skillContain {
-    padding-bottom: 2em;
     max-width: none;
     width: 100%;
     grid-column: 2
+  }
+
+  .skillContainLast {
+    padding-bottom: 0;
   }
 }
 
@@ -597,10 +607,12 @@ h4 {
 
 .contactBackground {
   width: 100vw;
-  display: flex;
+  min-height: 90vh;
   padding: 2em 0;
-  background-color: #2E2E3A;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  animation: fadeUpStart 2s cubic-bezier(.21,.07,.3,.97)
 }
 
 .contactContain {
@@ -613,7 +625,6 @@ h4 {
 .contactTitle, .contactDetails {
   width: 90vw;
   max-width: 500px;
-  color: #ffffff;
   padding-bottom: 1em;
 }
 
@@ -635,11 +646,10 @@ h4 {
 }
 
 .inputTitle {
-  color: #ffffff;
   margin-bottom: .7em
 }
 
-.input {
+.contactInput {
   width: auto;
   font-size: 1em;
   padding: .75em 2.25vw;
@@ -647,35 +657,35 @@ h4 {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
   border: none;
-  border-bottom: 3px solid #2E2E3A;
+  border-bottom: 3px solid #d1d1d1;
   animation: borderBottomInactive .25s cubic-bezier(.21,.07,.3,.97)
 }
 
 @keyframes borderBottomInactive {
   0% {
     border-bottom: 3px solid #51C5F8;
-    box-shadow: 0 0 7px #e2e2f3aa;
+    box-shadow: 0 0 7px #d1d1d1aa;
   }
   100% {
-    border-bottom: 3px solid #2E2E3A;
+    border-bottom: 3px solid #d1d1d1;
     box-shadow: none;
   }
 }
 
 .active {
   border-bottom: 3px solid #51C5F8;
-  box-shadow: 0 0 7px #e2e2f3aa;
+  box-shadow: 0 0 7px #d1d1d1aa;
   animation: borderBottomActive .25s cubic-bezier(.21,.07,.3,.97)
 }
 
 @keyframes borderBottomActive {
   0% {
-    border-bottom: 3px solid #2E2E3A;
+    border-bottom: 3px solid #d1d1d1;
     box-shadow: none;
   }
   100% {
     border-bottom: 3px solid #51C5F8;
-    box-shadow: 0 0 7px #e2e2f3aa;
+    box-shadow: 0 0 7px #d1d1d1aa;
   }
 }
 
@@ -701,12 +711,11 @@ h4 {
   width: inherit;
   height: inherit;
   z-index: 6;
-  background-color: #2E2E3A;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: messageTransition .75s cubic-bezier(.21,.07,.3,.97)
+  animation: fadeStart .75s cubic-bezier(.21,.07,.3,.97)
 }
 
 .successMessageContain {
@@ -716,28 +725,16 @@ h4 {
   padding: 30px;
 }
 
-.successMessage {
-  color: #fff
-}
-
 .bartAsset {
   width: 32vw;
   max-width: 320px;
 }
 
-@keyframes messageTransition {
-  0% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
-
 .errorMessage {
   color: #FF0054;
   margin-top: 4px;
-  text-align: right
+  text-align: right;
+  animation: fadeStart 2s cubic-bezier(.21,.07,.3,.97);
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape){
@@ -757,10 +754,10 @@ h4 {
 
   .contactDetails {
     max-width: none;
-    width: 32.5vw
+    width: 35vw
   }
 
-  .input {
+  .contactInput {
     width: 33vw;
     padding: .75em 1vw
   }
@@ -804,13 +801,19 @@ h4 {
   align-items: center;
 }
 
+.projectSelectBackground {
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+  animation: fadeUpStart 1s cubic-bezier(.21,.07,.3,.97)
+}
+
 /* mobileView */
 
 .projectInnerContain {
   width: 90vw;
   max-width: 500px;
-  margin: 0 auto;
-  padding: 2em 0 0;
+  margin: 0 auto
 }
 
 .projectContainTitle {
@@ -891,6 +894,8 @@ h4 {
 }
 
 .projectLink {
+  background: none;
+  border: none;
   padding: .75em;
   color: #51C5F8;
   font-weight: 700;
@@ -907,7 +912,7 @@ h4 {
 
   .projectInnerContain {
     max-width: none;
-    padding: 5vh 0;
+    padding: 0;
   }
 
   .projectContainTitle {
@@ -922,7 +927,6 @@ h4 {
   }
 
   .animationCanvas {
-    position: fixed;
     grid-column: 1;
     position: relative;
     width: 50vw;
@@ -936,6 +940,13 @@ h4 {
     z-index: 4;
     width: inherit;
     height: inherit
+  }
+
+  .projectSelectCenterTitle {
+    position: absolute;
+    animation: fadeUpStart 1.2s cubic-bezier(.21,.07,.3,.97);
+    justify-self: center;
+    align-self: center
   }
 
   .SVG, .blankSVG {
@@ -1104,28 +1115,33 @@ h4 {
   width: 90vw;
   display: flex;
   flex-direction: column;
+  animation: fadeUpStart 1.2s cubic-bezier(.21,.07,.3,.97);
+}
+
+.projectViewContain {
+  padding: 3em 0;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  animation: fadeUpStart 1.2s cubic-bezier(.21,.07,.3,.97);
+}
+
+.projectImgContain {
 }
 
 .projectImg {
-  width: 90vw;
-  min-height: 50.625vw;
-  background-color: #2E2E3A66;
-  margin: 2em 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center
 }
 
 .projectAsset {
-  width: 90vw
+  width: 90vw;
+  max-width: 325px;
 }
 
 .projectTitle h1 {
   margin-bottom: .5em;
-}
-
-.projectImgMain {
-  margin: 2em 0;
 }
 
 .projectBody {
@@ -1162,17 +1178,24 @@ h4 {
   .projectImgContain {
     grid-column: 1 / 3;
     width: 75vw;
-    align-self: center
+    padding: 3em 0 0 0;
+    align-self: center;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 7.5vw;
+    grid-row-gap: 3vw;
   }
 
   .projectImg {
-    width: 75vw;
-    min-height: 42.1875vw;
+    min-height: 0;
+    margin: 0;
   }
 
   .projectAsset {
-    height: 42.1875vw;
-    width: auto;
+    width: 20vw;
+    max-width: none;
+    height: auto;
   }
 
   .projectBody {
@@ -1222,8 +1245,17 @@ h4 {
   color: #f1f2f388;
 }
 
-.footerLinkContain > * {
+.footerLinkContain > *{
   margin-bottom: .6em
+}
+
+.footerContactLink {
+  color: #51C5F8;
+  margin-bottom: 1em
+}
+
+.footerContactLink:hover {
+  color: #F34213
 }
 
 .footerLinkContain:last-child {
@@ -1354,4 +1386,9 @@ h4 {
 .fade {
   -webkit-transition: color .3s cubic-bezier(.21,.07,.3,.97), background-color .3s cubic-bezier(.21,.07,.3,.97); /* For Safari 3.1 to 6.0 */
   transition: color .3s cubic-bezier(.21,.07,.3,.97), background-color .3s cubic-bezier(.21,.07,.3,.97), width .3s cubic-bezier(.21,.07,.3,.97);
+}
+
+.hidden {
+  animation: fadeUpEnd 2s cubic-bezier(.21,.07,.3,.97);
+  opacity: 0;
 }
