@@ -895,6 +895,8 @@ h4 {
   color: #51C5F8;
   font-weight: 700;
   align-self: flex-end;
+  background-color: #00000000;
+  border: 0;
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape){
