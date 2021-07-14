@@ -1,4 +1,7 @@
 import React from 'react'
+import Coin from '../../Assets/coin.svg'
+import CoinSlotLeft from '../../Assets/coinslotLeft.svg'
+import CoinSlotRight from '../../Assets/coinslotRight.svg'
 import '../../App.css'
 
 class SkillList extends React.Component {
@@ -14,6 +17,9 @@ class SkillList extends React.Component {
         <div className="skillListContent">
           <h1 className="skillTitle">Skills</h1>
           <div className="skillListContain">
+            <img src={Coin} className='coin' alt='coin'/>
+            <img src={CoinSlotLeft} className='coinslotLeft' alt='coinslot'/>
+            <img src={CoinSlotRight} className='coinslotRight' alt='coinslot'/>
             <h3 className="skillIntro">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
             <div className="skillContain">
               <h2 className="skillName">Lorem ipsum</h2>

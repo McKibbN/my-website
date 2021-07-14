@@ -545,6 +545,40 @@ h4 {
   animation: fadeUpStart 2s cubic-bezier(.21,.07,.3,.97)
 }
 
+.coinContain {
+  justify-self: center;
+  align-self: center;
+}
+
+.coin, .coinslotLeft, .coinslotRight {
+  width: 25vw;
+  height: auto;
+  justify-self: center;
+  align-self: center;
+}
+
+.coinslotLeft {
+  z-index: 1;
+}
+
+.coin {
+  z-index: 2;
+  animation: CoinInsert 3s cubic-bezier(.03,.71,.88,.66) infinite
+}
+
+.coinslotRight {
+  z-index: 3;
+}
+
+@keyframes CoinInsert {
+  0% {
+      transform: translateX(-50vw) rotateZ(-360deg);
+  }
+  100% {
+      transform: translateX(1vw) rotateZ(360deg)
+  }
+}
+
 .skillTitle {
   padding-bottom: 1em
 }
@@ -585,6 +619,11 @@ h4 {
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 5vw;
     grid-template-rows: auto;
+  }
+
+  .coin, .coinslotLeft, .coinslotRight {
+    grid-column: 1;
+    grid-row: 2 / 5;
   }
 
   .skillIntro {
@@ -733,7 +772,7 @@ h4 {
 .errorMessage {
   color: #FF0054;
   margin-top: 4px;
-  text-align: right;
+  text-align: left;
   animation: fadeStart 2s cubic-bezier(.21,.07,.3,.97);
 }
 

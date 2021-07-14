@@ -131,9 +131,9 @@ class ContactForm extends React.Component {
                   className={this.state.active === 'message' ? 'contactInput messageInput active' : 'contactInput messageInput'}
                 />
               </div>
-              <input type="submit" defaultValue="Submit" className={this.state.status === "SUCCESS" ? "fade button contactSubmit hidden" : "fade button contactSubmit"}/>
+              <button type="submit" defaultValue="Submit" className={this.state.status === "SUCCESS" ? "fade button contactSubmit hidden" : "fade button contactSubmit"}>SEND</button>
             </div>
-            {this.state.status === "ERROR" ? <h5 className='errorMessage'>Please enter all fields.</h5> : null}
+            {this.state.status === "ERROR" ? <h5 className='errorMessage'>Please enter all fields properly.</h5> : null}
           </form>
         </div>
       </div>
