@@ -227,6 +227,7 @@ h4 {
 }
 
 /* Drawer Contain */
+
 .backdrop {
   position: fixed;
   width: 100vw;
@@ -481,10 +482,8 @@ h4 {
   }
 
   .catchContain {
-    grid-column: 1;
-    grid-row: 1;
     display: grid;
-    grid-template-columns: 35vw 35vw;
+    grid-template-columns: repeat(2, 35vw);
     grid-column-gap: 5vw;
     grid-template-rows: repeat(2, 1fr)
   }

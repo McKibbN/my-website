@@ -23,7 +23,9 @@ class SkillList extends React.Component {
   }
 
   changeCoinFace() {
-    this.props.getCoinFaceSrc(true);
+    let coinFaceArray = ['ReactLogo', 'ReduxLogo', 'AdobeLogo'];
+
+    this.props.getCoinFaceSrc(coinFaceArray[1]);
 
     console.log(this.props.coinFaceSrc)
     /*
