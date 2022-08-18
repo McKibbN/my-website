@@ -40,20 +40,17 @@ class Splash extends React.Component {
         <div className="splashContain">
           <div className="catchContain">
             <div className="catchTextContain">
-              <h1>Lorem ipsum dolor sit amet.</h1>
-              <h3>consectetur adipiscing elit, sed do eiusmod tempor. incididunt ut labore et dolore magna aliqua.</h3>
-            </div>
-            <div className="splashSVGContain">
-              <InputsBackground className='inputBackground' />
-              <LightPunch className='inputs LP' />
-              <HeavyPunch className='inputs HP' />
-              <LightKick className='inputs LK' />
-              <HeavyKick className='inputs HK' />
+              <h1>Hi, I'm Avery.</h1>
+              <h3>
+                I am a frontend web developer and graphic web designer. My experience includes leading and managing 
+                teams of full stack web developers and graphic designers that create AI driven e-commerce platforms, 
+                mobile applications, frontend design standards, company logos, and websites.
+              </h3>
             </div>
             <div className="contactLinkContain">
-              <h3>Let's talk</h3>
+              <h2 className="ctaHeading">Let's talk</h2>
               <Link onClick={() => this.props.isSetToContact(true)} className='link' to='/'>
-                <h3 className="fade contactLink">avery.jordan.angel@gmail.com</h3>
+                <h3 className="fade contactLink splashLink">avery.jordan.angel@gmail.com</h3>
               </Link>
             </div>
           </div>

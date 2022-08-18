@@ -81,7 +81,10 @@ class ContactForm extends React.Component {
       <div id='contact' className="contactBackground">
         <div className="contactContain">
           <h1 className="contactTitle">Contact</h1>
-          <h3 className="contactDetails">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+          <h3 className="contactDetails">
+            Please contact me to learn more about how my web development
+            and graphic web design skills can help you grow your business.
+          </h3>
           <form onSubmit={this.submitForm} action="https://formspree.io/maypopad" method="post" encType="text/plain">
             <div className="contactForm">
               {

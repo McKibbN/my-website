@@ -33,7 +33,7 @@ class Footer extends React.Component {
             <div className='footerInnerContain'>
               <div className='footerLinkContain'>
                 <h3>Social Media</h3>
-                <a href="https://github.com/McKibbN" className='fade footerLink'>Github</a><br/>
+                <a href="https://github.com/McKibbN" className='fade footerLink'>GitHub</a><br/>
                 <a href="https://www.linkedin.com/in/avery-angel-a5441b99/" className='fade footerLink'>LinkedIn</a><br/>
                 <a href="https://twitter.com/very_Ange1" className='fade footerLink'>Twitter</a><br/>
               </div>

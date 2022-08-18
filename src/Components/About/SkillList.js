@@ -39,7 +39,12 @@ class SkillList extends React.Component {
         <div className="skillListContent">
           <h1 className="skillTitle">Skills</h1>
           <div className="skillListContain">
-          <h3 className="skillIntro">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+            <h3 className="skillIntro">
+              I am skilled in responsive web design, frontend
+              web development, web applications, and graphic web design.
+              My other skills include AI, CRM, customer service,
+              marketing, project management, and strategic planning.	
+            </h3>
             <div className="coinContain">
               <img 
                 src={AdobeLogo}
@@ -52,20 +57,33 @@ class SkillList extends React.Component {
               <img src={CoinSlotClink} className='coinslotClink' alt='coinslotClink'/>
             </div>
             <div className="skillContain">
-              <h2 className="skillName">Lorem ipsum</h2>
-              <h4 className="skillDetails">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+              <h2 className="skillName">Strategic Planner</h2>
+              <h4 className="skillDetails">
+                My first priority is always to ascertain and learn the unique 
+                project requirements and needs of each of my clients. I do so by 
+                leading planning meetings with clients and then creating comprehensive 
+                plans and business documents to ensure that their projects are 
+                completed correctly and on time. 
+              </h4>
             </div>
             <div className="skillContain">
-              <h2 className="skillName">Lorem ipsum</h2>
-              <h4 className="skillDetails">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
-            </div>
-            <div className="skillContain">
-              <h2 className="skillName">Lorem ipsum</h2>
-              <h4 className="skillDetails">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+              <h2 className="skillName">Data Driven</h2>
+              <h4 className="skillDetails">
+                I try my best to build my projects on a foundation of user data. 
+                I understand that testing and taking input from a wide range of 
+                demographics at the start only saves you more development time 
+                before inevitably re-iterating. Why build something without 
+                knowing what your audiences wants, how they want it?
+              </h4>
             </div>
             <div className="skillContain skillContainLast">
-              <h2 className="skillName">Lorem ipsum</h2>
-              <h4 className="skillDetails">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+              <h2 className="skillName">Empathetic</h2>
+              <h4 className="skillDetails">
+                My motivation comes from understanding not only the user's wants, 
+                but the underlying needs and desires that unconsciously motivate 
+                them. I see the ability to put yourself in the shoes of the user 
+                as a necessary aspect for any desiger.
+              </h4>
             </div>
           </div>
         </div>

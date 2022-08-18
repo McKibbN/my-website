@@ -2,6 +2,7 @@ import React from 'react';
 import Splash from './Splash.js'
 import SkillList from './SkillList.js'
 import ContactForm from './ContactForm.js'
+import CeadContent from '../Projects/ProjectContent/CeadContent.js'
 import '../../App.css';
 
 class About extends React.Component {
@@ -20,6 +21,7 @@ class About extends React.Component {
         <div className='homeBackground'>
           <Splash />
           <SkillList />
+          <CeadContent />
           <ContactForm />
         </div>
     );

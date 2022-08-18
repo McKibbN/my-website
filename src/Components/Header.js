@@ -76,7 +76,7 @@ class Header extends React.Component {
                 <Link className='link' onClick={() => this.props.pageChange('about')} to='/'>
                   <h3 className="fade">Avery Jordan Angel</h3>
                 </Link>
-                <h3 className="fade">Web Designer</h3>
+                <h3 className="fade">UX / UI Designer</h3>
               </div>
           </div>
           {
