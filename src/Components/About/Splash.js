@@ -40,17 +40,16 @@ class Splash extends React.Component {
         <div className="splashContain">
           <div className="catchContain">
             <div className="catchTextContain">
-              <h1>Hi, I'm Avery.</h1>
-              <h3>
-                I am a frontend web developer and graphic web designer. My experience includes leading and managing 
+              <h1 className='greetings'>Hi, I'm Avery.</h1>
+              <h4>
+                I am a UX / UI Designer. My experience includes leading and managing 
                 teams of full stack web developers and graphic designers that create AI driven e-commerce platforms, 
                 mobile applications, frontend design standards, company logos, and websites.
-              </h3>
+              </h4>
             </div>
             <div className="contactLinkContain">
-              <h2 className="ctaHeading">Let's talk</h2>
               <Link onClick={() => this.props.isSetToContact(true)} className='link' to='/'>
-                <h3 className="fade contactLink splashLink">avery.jordan.angel@gmail.com</h3>
+                <h1 className="fade contactLink splashLink">Let's Talk</h1>
               </Link>
             </div>
           </div>
