@@ -13,6 +13,17 @@ class DbfzContent extends React.Component {
   render() {
     return (
       <div className='projectViewContain projectViewContainAlt'>
+        <div className="projectDetailContain">
+          <div className='projectTitle'>
+            <h1>Framehameha</h1>
+            <h3>Personal Project</h3>
+          </div>
+          <div className='projectBody'>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+            <br/>
+            <h4>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+          </div>
+        </div>
         <div className='carouselContainer'>
           <div className='swipeContain'>
               <div className='leftArrow'>
@@ -22,7 +33,7 @@ class DbfzContent extends React.Component {
               <RightArrow className='swipeArrow'/>
               </div>
           </div>
-          <Carousel cols={1} rows={1} gap={0} loop>
+          <Carousel cols={1} rows={1} gap={0} dotColorActive={'#51C5F8'} loop>
             <Carousel.Item className='projectImg'>
               <img className='projectAsset' src={DBFZasset1} alt='dbfzAsset1'></img>
             </Carousel.Item>
@@ -36,17 +47,6 @@ class DbfzContent extends React.Component {
               <img className='projectAsset' src={DBFZasset4} alt='dbfzAsset4'></img>
             </Carousel.Item>
           </Carousel>
-        </div>
-        <div className="projectDetailContain">
-          <div className='projectTitle'>
-            <h1>Framehameha</h1>
-            <h3>Personal Project</h3>
-          </div>
-          <div className='projectBody'>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
-            <br/>
-            <h4>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
-          </div>
         </div>
       </div>
     );

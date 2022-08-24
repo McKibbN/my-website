@@ -59,7 +59,7 @@ class SkillList extends React.Component {
               <img src={CoinSlotClink} className='coinslotClink' alt='coinslotClink'/>
             </div>
             <div className="skillContain">
-              <h5 className="skillName">• Strategic Planner</h5>
+              <h5 className="skillName"> * Strategic Planner</h5>
               <h4 className="skillDetails">
                 My first priority is always to ascertain and learn the unique 
                 project requirements and needs of each of my clients. I do so by 
@@ -69,7 +69,7 @@ class SkillList extends React.Component {
               </h4>
             </div>
             <div className="skillContain">
-              <h5 className="skillName">• Data Driven</h5>
+              <h5 className="skillName"> * Data Driven</h5>
               <h4 className="skillDetails">
                 I try my best to build my projects on a foundation of user data. 
                 I understand that testing and taking input from a wide range of 
@@ -79,12 +79,12 @@ class SkillList extends React.Component {
               </h4>
             </div>
             <div className="skillContain skillContainLast">
-              <h5 className="skillName">• Empathetic</h5>
+              <h5 className="skillName"> * Empathetic</h5>
               <h4 className="skillDetails">
                 My motivation comes from understanding not only the user's wants, 
                 but the underlying needs and desires that unconsciously motivate 
                 them. I see the ability to put yourself in the shoes of the user 
-                as a necessary aspect for any desiger.
+                as a necessary skill for any designer.
               </h4>
             </div>
           </div>

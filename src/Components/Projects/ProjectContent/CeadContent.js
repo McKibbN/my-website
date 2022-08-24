@@ -41,7 +41,7 @@ class CeadContent extends React.Component {
               <RightArrow className='swipeArrow'/>
               </div>
           </div>
-          <Carousel cols={1} rows={1} gap={0} loop>
+          <Carousel cols={1} rows={1} gap={0} showDots={true} dotColorActive={'#51C5F8'} loop>
             <Carousel.Item className='projectImg'>
               <img className='projectAsset' src={CEADasset1} alt='ceadAsset1'></img>
             </Carousel.Item>
