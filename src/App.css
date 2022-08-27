@@ -637,9 +637,6 @@ h4 {
   padding-bottom: 1em
 }
 
-.skillIntro {
-}
-
 .skillName {
   font-size: 1.5em;
   font-style: italic;
@@ -684,6 +681,11 @@ h4 {
     width: 35vw;
   }
 
+  .coinShadow {
+    border-radius: 20px;
+    box-shadow: 3px 4px 2px rgba(0,0,0,0.4);
+  }
+
   @keyframes CoinInsert {
     0% {
         transform: translateX(-50vw) rotateZ(-360deg);
@@ -720,6 +722,11 @@ h4 {
 
   .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinShadow {
     width: 25vw;
+  }
+
+  .coinShadow {
+    border-radius: 40px;
+    box-shadow: 6px 10px 10px rgba(0,0,0,0.4);
   }
 
   .skillIntro {
