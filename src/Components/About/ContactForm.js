@@ -80,64 +80,62 @@ class ContactForm extends React.Component {
     return (
       <div id='contact' className='contactBackground'>
         <div className='contactContain'>
-          <div className='contactHeader'>
-            <h1 className='contactTitle'>Contact</h1>
-            <h3 className='contactDetails'>
-              Please contact me to learn more about how my web development
-              and graphic web design skills can help you grow your business.
-            </h3>
-          </div>
-          <form onSubmit={this.submitForm} action='https://formspree.io/maypopad' method='post' encType='text/plain'>
-            <div className='contactForm'>
-              {
-                this.state.status === 'SUCCESS'
-                ?
-                <div className='successMessageBackground'>
-                  <div className='successMessageContain'>
-                    <h2 className='successMessage'>Thank you kindly :D</h2>
-                  </div>
-                  <img src={BartAsset} className='bartAsset' alt='bart'/>
-                </div>
-                :
-                null
-              }
-              <div className={this.state.status === 'SUCCESS' ? 'inputContain nameInputContain hidden' : 'inputContain nameInputContain'}>
-                <h4 className='inputTitle'>Name:</h4>
-                <input
-                  type='text'
-                  name='name'
-                  onFocus={this.handleActiveField}
-                  onInput={this.handleFieldChange}
-                  defaultValue={this.state.name}
-                  placeholder='Jane Doe'
-                  className={this.state.active === 'name' ? 'contactInput active' : 'contactInput'}
-                />
-              </div>
-              <div className={this.state.status === 'SUCCESS' ? 'inputContain emailInputContainhidden hidden' : 'inputContain emailInputContain'}>
-                <h4 className='inputTitle'>Email:</h4>
-                <input
-                  type='text'
-                  name='email'
-                  defaultValue={this.state.email}
-                  onFocus={this.handleActiveField}
-                  onInput={this.handleFieldChange}
-                  placeholder='example@email.com'
-                  className={this.state.active === 'email' ? 'contactInput active' : 'contactInput'}
-                />
-              </div>
-              <div className={this.state.status === 'SUCCESS' ? 'inputContain messageInputContain hidden' : 'inputContain messageInputContain'}>
-                <h4 className='inputTitle'>Message:</h4>
-                <textarea
-                  defaultValue={this.state.message}
-                  name='message'
-                  onFocus={this.handleActiveField}
-                  onInput={this.handleFieldChange}
-                  placeholder='Nice to meet ya!'
-                  className={this.state.active === 'message' ? 'contactInput messageInput active' : 'contactInput messageInput'}
-                />
-              </div>
-              <button type='submit' defaultValue='Submit' className={this.state.status === 'SUCCESS' ? 'fade button contactSubmit hidden' : 'fade button contactSubmit'}>SEND</button>
+          <form onSubmit={this.submitForm} action='https://formspree.io/maypopad' method='post' encType='text/plain' className='contactForm'>
+            <div className='contactHeader'>
+              <h1 className='contactTitle'>Contact</h1>
+              <h3 className='contactDetails'>
+                Please contact me to learn more about how my web development
+                and graphic web design skills can help you grow your business.
+              </h3>
             </div>
+            {
+              this.state.status === 'SUCCESS'
+              ?
+              <div className='successMessageBackground'>
+                <div className='successMessageContain'>
+                  <h2 className='successMessage'>Thank you kindly :D</h2>
+                </div>
+                <img src={BartAsset} className='bartAsset' alt='bart'/>
+              </div>
+              :
+              null
+            }
+            <div className={this.state.status === 'SUCCESS' ? 'inputContain nameInputContain hidden' : 'inputContain nameInputContain'}>
+              <h4 className='inputTitle'>Name:</h4>
+              <input
+                type='text'
+                name='name'
+                onFocus={this.handleActiveField}
+                onInput={this.handleFieldChange}
+                defaultValue={this.state.name}
+                placeholder='Jane Doe'
+                className={this.state.active === 'name' ? 'contactInput active' : 'contactInput'}
+              />
+            </div>
+            <div className={this.state.status === 'SUCCESS' ? 'inputContain emailInputContainhidden hidden' : 'inputContain emailInputContain'}>
+              <h4 className='inputTitle'>Email:</h4>
+              <input
+                type='text'
+                name='email'
+                defaultValue={this.state.email}
+                onFocus={this.handleActiveField}
+                onInput={this.handleFieldChange}
+                placeholder='example@email.com'
+                className={this.state.active === 'email' ? 'contactInput active' : 'contactInput'}
+              />
+            </div>
+            <div className={this.state.status === 'SUCCESS' ? 'inputContain messageInputContain hidden' : 'inputContain messageInputContain'}>
+              <h4 className='inputTitle'>Message:</h4>
+              <textarea
+                defaultValue={this.state.message}
+                name='message'
+                onFocus={this.handleActiveField}
+                onInput={this.handleFieldChange}
+                placeholder='Nice to meet ya!'
+                className={this.state.active === 'message' ? 'contactInput messageInput active' : 'contactInput messageInput'}
+              />
+            </div>
+            <button type='submit' defaultValue='Submit' className={this.state.status === 'SUCCESS' ? 'fade button contactSubmit hidden' : 'fade button contactSubmit'}>SEND</button>
             {this.state.status === 'ERROR' ? <h5 className='errorMessage'>Please enter all fields properly.</h5> : null}
           </form>
         </div>

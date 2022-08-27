@@ -38,20 +38,25 @@ class Splash extends React.Component {
     return (
       <div id="splash" className="splashBackground">
         <div className="splashContain">
-          <div className="catchContain">
-            <div className="catchTextContain">
-              <h1 className='greetings'>Hi, I'm Avery.</h1>
-              <h4>
-                I am a UX / UI Designer. My experience includes leading and managing 
-                teams of full stack web developers and graphic designers that create AI driven e-commerce platforms, 
-                mobile applications, frontend design standards, company logos, and websites.
-              </h4>
-            </div>
-            <div className="contactLinkContain">
-              <Link onClick={() => this.props.isSetToContact(true)} className='link' to='/'>
-                <h1 className="fade contactLink splashLink">Let's Talk</h1>
-              </Link>
-            </div>
+          <div className="catchTextContain">
+            <h1 className='greetings'>Hi, I'm Avery.</h1>
+            <h4>
+              I am a UX / UI Designer. My experience includes leading and managing 
+              teams of full stack web developers and graphic designers that create AI driven e-commerce platforms, 
+              mobile applications, frontend design standards, company logos, and websites.
+            </h4>
+          </div>
+          <div className="splashSVGContain">
+            <InputsBackground className='inputBackground' />
+            <LightPunch className='inputs LP' />
+            <HeavyPunch className='inputs HP' />
+            <LightKick className='inputs LK' />
+            <HeavyKick className='inputs HK' />
+          </div>
+          <div className="contactLinkContain">
+            <Link onClick={() => this.props.isSetToContact(true)} className='link' to='/'>
+              <h1 className="fade contactLink splashLink">Let's Talk</h1>
+            </Link>
           </div>
         </div>
         <div className="arrowContain">

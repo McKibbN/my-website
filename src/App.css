@@ -5,7 +5,7 @@ body {
 }
 
 .appWrapper {
-  position:relative;
+  position: relative;
   overflow-x: hidden;
   width: 100vw;
 }
@@ -104,7 +104,7 @@ h4 {
 .button {
   display: inline-block;
   text-align: center;
-  padding: .75em 0;
+  padding: 1em 0;
   color: white;
   border: none;
   border-radius: 5px;
@@ -295,7 +295,6 @@ h4 {
 
 .splashBackground {
   height: 90vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -328,7 +327,6 @@ h4 {
 
 .contactLinkContain {
   width: fit-content;
-  margin-top: 5.5em;
 }
 
 .contactLink {
@@ -348,7 +346,7 @@ h4 {
 
 .splashSVGContain {
   width: 50vw;
-  max-width: 420px;
+  max-width: 600px;
   margin: 1.5em auto;
   display: flex;
   flex-direction: column;
@@ -357,13 +355,14 @@ h4 {
 
 .inputBackground {
   width: 50vw;
-  max-width: 420px;
+  max-width: 600px;
 }
 
 .inputs {
   width: 50vw;
-  max-width: 420px;
+  max-width: 600px;
   position: absolute;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
 .LP {
@@ -480,24 +479,16 @@ h4 {
 }
 
 @media only screen and (min-width: 767px) {
-  .splashBackground {
-    height: fit-content;
-    padding: 2em 0 2em 0;
+  .splashBackground { 
+    height: 50vh;
   }
 
   .splashContain {
-    width: 75vw;
-    height: fit-content;
+    width: 90vw;
     max-width: none;
-    margin: 0 12.5vw;
-    display: flex;
-    justify-content: center;
-  }
-
-  .catchContain {
     display: grid;
-    height: fit-content;
-    grid-template-columns: repeat(2, 35vw);
+    grid-template-columns: repeat(2, 42.5vw);
+    grid-column-gap: 5vw;
     grid-template-rows: 1fr 
   }
 
@@ -505,7 +496,6 @@ h4 {
     grid-column: 1;
     grid-row: 2;
     justify-content: center;
-    margin-top: 2em;
   }
 
   .catchTextContain {
@@ -517,21 +507,38 @@ h4 {
   }
 
   .splashSVGContain {
-    width: 35vw;
+    width: 42.5vw;
     grid-column: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    max-width: 1140px;
+    grid-row: 1;
   }
 
   .inputs,
   .inputBackground {
     width: 35vw;
-    max-width: 1140px
   }
 
   .arrowContain {
     position: relative;
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape){
+  .splashBackground { 
+    height: 90vh;
+  }
+
+  .splashContain {
+    width: 75vw;
+    display: grid;
+    grid-template-columns: repeat(2, 35vw);
+    grid-column-gap: 5vw;
+    grid-template-rows: 1fr 
+  }
+
+  .splashSVGContain {
+    width: 35vw;
+    grid-column: 2;
+    grid-row: 1;
   }
 }
 
@@ -546,9 +553,8 @@ h4 {
   justify-content: center
 }
 
-.skillListContent {
+.skillListContain {
   width: 90vw;
-  max-width: 500px;
   display: flex;
   flex-direction: column;
   animation: fadeUpStart 2s cubic-bezier(.21,.07,.3,.97)
@@ -558,10 +564,10 @@ h4 {
   justify-self: center;
   align-self: center;
   display: grid;
-  padding: 0 0 4em 0;
+  padding: 4em 0;
 }
 
-.coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace {
+.coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinShadow {
   width: 50vw;
   height: auto;
   grid-column: 1;
@@ -570,19 +576,25 @@ h4 {
   align-self: center;
 }
 
+.coinShadow {
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 2px 3px 1px rgba(0,0,0,0.4);
+}
+
 .coinslotLeft {
   z-index: 1;
 }
 
 .coin {
   z-index: 2;
-  animation: CoinInsert 4s cubic-bezier(.03,.71,.88,.66) infinite
+  animation: CoinInsert 4s cubic-bezier(.03,.71,.88,.66) infinite;
 }
 
 .coinFace {
   z-index: 3;
   opacity: 75%;
-  animation: CoinInsert 4s cubic-bezier(.03,.71,.88,.66) infinite
+  animation: CoinInsert 4s cubic-bezier(.03,.71,.88,.66) infinite;
 }
 
 @keyframes CoinInsert {
@@ -626,7 +638,6 @@ h4 {
 }
 
 .skillIntro {
-  padding-bottom: 4em;
 }
 
 .skillName {
@@ -651,10 +662,6 @@ h4 {
 }
 
 @media screen and (min-width: 767px) {
-  .skillListContent {
-    max-width: none;
-  }
-
   .skillListContain {
     width: 90vw;
     display: grid;
@@ -662,55 +669,19 @@ h4 {
     grid-column-gap: 5vw;
   }
 
-  .skillIntro {
-    grid-column: 2;
-  }
-
-  .skillDetails {
-  }
-
-  .coinContain {
-    grid-column: 1;
+  .skillTitle {
     grid-row: 1;
-    padding: 0;
-  }
-
-  .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace {
-    width: 25vw;
-  }
-
-  .skillContain {
-    width: 50vw;
     grid-column: 1 / 3;
   }
-}
-
-@media screen and (min-width: 1024px) and (orientation: landscape){
-
-  .skillListContent {
-    width: 75vw;
-    max-width: none;
-  }
-
-  .skillTitle {
-    padding-bottom: 1em;
-  }
-
-  .skillListContain {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 5vw;
-    grid-template-rows: auto;
-  }
 
   .coinContain {
     grid-column: 1;
-    grid-row: 2 / 5;
+    grid-row: 3 / 5;
     padding: 0;
   }
 
-  .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace {
-    width: 25vw;
+  .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinShadow {
+    width: 35vw;
   }
 
   @keyframes CoinInsert {
@@ -720,6 +691,35 @@ h4 {
     100% {
         transform: translateX(1vw) rotateZ(360deg)
     }
+  }
+
+  .skillContain {
+    width: 42.5vw;
+    grid-column: 2;
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape){
+  .skillListBackground {
+    padding: 4em 0;
+  }
+
+  .skillListContain {
+    width: 75vw;
+  }
+
+  .skillTitle {
+    padding-bottom: 1em;
+  }
+
+  .skillListContain {
+    width: 75vw;
+    grid-template-columns: repeat(2, 35vw);
+    grid-row-gap: 1em;
+  }
+
+  .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinShadow {
+    width: 25vw;
   }
 
   .skillIntro {
@@ -737,33 +737,33 @@ h4 {
 /* Contact Card */
 
 .contactBackground {
-  width: 100vw;
-  padding: 2em 0;
+  width: 90vw;
+  padding: 2em 5vw;
+  animation: fadeUpStart 2s cubic-bezier(.21,.07,.3,.97);
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeUpStart 2s cubic-bezier(.21,.07,.3,.97)
 }
 
 .contactContain {
-  width: 90vw;
+  width: auto;
   max-width: 500px;
   display: flex;
   flex-direction: column;
+  background-color: #C9E0F5;
+  padding: 5vw;
+  border-radius: 20px;
+  box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.44);
 }
 
 .contactTitle, .contactDetails {
-  width: 90vw;
-  max-width: 500px;
   padding-bottom: 1em;
 }
 
 .contactForm {
   position: relative;
   align-self: center;
-  width: 90vw;
   height: 100%;
-  max-width: 500px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -827,7 +827,8 @@ h4 {
 .contactSubmit {
   width: 100%;
   background-color: #51C5F8;
-  font-size: 1em
+  font-size: 1em;
+  box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.22);
 }
 
 .contactSubmit:hover,
@@ -868,49 +869,21 @@ h4 {
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape){
+  .contactBackground {
+    width: 75vw;
+    padding: 1em 12.5vw 4em 12.5vw;
+  }
+
   .contactContain {
-    width: 75vw;
-    max-width: none;
-  }
-
-  .contactForm {
-    width: 75vw;
-    max-width: none;
-    display: grid;
-    grid-template-columns: repeat(2, 35vw);
-    grid-column-gap: 5vw;
-    grid-template-rows: 1fr 1fr 3fr auto;
-  }
-
-  .contactDetails {
-    max-width: none;
-    width: 35vw
+    padding: 2.5vw;
   }
 
   .contactInput {
-    width: 33vw;
-    padding: .75em 1vw
+    padding: .75em 1.25vw;
   }
 
-  .nameInputContain {
-    grid-column: 1;
-    grid-row: 1
-  }
-
-  .emailInputContain {
-    grid-column: 1;
-    grid-row: 2
-  }
-
-  .messageInputContain {
-    grid-column-start: 1;
-    grid-row: 3
-  }
-
-  .contactSubmit {
-    width: 100%;
-    max-width: 160px;
-    grid-column: 1;
+  .messageInput {
+    min-height: 10vh;
   }
 }
 
@@ -1275,17 +1248,12 @@ h4 {
   padding-bottom: .5em;
 }
 
+.projectTitle h3 {
+  font-style: italic;
+}
+
 .projectBody {
   padding: 2em 0;
-}
-
-.projectBody h3{
-  font-style: italic;
-  padding-bottom: 1em;
-}
-
-.projectBody h3:last-child{
-  padding-bottom: 0;
 }
 
 .carouselContainer {
@@ -1298,6 +1266,7 @@ h4 {
 }
 
 .projectAsset {
+  box-shadow: 1px 3px 3px 0px rgba(0,0,0,0.44);
   border-radius: 10px;
   width: 60vw;
   margin: 0 20vw
@@ -1338,41 +1307,48 @@ h4 {
 
 @keyframes arrowBounceX1 {
   0% {
-      transform: translateX(25vw)
+      transform: translateX(25vw);
+      opacity: 0
   }
   50% {
-      transform: translateX(0)
+      transform: translateX(0);
+      opacity: 100%
   }
   90% {
-      transform: translateX(25vw)
+      transform: translateX(25vw);
+      opacity: 0
   }
   100% {
-    transform: translateX(25vw)
+    transform: translateX(25vw);
+    opacity: 0
   }
 }
 
 @keyframes arrowBounceX2 {
   0% {
-    transform: translateX(-25vw)
+    transform: translateX(-25vw);
+    opacity: 0
 }
   50% {
-    transform: translateX(0)
+    transform: translateX(0);
+    opacity: 100%
 }
   90% {
-    transform: translateX(-25vw)
+    transform: translateX(-25vw);
+    opacity: 0
   }
   100% {
-    transform: translateX(-25vw)
+    transform: translateX(-25vw);
+    opacity: 0
   }
 }
 
 @media screen and (min-width: 767px){
-
   .projectViewContain{
     width: 90vw;
     padding: 5vw;
     display: grid;
-    grid-template-columns: 42.5vw 42.5vw;
+    grid-template-columns: repeat(2, 42.5vw);
     grid-column-gap: 5vw;
     grid-template-rows: auto;
   }
@@ -1400,19 +1376,15 @@ h4 {
   }
 
   .swipeContain {
-    visibility: hidden;
+    display: none;
   }
-
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape){
-
-  .projectViewContain {
+  .projectViewContain{
     width: 75vw;
-    display: grid;
-    grid-template-columns: 20vw 50vw;
-    grid-column-gap: 5vw;
-    grid-template-rows: auto;
+    padding: 5vw 12.5vw;
+    grid-template-columns: repeat(2, 35vw);
   }
 
   .projectTitle {
@@ -1430,6 +1402,16 @@ h4 {
 
   .projectBody h3{
     margin-bottom: 2em;
+  }
+
+  .carouselContainer {
+    width: 25vw;
+    padding: 0 5vw
+  }
+
+  .projectAsset {
+    width: 15vw;
+    margin: 0 3.75vw;
   }
 }
 
@@ -1512,7 +1494,7 @@ h4 {
   text-align: right;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 767px){
 
   .footerBackground {
     margin-top: 0
@@ -1522,13 +1504,31 @@ h4 {
     display: none
   }
 
-  .footerContain {
-    width: 75vw;
+  .recatchContain,
+  .footerInnerContain {
+    width: 37.5vw;
+  }
+}
+
+@media screen and (min-width: 767px){
+
+  .footerBackground {
+    margin-top: 0
+  }
+
+  .footerSVG {
+    display: none
   }
 
   .recatchContain,
   .footerInnerContain {
     width: 37.5vw;
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+  .footerContain {
+    width: 75vw;
   }
 }
 

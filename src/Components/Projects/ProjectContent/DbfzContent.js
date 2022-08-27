@@ -33,7 +33,7 @@ class DbfzContent extends React.Component {
               <RightArrow className='swipeArrow'/>
               </div>
           </div>
-          <Carousel cols={1} rows={1} gap={0} dotColorActive={'#51C5F8'} loop>
+          <Carousel cols={1} rows={1} gap={0} scrollSnap={false} showDots={true} dotColorActive={'#51C5F8'} loop>
             <Carousel.Item className='projectImg'>
               <img className='projectAsset' src={DBFZasset1} alt='dbfzAsset1'></img>
             </Carousel.Item>

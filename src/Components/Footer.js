@@ -38,7 +38,7 @@ class Footer extends React.Component {
                 <a href="https://twitter.com/very_Ange1" className='fade footerLink'>Twitter</a><br/>
               </div>
             </div>
-            <h4 className='cr'>Copyright Avery Jordan Angel 2019 ©</h4>
+            <h4 className='cr'>Copyright Avery Jordan Angel 2022 ©</h4>
           </div>
         </div>
       </div>
