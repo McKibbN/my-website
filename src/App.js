@@ -8,6 +8,7 @@ import About from './Components/About/About.js'
 import Footer from './Components/Footer.js'
 import SideDrawer from './Components/SideDrawer.js'
 import ProjectView from './Components/Projects/ProjectView.js'
+import Resume from './Components/Resume.js'
 import './App.css';
 
 class App extends React.Component {
@@ -105,6 +106,7 @@ class App extends React.Component {
             <Header width={this.state.windowWidth} />
             <Route exact path='/' render={(props) => <About />} />
             <Route path='/projects' render={(props) => <ProjectView {...props} width={this.state.windowWidth} />} />
+            <Route path='/resume' render={(props) => <Resume />} />
             <Footer />
           </div>
           {

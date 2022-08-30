@@ -90,11 +90,11 @@ class Header extends React.Component {
               <Link className='link' onClick={() => this.setState({page: 'about'})} to='/'>
                   <h4 className={this.props.page === 'about' ? "activeTabItem tabItem" : "fade tabItem"} onClick={() => this.props.pageChange('about')}>About</h4>
               </Link>
-              <Link className='link' onClick={() => this.setState({page: 'projects'})} to='/projects'>
-                <h4 className={this.props.page === 'projects' ? "activeTabItem tabItem" : "fade tabItem"} onClick={() => this.props.pageChange('projects')}>Projects</h4>
+              <Link className='link' onClick={() => this.setState({page: 'resume'})} to='/resume'>
+                <h4 className={this.props.page === 'resume' ? "activeTabItem tabItem" : "fade tabItem"} onClick={() => this.props.pageChange('resume')}>Resumé</h4>
               </Link>
               <Link className='link' onClick={this.contactLinkEvent} to='/'>
-                <h4 className="fade emailTab">avery.jordan.angel@gmail.com</h4>
+                <h4 className="fade emailTab">Contact</h4>
               </Link>
             </div>
           }

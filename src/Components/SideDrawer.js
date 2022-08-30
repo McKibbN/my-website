@@ -39,8 +39,8 @@ class SideDrawer extends React.Component {
             <Link onClick={() => this.toggleRender()} className='mobileTab' to='/'>
               <h2 className='mobileTabItem'>About</h2>
             </Link>
-            <Link onClick={() => this.toggleRender()} className='mobileTab' to='/projects'>
-              <h2 className='mobileTabItem'>Projects</h2>
+            <Link onClick={() => this.toggleRender()} className='mobileTab' to='/resume'>
+              <h2 className='mobileTabItem'>Resume</h2>
             </Link>
           </div>
         </div>
