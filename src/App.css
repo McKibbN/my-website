@@ -1313,38 +1313,30 @@ h4 {
 @keyframes arrowBounceX1 {
   0% {
       transform: translateX(25vw);
-      opacity: 0
   }
   50% {
       transform: translateX(0);
-      opacity: 100%
   }
   90% {
       transform: translateX(25vw);
-      opacity: 0
   }
   100% {
     transform: translateX(25vw);
-    opacity: 0
   }
 }
 
 @keyframes arrowBounceX2 {
   0% {
     transform: translateX(-25vw);
-    opacity: 0
 }
   50% {
     transform: translateX(0);
-    opacity: 100%
 }
   90% {
     transform: translateX(-25vw);
-    opacity: 0
   }
   100% {
     transform: translateX(-25vw);
-    opacity: 0
   }
 }
 
