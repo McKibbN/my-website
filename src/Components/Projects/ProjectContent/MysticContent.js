@@ -2,6 +2,7 @@ import React from 'react'
 import Carousel from 'better-react-carousel'
 import MYSTasset1 from '../../../Assets/mysticAssets/myst_Loading.gif'
 import MYSTasset2 from '../../../Assets/mysticAssets/myst_Home.png'
+import MYSTasset3 from '../../../Assets/mysticAssets/myst_NewMeeting.png'
 import { ReactComponent as LeftArrow } from '../../../Assets/leftArrow.svg';
 import { ReactComponent as RightArrow } from '../../../Assets/rightArrow.svg';
 import '../../../App.css'
@@ -33,10 +34,13 @@ class CeadContent extends React.Component {
           </div>
           <Carousel cols={1} rows={1} gap={0} scrollSnap={false} showDots={true} dotColorActive={'#51C5F8'} loop>
             <Carousel.Item className='projectImg'>
-              <img className='projectAsset' src={MYSTasset1} alt='ceadAsset1'></img>
+              <img className='projectAsset' src={MYSTasset1} alt='mysticAsset1'></img>
             </Carousel.Item>
             <Carousel.Item className='projectImg'>
-              <img className='projectAsset' src={MYSTasset2} alt='ceadAsset2'></img>
+              <img className='projectAsset' src={MYSTasset2} alt='mysticAsset2'></img>
+            </Carousel.Item>
+            <Carousel.Item className='projectImg'>
+              <img className='projectAsset' src={MYSTasset3} alt='mysticAsset3'></img>
             </Carousel.Item>
           </Carousel>
         </div>
