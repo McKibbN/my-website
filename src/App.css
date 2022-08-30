@@ -204,7 +204,7 @@ h4 {
 
 .tabItem, .emailTab {
   font-weight: 400;
-  padding: .5em 1.75em;
+  padding: .5em 1em;
   box-shadow: none;
 }
 
@@ -878,7 +878,7 @@ h4 {
 @media screen and (min-width: 1024px) and (orientation: landscape){
   .contactBackground {
     width: 75vw;
-    padding: 1em 12.5vw 4em 12.5vw;
+    padding: 3em 12.5vw;
   }
 
   .contactContain {
@@ -1537,6 +1537,17 @@ h4 {
   .footerContain {
     width: 75vw;
   }
+}
+
+.resumeBackground {
+  position: fixed;
+  width: 100vw;
+  height: 90vh;
+}
+
+.resumeFile {
+  width: 100vw;
+  height: 90vh;
 }
 
 /* Shared attributes */
