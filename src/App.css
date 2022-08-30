@@ -1431,6 +1431,7 @@ h4 {
 }
 
 .footerSVG {
+  max-height: 379px;
   margin-bottom: -4px;
 }
 
