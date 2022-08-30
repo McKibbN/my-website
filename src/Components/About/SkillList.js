@@ -1,14 +1,10 @@
 import React from 'react'
 import { getCoinFaceSrc } from '../../Redux/Actions/coinFaceController';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CoinBase from '../../Assets/coin.svg'
 import CoinSlotLeft from '../../Assets/coinslotLeft.svg'
 import CoinSlotRight from '../../Assets/coinslotRight.svg'
 import CoinSlotClink from '../../Assets/coinslotClink.svg'
-import ReactLogo from '../../Assets/coinFaceReact.svg'
-import ReduxLogo from '../../Assets/coinFaceRedux.svg'
-import AdobeLogo from '../../Assets/coinFaceAdobe.svg'
 import '../../App.css'
 
 class SkillList extends React.Component {
@@ -47,11 +43,6 @@ class SkillList extends React.Component {
             </h4>
           </div>
           <div className="coinContain">
-            <img 
-              src={AdobeLogo}
-              className='coinFace'
-              alt='coin'
-            />
             <img src={CoinBase} className='coin' alt='coin'/>
             <img src={CoinSlotLeft} className='coinslotLeft' alt='coinslot'/>
             <img src={CoinSlotRight} className='coinslotRight' alt='coinslot'/>

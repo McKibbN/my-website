@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { isSetToContact } from '../Redux/Actions/yPosController.js';
 import { pageChange } from '../Redux/Actions/pageController.js';
-import IsoBuildings from '../Assets/iso.svg'
 import '../App.css'
 
 class Footer extends React.Component {
@@ -21,7 +20,6 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="footerBackground">
-        <img className='footerSVG' src={IsoBuildings} alt='IsoBuildings'/>
         <div className='footerLinkBackground'>
           <div className='footerContain'>
             <div className='footerLinkContain recatchContain'>
