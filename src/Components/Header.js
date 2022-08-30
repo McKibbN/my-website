@@ -32,7 +32,7 @@ class Header extends React.Component {
   navBarResize() {
     const ww = this.props.width
 
-    if ( ww < 1024 ) {
+    if ( ww < 767 ) {
       this.setState({
         mobile: true
       })
