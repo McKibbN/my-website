@@ -80,14 +80,14 @@ class ContactForm extends React.Component {
     return (
       <div id='contact' className='contactBackground'>
         <div className='contactContain'>
+          <div className='contactHeader'>
+            <h1 className='contactTitle'>Contact</h1>
+            <h3 className='contactDetails'>
+              Please contact me to learn more about how my web development
+              and graphic web design skills can help you grow your business.
+            </h3>
+          </div>
           <form onSubmit={this.submitForm} action='https://formspree.io/maypopad' method='post' encType='text/plain' className='contactForm'>
-            <div className='contactHeader'>
-              <h1 className='contactTitle'>Contact</h1>
-              <h3 className='contactDetails'>
-                Please contact me to learn more about how my web development
-                and graphic web design skills can help you grow your business.
-              </h3>
-            </div>
             {
               this.state.status === 'SUCCESS'
               ?
