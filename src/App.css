@@ -293,6 +293,10 @@ h4 {
 
 /* Splash Contain */
 
+.homeBackground {
+  min-height: 90vh;
+}
+
 .splashBackground {
   height: 90vh;
   display: flex;
@@ -863,7 +867,7 @@ h4 {
 
 .successMessageBackground {
   position: absolute;
-  width: 90vw;
+  width: 80vw;
   max-width: 500px;
   height: 100%;
   z-index: 6;
@@ -882,10 +886,11 @@ h4 {
   border-radius: 5px;
   padding: 30px;
   margin: 10px;
+  box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.22);
 }
 
 .bartAsset {
-  width: 32vw;
+  width: 50vw;
   max-width: 320px;
 }
 
