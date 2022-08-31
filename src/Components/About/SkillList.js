@@ -37,9 +37,9 @@ class SkillList extends React.Component {
           <div className="skillIntro">
             <h4 className="skillIntroText">
               I am skilled in responsive web design, frontend
-              web development, web applications, and graphic web design.
-              My other skills include AI, CRM, customer service,
-              marketing, project management, and strategic planning.	
+              web development (React / React Native), and graphic web design.
+              My other skills include CRM, customer service,
+              marketing, user research, project management, and strategic planning.	
             </h4>
           </div>
           <div className="coinContain">
@@ -47,7 +47,7 @@ class SkillList extends React.Component {
             <img src={CoinSlotLeft} className='coinslotLeft' alt='coinslot'/>
             <img src={CoinSlotRight} className='coinslotRight' alt='coinslot'/>
             <img src={CoinSlotClink} className='coinslotClink' alt='coinslotClink'/>
-            <div className='coinShadow'></div>
+            <img src={CoinSlotLeft} className='coinslotBackdrop' alt='coinslot'/>
           </div>
           <div className="skillContain">
             <h5 className="skillName"> * Strategic Planner</h5>
