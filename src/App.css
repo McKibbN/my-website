@@ -565,6 +565,15 @@ h4 {
   align-self: center;
   display: grid;
   padding: 4em 0;
+  animation: CoinPop 4s cubic-bezier(.03,.71,.88,.66) infinite
+}
+
+@keyframes CoinPop {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+  }
 }
 
 .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinslotBackdrop {
@@ -574,10 +583,7 @@ h4 {
   grid-row: 1;
   justify-self: center;
   align-self: center;
-}
-
-.coinslotBackdrop {
-  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  filter: none;
 }
 
 .coinslotLeft {
@@ -593,6 +599,24 @@ h4 {
   z-index: 3;
   opacity: 75%;
   animation: CoinInsert 4s cubic-bezier(.03,.71,.88,.66) infinite;
+}
+
+@keyframes CoinPop {
+  0% {
+      transform: scale(1);
+}
+  88% {
+      transform: scale(1);
+  }
+  92% {
+      transform: scale(.9);
+  }
+  96% {
+    transform: scale(1.1);
+}
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes CoinInsert {
@@ -611,6 +635,11 @@ h4 {
 .coinslotClink {
   z-index: 5;
   animation: Clink 4s cubic-bezier(.03,.71,.88,.66) infinite
+}
+
+.coinslotBackdrop {
+  z-index: 0;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
 @keyframes Clink {
