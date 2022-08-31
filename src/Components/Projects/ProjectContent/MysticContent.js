@@ -18,9 +18,18 @@ class CeadContent extends React.Component {
             <h3>Thumbnail Consulting</h3>
           </div>
           <div className='projectBody'>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+            <h4>
+              Mystic was piece of Scheduling Software I helped design while 
+              contracted under Thumbnail Consulting.
+            </h4>
             <br/>
-            <h4>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+            <h4>
+            This application's features include appointment management, automation, email 
+            templating and analytics, employee management, file storage, lead tracking, 
+            project tracking, a built-in calendar for scheduling, and surveying features. 
+            I was tasked with generating assets and developing the front-facing elements 
+            in React Native.
+            </h4>
           </div>
         </div>
         <div className='carouselContainer'>

@@ -19,9 +19,19 @@ class DbfzContent extends React.Component {
             <h3>Personal Project</h3>
           </div>
           <div className='projectBody'>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+            <h4>
+              Framehameha is hybrid web app for the fighting game Dragonball Fighter Z. 
+              This was a project I worked on with a React Developer that I established a 
+              relationship through playing the game at my local fighting game scene.
+            </h4>
             <br/>
-            <h4>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+            <h4>
+              My focus was on the designing a mobile responsive layout for players to 
+              have easy access to the info needed to improve at the game either at home 
+              or at a tournament. This passion project also let me design for a demographic 
+              that I had readily available feedback through my local scene, which greatly 
+              assisted in the reiteration process.
+            </h4>
           </div>
         </div>
         <div className='carouselContainer'>

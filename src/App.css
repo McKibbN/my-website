@@ -567,7 +567,7 @@ h4 {
   padding: 4em 0;
 }
 
-.coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinShadow {
+.coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinslotBackdrop {
   width: 50vw;
   height: auto;
   grid-column: 1;
@@ -576,7 +576,7 @@ h4 {
   align-self: center;
 }
 
-.coinslotLeft {
+.coinslotBackdrop {
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
@@ -675,13 +675,8 @@ h4 {
     padding: 0;
   }
 
-  .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinShadow {
+  .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinslotBackdrop {
     width: 35vw;
-  }
-
-  .coinShadow {
-    border-radius: 20px;
-    box-shadow: 3px 4px 2px rgba(0,0,0,0.4);
   }
 
   @keyframes CoinInsert {
@@ -718,13 +713,8 @@ h4 {
     grid-row-gap: 1em;
   }
 
-  .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinShadow {
+  .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinslotBackdrop {
     width: 25vw;
-  }
-
-  .coinShadow {
-    border-radius: 40px;
-    box-shadow: 6px 10px 10px rgba(0,0,0,0.4);
   }
 
   .skillIntro {
@@ -1313,30 +1303,38 @@ h4 {
 @keyframes arrowBounceX1 {
   0% {
       transform: translateX(25vw);
+      opacity: 0
   }
   50% {
       transform: translateX(0);
+      opacity: 100%
   }
   90% {
       transform: translateX(25vw);
+      opacity: 0
   }
   100% {
     transform: translateX(25vw);
+    opacity: 0
   }
 }
 
 @keyframes arrowBounceX2 {
   0% {
     transform: translateX(-25vw);
+    opacity: 0
 }
   50% {
     transform: translateX(0);
+    opacity: 100%
 }
   90% {
     transform: translateX(-25vw);
+    opacity: 0
   }
   100% {
     transform: translateX(-25vw);
+    opacity: 0
   }
 }
 

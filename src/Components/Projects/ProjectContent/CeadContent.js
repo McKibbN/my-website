@@ -27,9 +27,18 @@ class CeadContent extends React.Component {
             <h3>The CEAD COMPANY</h3>
           </div>
           <div className='projectBody'>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+            <h4>
+              CEAD is Point of Sale Software dedicated for the Cannabis industry. 
+              This was a project initiated by a startup I participated in with a couple
+              of fellow students from Woz U.
+            </h4>
             <br/>
-            <h4>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+            <h4>
+              The User Journey’s was designed with the Budtender’s motives in mind. 
+              Critical information like inventory stock, customer allotments, and a customer 
+              queue allowed for swift and efficient service all while not pinning servers 
+              to an immobile workstation.
+            </h4>
           </div>
         </div>
         <div className='carouselContainer'>
