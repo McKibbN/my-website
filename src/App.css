@@ -127,7 +127,7 @@ h4 {
 .headerBackground {
   position: fixed;
   top: 0;
-  z-index: 7;
+  z-index: 10;
   width: 100vw;
   height: 10vh;
   display: flex;
@@ -298,39 +298,56 @@ h4 {
 }
 
 .splashBackground {
+  z-index: 1;
   height: 90vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 60vh 1fr;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fadeUpStart 2s cubic-bezier(.21,.07,.3,.97)
 }
 
-.splashContain {
+.splashCatchContain {
+  grid-row: 2;
+  z-index: 4;
+  padding-left: 5vw;
   width: 90vw;
   max-width: 500px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center
+  justify-content: center;
+  animation: splashOpacity 5s cubic-bezier(.21,.07,.3,.97)
 }
 
-.catchTextContain {
-  display: flex;
-  flex-direction: column;
+@keyframes splashOpacity {
+  0% {
+      opacity: 0;
+  }
+  75% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1
+  }
 }
 
-.catchTextContain h1 {
+.splashCatchContain h1 {
   font-size: 2em;
 }
 
-.catchTextContain h4 {
+.splashCatchContain h4 {
   padding-top: 2em;
   line-height: 1.6;
 }
 
 .contactLinkContain {
-  width: fit-content;
+  z-index: 9;
+  grid-row: 3;
+  justify-self: flex-start;
+  align-self: center;
+  padding-left: 5vw;
+  animation: splashOpacity 5s cubic-bezier(.21,.07,.3,.97)
 }
 
 .contactLink {
@@ -338,6 +355,60 @@ h4 {
   color: #51C5F8;
   padding: .3em 0;
   border-bottom: 3px solid #F34213;
+}
+
+.splashAssetBackground {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  height: 90vh;
+  width: 100vw;
+}
+
+.splashAssetContain {
+  align-self: flex-end;
+  display: flex;
+  height: 50vh;
+  animation: handGesture 5s cubic-bezier(.21,.07,.3,.97);
+}
+
+@keyframes handGesture {
+  0% {
+      transform: translateY(-70vh) scale(5);
+      opacity: 0;
+  }
+  25% {
+      opacity: 1;
+  }
+  50% {
+      transform: translateY(-70vh) scale(5);
+  }
+  100% {
+      transform: translateY(0) scale(1)
+  }
+}
+
+.me, .heroIcon {
+  width: 100vw;
+  height: min-content;
+  align-self: flex-end;
+}
+
+.heroIcon {
+  z-index: 3;
+  position: absolute;
+  filter: drop-shadow(0px 3px 1px rgb(0 0 0 / 0.25));
+  animation: iconHover 1s cubic-bezier(.21,.07,.3,.97) infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes iconHover {
+  0% {
+      transform: translateY(3px);
+  }
+  100% {
+      transform: translateY(0)
+  }
 }
 
 .contactLink:hover,
@@ -348,9 +419,9 @@ h4 {
   transition: border .3s cubic-bezier(.21,.07,.3,.97), color .3s cubic-bezier(.21,.07,.3,.97);
 }
 
-.splashSVGContain {
+.skillSVGContain {
   width: 50vw;
-  max-width: 600px;
+  max-width: 300px;
   margin: 1.5em auto;
   display: flex;
   flex-direction: column;
@@ -359,12 +430,12 @@ h4 {
 
 .inputBackground {
   width: 50vw;
-  max-width: 600px;
+  max-width: 300px;
 }
 
 .inputs {
   width: 50vw;
-  max-width: 600px;
+  max-width: 300px;
   position: absolute;
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
@@ -448,81 +519,63 @@ h4 {
     }
 }
 
-.arrowContain {
-  margin-top: 2em;
-}
-
-.arrow {
-  width: 8vw;
-  max-width: 32px;
-  animation: arrowBounceY 2s cubic-bezier(.21,.07,.3,.97) infinite
-}
-
-@keyframes arrowBounceY {
-    0% {
-        transform: translateY(0)
-    }
-    50% {
-        transform: translateY(1vh)
-    }
-    60% {
-        transform: translateY(0)
-    }
-    70% {
-        transform: translateY(1vh)
-    }
-    80% {
-        transform: translateY(0)
-    }
-    90% {
-        transform: translateY(1vh)
-    }
-    100% {
-        transform: translateY(0)
-    }
-}
-
 @media only screen and (min-width: 767px) {
   .splashBackground {
     height: 50vh;
-  }
-
-  .splashContain {
-    width: 90vw;
     max-width: none;
     display: grid;
-    grid-template-columns: repeat(2, 42.5vw);
-    grid-column-gap: 5vw;
-    grid-template-rows: 1fr
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 35vh 1fr;
+  }
+
+  .splashCatchContain {
+    align-self: flex-start;
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .contactLinkContain {
+    align-self: flex-end;
     grid-column: 1;
     grid-row: 2;
-    justify-content: center;
   }
 
   .catchTextContain {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .buttonContact {
     max-width: 160px
   }
 
-  .splashSVGContain {
-    width: 42.5vw;
-    grid-column: 2;
-    grid-row: 1;
+  .splashAssetBackground {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    height: 50vh;
   }
-
-  .inputs,
-  .inputBackground {
-    width: 35vw;
+  
+  .splashAssetContain {
+    align-self: flex-end;
+    display: flex;
+    height: 50vh;
+    animation: handGesture 5s cubic-bezier(.21,.07,.3,.97);
   }
-
-  .arrowContain {
-    position: relative;
+  
+  @keyframes handGesture {
+    0% {
+        transform: translateY(-20vh) scale(3);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20vh) scale(3);
+    }
+    100% {
+        transform: translateY(0) scale(1)
+    }
   }
 }
 
@@ -539,16 +592,32 @@ h4 {
     grid-template-rows: 1fr
   }
 
-  .splashSVGContain {
-    width: 35vw;
-    grid-column: 2;
-    grid-row: 1;
+  .splashAssetBackground {
+    height: 90vh;
+  }
+
+  @keyframes handGesture {
+    0% {
+        transform: translateY(50vh) scale(3);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(50vh) scale(3);
+    }
+    100% {
+        transform: translateY(0) scale(1)
+    }
   }
 }
 
 /* Slill List */
 
 .skillListBackground {
+  z-index: 7;
+  position: relative;
   background-color: #2E2E3A;
   color: #ffffff;
   display: flex;
@@ -561,106 +630,6 @@ h4 {
   width: 90vw;
   display: flex;
   flex-direction: column;
-}
-
-.coinContain {
-  justify-self: center;
-  align-self: center;
-  display: grid;
-  padding: 4em 0;
-  animation: CoinPop 4s cubic-bezier(.03,.71,.88,.66) infinite
-}
-
-@keyframes CoinPop {
-  0% {
-    transform: scale(0.8);
-  }
-  100% {
-  }
-}
-
-.coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinslotBackdrop {
-  width: 50vw;
-  height: auto;
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: center;
-  align-self: center;
-  filter: none;
-}
-
-.coinslotLeft {
-  z-index: 1;
-}
-
-.coin {
-  z-index: 2;
-  animation: CoinInsert 4s cubic-bezier(.03,.71,.88,.66) infinite;
-}
-
-.coinFace {
-  z-index: 3;
-  opacity: 75%;
-  animation: CoinInsert 4s cubic-bezier(.03,.71,.88,.66) infinite;
-}
-
-@keyframes CoinPop {
-  0% {
-      transform: scale(1);
-}
-  88% {
-      transform: scale(1);
-  }
-  92% {
-      transform: scale(.9);
-  }
-  96% {
-    transform: scale(1.1);
-}
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes CoinInsert {
-  0% {
-      transform: translateX(-100vw) rotateZ(-360deg);
-  }
-  100% {
-      transform: translateX(1vw) rotateZ(360deg)
-  }
-}
-
-.coinslotRight {
-  z-index: 4;
-}
-
-.coinslotClink {
-  z-index: 5;
-  animation: Clink 4s cubic-bezier(.03,.71,.88,.66) infinite
-}
-
-.coinslotBackdrop {
-  z-index: 0;
-  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-}
-
-@keyframes Clink {
-  0% {
-      opacity: 0;
-      transform: translateX(-2vw);
-  }
-  90% {
-    opacity: 0;
-    transform: translateX(-2vw);
-}
-  95% {
-      opacity: 100%;
-  }
-  100% {
-      opacity: 0;
-      transform: translateX(0);
-  }
 }
 
 .skillTitle {
@@ -701,7 +670,7 @@ h4 {
     grid-column: 1 / 3;
   }
 
-  .coinContain {
+  .skillSVGContain {
     grid-column: 1;
     grid-row: 3 / 5;
     padding: 0;
@@ -933,7 +902,6 @@ h4 {
   display: flex;
   align-items: center;
   min-height: 90vh;
-  animation: fadeUpStart 1s cubic-bezier(.21,.07,.3,.97)
 }
 
 /* mobileView */
