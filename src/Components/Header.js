@@ -66,9 +66,7 @@ class Header extends React.Component {
             {
               this.state.tablet
               ?
-              <div className="logoContain">
-                <img className="profile" src={Profile} alt="headshot" />
-              </div>
+              null
               :
               null
             }

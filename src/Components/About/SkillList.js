@@ -1,11 +1,11 @@
 import React from 'react'
 import { getCoinFaceSrc } from '../../Redux/Actions/coinFaceController';
 import { connect } from 'react-redux';
-import CoinBase from '../../Assets/coin.svg'
-import CoinSlotLeft from '../../Assets/coinslotLeft.svg'
-import CoinSlotRight from '../../Assets/coinslotRight.svg'
-import CoinSlotClink from '../../Assets/coinslotClink.svg'
-import '../../App.css'
+import { ReactComponent as InputsBackground } from '../../Assets/inputsBackground.svg'
+import { ReactComponent as LightPunch } from '../../Assets/inputsLP.svg'
+import { ReactComponent as HeavyPunch } from '../../Assets/inputsHP.svg'
+import { ReactComponent as LightKick } from '../../Assets/inputsLK.svg'
+import { ReactComponent as HeavyKick } from '../../Assets/inputsHK.svg'
 
 class SkillList extends React.Component {
   constructor() {
@@ -42,12 +42,12 @@ class SkillList extends React.Component {
               marketing, user research, project management, and strategic planning.	
             </h4>
           </div>
-          <div className="coinContain">
-            <img src={CoinBase} className='coin' alt='coin'/>
-            <img src={CoinSlotLeft} className='coinslotLeft' alt='coinslot'/>
-            <img src={CoinSlotRight} className='coinslotRight' alt='coinslot'/>
-            <img src={CoinSlotClink} className='coinslotClink' alt='coinslotClink'/>
-            <img src={CoinSlotLeft} className='coinslotBackdrop' alt='coinslot'/>
+          <div className="skillSVGContain">
+            <InputsBackground className='inputBackground' />
+            <LightPunch className='inputs LP' />
+            <HeavyPunch className='inputs HP' />
+            <LightKick className='inputs LK' />
+            <HeavyKick className='inputs HK' />
           </div>
           <div className="skillContain">
             <h5 className="skillName"> * Strategic Planner</h5>
