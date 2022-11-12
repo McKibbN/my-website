@@ -374,17 +374,17 @@ h4 {
 
 @keyframes handGesture {
   0% {
-      transform: translateY(-70vh) scale(5);
+      transform: translateY(-70vh) scale3D(5);
       opacity: 0;
   }
   25% {
       opacity: 1;
   }
   50% {
-      transform: translateY(-70vh) scale(5);
+      transform: translateY(-70vh) scale3D(5);
   }
   100% {
-      transform: translateY(0) scale(1)
+      transform: translateY(0) scale3D(1)
   }
 }
 
@@ -563,17 +563,17 @@ h4 {
   
   @keyframes handGesture {
     0% {
-        transform: translateY(-20vh) scale(3);
+        transform: translateY(-20vh) scale3d(3);
         opacity: 0;
     }
     25% {
         opacity: 1;
     }
     50% {
-        transform: translateY(-20vh) scale(3);
+        transform: translateY(-20vh) scale3d(3);
     }
     100% {
-        transform: translateY(0) scale(1)
+        transform: translateY(0) scale3d(1)
     }
   }
 }
@@ -597,17 +597,17 @@ h4 {
 
   @keyframes handGesture {
     0% {
-        transform: translateY(50vh) scale(3);
+        transform: translateY(50vh) scale3d(3);
         opacity: 0;
     }
     25% {
         opacity: 1;
     }
     50% {
-        transform: translateY(50vh) scale(3);
+        transform: translateY(50vh) scale3d(3);
     }
     100% {
-        transform: translateY(0) scale(1)
+        transform: translateY(0) scale3d(1)
     }
   }
 }
