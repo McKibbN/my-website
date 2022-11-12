@@ -390,7 +390,6 @@ h4 {
 
 .me, .heroIcon {
   width: 100vw;
-  height: min-content;
   align-self: flex-end;
 }
 
