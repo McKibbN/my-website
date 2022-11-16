@@ -317,14 +317,14 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  animation: splashOpacity 5s cubic-bezier(.21,.07,.3,.97)
+  animation: splashOpacity 2s cubic-bezier(.21,.07,.3,.97)
 }
 
 @keyframes splashOpacity {
   0% {
       opacity: 0;
   }
-  75% {
+  50% {
       opacity: 0;
   }
   100% {
@@ -347,7 +347,7 @@ h4 {
   justify-self: flex-start;
   align-self: center;
   padding-left: 5vw;
-  animation: splashOpacity 5s cubic-bezier(.21,.07,.3,.97)
+  animation: splashOpacity 3s cubic-bezier(.21,.07,.3,.97)
 }
 
 .contactLink {
@@ -369,24 +369,9 @@ h4 {
   align-self: flex-end;
   display: flex;
   height: 50vh;
-  animation: handGesture 5s cubic-bezier(.21,.07,.3,.97);
+  animation: splashOpacity 4s cubic-bezier(.21,.07,.3,.97)
 }
 
-@keyframes handGesture {
-  0% {
-      transform: translateY(-70vh) scale(5);
-      opacity: 0;
-  }
-  25% {
-      opacity: 1;
-  }
-  50% {
-      transform: translateY(-70vh) scale(5);
-  }
-  100% {
-      transform: translateY(0) scale(1)
-  }
-}
 
 .me, .heroIcon {
   width: 100vw;
@@ -418,22 +403,8 @@ h4 {
   transition: border .3s cubic-bezier(.21,.07,.3,.97), color .3s cubic-bezier(.21,.07,.3,.97);
 }
 
-.skillSVGContain {
-  width: 50vw;
-  max-width: 300px;
-  margin: 1.5em auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.inputBackground {
-  width: 50vw;
-  max-width: 300px;
-}
-
 .inputs {
-  width: 50vw;
+  width: 30vw;
   max-width: 300px;
   position: absolute;
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
@@ -531,12 +502,14 @@ h4 {
     align-self: flex-start;
     grid-column: 1;
     grid-row: 2;
+    animation: splashOpacity 7s cubic-bezier(.21,.07,.3,.97)
   }
 
   .contactLinkContain {
     align-self: flex-end;
     grid-column: 1;
     grid-row: 2;
+    animation: splashOpacity 8s cubic-bezier(.21,.07,.3,.97)
   }
 
   .catchTextContain {
@@ -631,101 +604,88 @@ h4 {
   flex-direction: column;
 }
 
-.skillTitle {
-  padding-bottom: 1em
+.skillContain {
+  width: 90vw;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto .75fr;
+  max-width: 800px;
+  padding: 1em 0
+}
+
+.test {
+  width: 30vw;
+  max-width: 250px;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  justify-self: center;
 }
 
 .skillName {
-  font-size: 1.5em;
+  grid-column: 2;
+  grid-row: 1;
+  padding: 0 0 0 1rem;
   font-style: italic;
 }
 
-.skillContain {
-  width: 90vw;
-  max-width: 500px;
-  padding-bottom: 2em;
-  display: flex;
-  flex-direction: column;
-}
-
-.skillContainLast {
-  padding-bottom: 0 !important
-}
-
 .skillDetails {
-  padding-top: .8em;
+  grid-column: 2;
+  grid-row: 2;
+  padding: 1rem 1rem 0;
+}
+
+.dataDriven {
+  grid-template-columns: 3fr 1fr;
+}
+
+.dataDriven .test {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+.dataDriven .skillName {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.dataDriven .skillDetails {
+  grid-column: 1;
+  grid-row: 2;
 }
 
 @media screen and (min-width: 767px) {
-  .skillListContain {
-    width: 90vw;
-    display: grid;
-    grid-template-columns: repeat(2, 42.5vw);
-    grid-column-gap: 5vw;
-  }
-
-  .skillTitle {
-    grid-row: 1;
-    grid-column: 1 / 3;
-  }
-
-  .skillSVGContain {
-    grid-column: 1;
-    grid-row: 3 / 5;
-    padding: 0;
-  }
-
-  .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinslotBackdrop {
-    width: 35vw;
-  }
-
-  @keyframes CoinInsert {
-    0% {
-        transform: translateX(-50vw) rotateZ(-360deg);
-    }
-    100% {
-        transform: translateX(1vw) rotateZ(360deg)
-    }
-  }
-
   .skillContain {
-    width: 42.5vw;
-    grid-column: 2;
+    padding: 3em 0 ;
   }
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape){
-  .skillListBackground {
-    padding: 4em 0;
-  }
 
   .skillListContain {
-    width: 75vw;
-  }
-
-  .skillTitle {
-    padding-bottom: 1em;
-  }
-
-  .skillListContain {
-    width: 75vw;
-    grid-template-columns: repeat(2, 35vw);
-    grid-row-gap: 1em;
-  }
-
-  .coin, .coinslotLeft, .coinslotRight, .coinslotClink, .coinFace, .coinslotBackdrop {
-    width: 25vw;
-  }
-
-  .skillIntro {
-    padding: 0;
-    grid-column: 1
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
   .skillContain {
-    max-width: none;
-    width: 100%;
-    grid-column: 2
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skillName {
+    padding: 0;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .test {
+    align-self: center;
+    padding: 3em 0;
+  }
+
+  .skillDetails {
+    padding: 0;
   }
 }
 
