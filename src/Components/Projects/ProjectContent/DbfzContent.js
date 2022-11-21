@@ -26,7 +26,7 @@ class DbfzContent extends React.Component {
             </h4>
             <br/>
             <h4>
-              My focus was on the designing a mobile responsive layout for players to 
+              My focus was on designing a mobile responsive layout for players to 
               have easy access to the info needed to improve at the game either at home 
               or at a tournament. This passion project also let me design for a demographic 
               that I had readily available feedback through my local scene, which greatly 

@@ -1,7 +1,8 @@
 import React from 'react'
 import { getCoinFaceSrc } from '../../Redux/Actions/coinFaceController';
 import { connect } from 'react-redux';
-import { ReactComponent as Icon } from '../../Assets/QWC.svg';
+import { ReactComponent as SkillIconOne } from '../../Assets/skillIconOne.svg';
+import { ReactComponent as SkillIconTwo } from '../../Assets/skillIconTwo.svg';
 
 class SkillList extends React.Component {
   constructor() {
@@ -15,7 +16,7 @@ class SkillList extends React.Component {
         <div className="skillListContain">
           <div className="skillContain stratPlan">
             <h1 className="skillName">Strategic Planner</h1>
-            <Icon className='test' />
+            <SkillIconOne className='skillIcon' />
             <h4 className="skillDetails">
               My first priority is always to ascertain and learn the unique 
               project requirements and needs of each of my clients. I do so by 
@@ -26,7 +27,7 @@ class SkillList extends React.Component {
           </div>
           <div className="skillContain dataDriven">
             <h1 className="skillName">Data Driven</h1>
-            <Icon className='test' />
+            <SkillIconTwo className='skillIcon' />
             <h4 className="skillDetails">
               I understand that testing and taking input from a wide range of 
               demographics at the start only saves you more development time 
@@ -36,7 +37,7 @@ class SkillList extends React.Component {
           </div>
           <div className="skillContain empathetic">
             <h1 className="skillName">Empathetic</h1>
-            <Icon className='test' />
+            <SkillIconOne className='skillIcon' />
             <h4 className="skillDetails">
               My motivation comes from understanding not only the user's wants, 
               but the underlying needs and desires that unconsciously motivate 
