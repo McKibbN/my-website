@@ -20,7 +20,7 @@ class DbfzContent extends React.Component {
           </div>
           <div className='projectBody'>
             <h4>
-              Framehameha is hybrid web app for the fighting game Dragonball Fighter Z. 
+              Framehameha is a hybrid web app for the fighting game Dragonball Fighter Z. 
               This was a project I worked on with a React Developer that I established a 
               relationship through playing the game at my local fighting game scene.
             </h4>
