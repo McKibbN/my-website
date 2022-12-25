@@ -44,10 +44,10 @@ class CeadContent extends React.Component {
         <div className='carouselContainer'>
           <div className='swipeContain'>
               <div className='leftArrow'>
-                <LeftArrow className='swipeArrow'/>
+                <LeftArrow fill="#F34213" className='swipeArrow'/>
               </div>
               <div className='rightArrow'>
-              <RightArrow className='swipeArrow'/>
+                <RightArrow fill="#F34213" className='swipeArrow'/>
               </div>
           </div>
           <Carousel cols={1} rows={1} gap={0} scrollSnap={false} showDots={true} dotColorActive={'#51C5F8'} loop>
