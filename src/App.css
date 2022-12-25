@@ -1215,6 +1215,7 @@ h4 {
   z-index: 4;
   width: 100vw;
   margin-top: 60%;
+  padding: 0 ;
   display: grid;
   grid-template-columns: 1fr 70vw 1fr;
   align-items: center;
@@ -1230,11 +1231,13 @@ h4 {
 }
 
 .leftArrow {
+  padding-left: 5vw;
   grid-column: 1;
   animation: arrowBounceX1 3s cubic-bezier(.09,.93,.47,1) infinite;
 }
 
 .rightArrow {
+  padding-left: 5vw;
   grid-column: 3;
   animation: arrowBounceX2 3s cubic-bezier(.09,.93,.47,1) infinite;
 }
