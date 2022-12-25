@@ -28,7 +28,7 @@ class CeadContent extends React.Component {
           </div>
           <div className='projectBody'>
             <h4>
-              CEAD is Point of Sale Software dedicated for the Cannabis industry. 
+              CEAD is a piece of Point of Sale Software dedicated for the Cannabis industry. 
               This was a project initiated by a startup I participated in with a couple
               of fellow students from Woz U.
             </h4>
