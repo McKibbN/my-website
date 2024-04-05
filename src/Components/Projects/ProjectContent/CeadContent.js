@@ -28,7 +28,7 @@ class CeadContent extends React.Component {
           </div>
           <div className='projectBody'>
             <h4>
-              CEAD is a piece of Point of Sale Software dedicated for the Cannabis industry. 
+              CEAD is Point of Sale Software dedicated for the Cannabis industry. 
               This was a project initiated by a startup I participated in with a couple
               of fellow students from Woz U.
             </h4>
@@ -43,8 +43,12 @@ class CeadContent extends React.Component {
         </div>
         <div className='carouselContainer'>
           <div className='swipeContain'>
-                <LeftArrow fill="#F34213" className='leftArrow swipeArrow'/>
-                <RightArrow fill="#F34213" className='rightArrow swipeArrow'/>
+              <div className='leftArrow'>
+                <LeftArrow className='swipeArrow'/>
+              </div>
+              <div className='rightArrow'>
+              <RightArrow className='swipeArrow'/>
+              </div>
           </div>
           <Carousel cols={1} rows={1} gap={0} scrollSnap={false} showDots={true} dotColorActive={'#51C5F8'} loop>
             <Carousel.Item className='projectImg'>
