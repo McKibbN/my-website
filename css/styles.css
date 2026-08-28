@@ -90,8 +90,7 @@ button {
 /* =========================================================
      2) CSS-ONLY CAROUSEL (scroll-snap, no JS)
      ========================================================= */
-  .slide {
-  flex: 0 0 100%;
+.slide {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -99,6 +98,7 @@ button {
   margin: 1.5rem;
   scroll-snap-align: start;
   filter: var(--shadow-hard);
+  flex: 0 0 70vw;
 }
 
 .css-carousel h3{
@@ -118,8 +118,13 @@ button {
   gap: 1.5rem; /* inter-slide spacing lives here now, not on .slide */
 }
 
-.css-track .slide {
-  flex: 0 0 70vw;
+.emptySlide {
+  flex: 0 0 0 !important;
+  margin: 0;
+}
+
+.slide:nth-of-type(2) {
+  margin: 1.5rem 1.5rem 1.5rem 0;
 }
 
   .css-track:last-of-type {
@@ -175,6 +180,10 @@ p {
 }
 
 p strong {
+  color: var(--color-taupe);
+}
+
+.quote-overview p strong {
   color: var(--color-sand);
 }
 
@@ -440,7 +449,6 @@ p:last-of-type {
    ============================================ */
 
 .home-hero {
-  max-height: 75vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -502,7 +510,7 @@ p:last-of-type {
 .who-am-I {
   align-self: end;
   z-index: 2;
-  grid-row: 1;
+  grid-row: 2;
   grid-column: 1;
 }
 
@@ -519,12 +527,18 @@ p:last-of-type {
 }
 
 .project-card {
-    z-index: 2;
-    background-color: var(--color-bg);
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+  z-index: 2;
+  background-color: var(--color-bg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+.project-card .containerBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .project-card .imgWrapper {
@@ -536,7 +550,7 @@ p:last-of-type {
   .project-card h5 {
     font-weight: 600;
     font-style: italic;
-    color: var(--color-sand);
+    color: var(--color-taupe);
   }
 
   .project-card .logoContain {
@@ -784,7 +798,7 @@ p:last-of-type {
 .quote-content {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50vh;
+  grid-template-rows: auto;
   background-color: var(--color-bg-alt);
 }
 
@@ -1440,7 +1454,6 @@ p:last-of-type {
 
 .about-who-am-I-content p {
   color: var(--color-white);
-  text-align: center;
 }
 
 .about-quote-content {
@@ -1798,6 +1811,11 @@ p:last-of-type {
     margin: 1.5rem 2.5rem;
   }
 
+  .emptySlide {
+    flex: 0 0 0 !important;
+    margin: 0 1rem 0 0;
+  }
+
   h1 {
     font-size: clamp(2rem, 4vw, 4rem);
   }
@@ -2061,7 +2079,6 @@ p:last-of-type {
     height: 100%;
   }
 
-
   .about-body {
     grid-column: 1 / 4;
     grid-row: 1;
@@ -2074,7 +2091,6 @@ p:last-of-type {
 
   .who-am-I-content p {
     text-align: center;
-    padding: 0 15%
   }
 
 .about-who-am-I-content p {
@@ -3444,6 +3460,12 @@ p:last-of-type {
   }
 }
 
+@media (orientation: portrait){
+  .workstudy-hero-content {
+    min-height: 40vh;
+  }
+}
+
 /* ============================================
    DESKTOP BREAKPOINT (>= 1024px)
    ============================================ */
@@ -3470,6 +3492,11 @@ p:last-of-type {
 
   .containerBody {
     padding: 4rem 8rem
+  }
+
+  .who-am-I-content p {
+    text-align: center;
+    padding: 0 15%;
   }
 
   .home-hero .containerBody{
