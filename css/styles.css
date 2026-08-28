@@ -57,7 +57,6 @@ button {
   font-family: var(--font-sans);
   font-weight: 800;
   padding: 1rem;
-  margin-top: 2.5rem;
   text-transform: uppercase;
   background-color: #C9B99A11;
   color: var(--color-sand);
@@ -209,6 +208,7 @@ p:last-of-type {
 }
 
 .containerBody .button {
+  margin-top: 2.5rem;
   width: auto;
   align-self: self-end;
 }
@@ -1674,7 +1674,7 @@ p:last-of-type {
   flex-direction: column;
 }
 
-.form-group-email {
+.form-group-email, .form-group-message {
   padding-bottom: 2.5rem;
 }
 
@@ -1709,7 +1709,6 @@ p:last-of-type {
 .contact-button {
   width:fit-content;
   justify-self: end;
-  margin: 1.5rem 0 0 0 ;
   background-color: var(--color-espresso);
 }
 
@@ -2216,7 +2215,7 @@ p:last-of-type {
   /* Contact */
   .contact-grid {
     grid-template-columns: 1fr 2fr;
-    gap: 2.5rem;
+    grid-column-gap: 2.5rem;
     padding: 2.5rem;
   }
 
@@ -2227,7 +2226,7 @@ p:last-of-type {
   }
 
   .contact-info p {
-    padding: 0;
+    padding: 0 0 2.5rem 0;
   }
 
   .form-group label {
