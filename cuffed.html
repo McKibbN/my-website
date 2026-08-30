@@ -179,7 +179,7 @@
         </div>
         <div class="form-group form-group-message">
           <label for="message">Message</label>
-          <textarea id="message" class="message-field" name="message" placeholder="You look ravashing today..." required></textarea>
+          <textarea id="message" class="message-field" name="message" placeholder="You look ravishing today..." required></textarea>
         </div>
         <button type="submit" class="contact-button">Send</button>
       </form>
@@ -205,6 +205,39 @@
     // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMobile = document.getElementById('navMobile');
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const button = form.querySelector('.contact-button');
+    button.disabled = true;
+    button.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.textContent = "Message sent — thank you! I'll get back to you soon.";
+        status.className = 'form-status success';
+        form.reset();
+      } else {
+        status.textContent = "Something went wrong. Please try again or email directly.";
+        status.className = 'form-status error';
+      }
+    } catch (error) {
+      status.textContent = "Something went wrong. Please check your connection and try again.";
+      status.className = 'form-status error';
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Send';
+    }
+  });
 
     menuToggle.addEventListener('click', () => {
       menuToggle.classList.toggle('active');
@@ -231,6 +264,5 @@
       }
     });
   </script>
-
 </body>
 </html>
