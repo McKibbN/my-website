@@ -3510,8 +3510,9 @@ p:last-of-type {
   }
 
   .slide:first-of-type {
-    margin: 2rem 1rem 2rem 8rem;
+    margin: 2rem 6.5rem 2rem 8rem;
   }
+  
 
   .slide:last-of-type {
     margin: 2rem 8rem 2rem 1rem;
@@ -4234,7 +4235,7 @@ p:last-of-type {
   }
 
   .slide:first-of-type {
-    margin: 2rem 1rem 2rem 16rem;
+    margin: 2rem 14.5rem 2rem 8rem;
   }
 
   .slide:last-of-type {
