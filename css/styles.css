@@ -1729,7 +1729,7 @@ p:last-of-type {
   align-items: center;
   margin: 0;
   grid-column: 1;
-  width: 80%;
+  width: 70%;
   grid-row: 3;
   margin-top: 1rem;
 }
